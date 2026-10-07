@@ -10,7 +10,7 @@
 
 ### `ayon@mesh:~$ cat about.md`
 
-**Backend Engineer · Web3 Developer · AI Systems Builder**
+**Backend Engineer · Web3 Developer**
 
 Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ University &nbsp;|&nbsp; MCA — Amity University Noida &nbsp;|&nbsp; BCA — Christ University
 
@@ -25,7 +25,7 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
   "web3":    ["Solidity", "Hardhat", "Ethers.js", "EIP-712", "Sepolia", "Polygon Amoy"],
   "backend": ["Java", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "Python"],
   "mobile":  ["Flutter", "Dart", "Firebase", "Cloud Firestore"],
-  "ai_ml":   ["Agentic Swarms", "Vector Stores", "LLM Pipelines", "IISc Certified"],
+  "ai_ml":   ["Agentic Swarms", "Vector Stores", "LLM Pipelines"]
   "tools":   ["Git", "Docker", "Google Cloud", "Google Maps Platform"]
 }
 ```
