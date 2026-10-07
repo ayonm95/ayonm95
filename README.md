@@ -43,16 +43,6 @@ Bengaluru, India &nbsp;|&nbsp; MCA — Christ University &nbsp;|&nbsp; B.Sc. —
 
 ---
 
-### `$ cat certifications.txt`
-
-```
-[IISc]  Applied AI/ML for IT Leaders — Indian Institute of Science, Bengaluru
-[IIIT]  Blockchain & Cryptocurrency — IIIT Hyderabad (PG Program)
-[AWS]   Cloud Foundations — Amazon Web Services
-```
-
----
-
 <div align="center">
 
 ### `$ ./connect`
