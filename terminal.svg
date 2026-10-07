@@ -17,38 +17,108 @@
       .og  { fill: #4ade80; font-family: 'Courier New',monospace; font-size: 11.5px; }
       .op  { fill: #c084fc; font-family: 'Courier New',monospace; font-size: 11.5px; }
       .oy  { fill: #fbbf24; font-family: 'Courier New',monospace; font-size: 11.5px; }
-      .cur { fill: #22c55e; }
       .sb  { fill: #1c2128; }
+
+      /* Accessibility: show everything if user prefers reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *, tspan { animation: none !important; opacity: 1 !important; }
+      }
+
       /* === Animations === */
-      .p1  { opacity: 0; animation: fi .01s ease .40s forwards; }
-      .c1  { animation: tw .55s steps(6,end) .5s both; }
-      .o1  { opacity: 0; animation: fi .25s ease 1.25s forwards; }
-      .p2  { opacity: 0; animation: fi .01s ease 1.90s forwards; }
-      .c2  { animation: tw .80s steps(14,end) 2.0s both; }
-      .o2a { opacity: 0; animation: fi .25s ease 3.0s forwards; }
-      .o2b { opacity: 0; animation: fi .25s ease 3.3s forwards; }
-      .o2c { opacity: 0; animation: fi .25s ease 3.6s forwards; }
-      .p3  { opacity: 0; animation: fi .01s ease 4.6s forwards; }
-      .c3  { animation: tw 1.0s steps(12,end) 4.7s both; }
-      .o3a { opacity: 0; animation: fi .25s ease 5.9s forwards; }
-      .o3b { opacity: 0; animation: fi .25s ease 6.2s forwards; }
-      .o3c { opacity: 0; animation: fi .25s ease 6.5s forwards; }
-      .o3d { opacity: 0; animation: fi .25s ease 6.8s forwards; }
-      .p4  { opacity: 0; animation: fi .01s ease 7.8s forwards; }
-      .c4  { animation: tw .80s steps(26,end) 7.9s both; }
-      .o4a { opacity: 0; animation: fi .25s ease 8.9s forwards; }
-      .o4b { opacity: 0; animation: fi .25s ease 9.2s forwards; }
-      .p5  { opacity: 0; animation: fi .01s ease 9.9s forwards; }
-      .cur { animation: bk 1s step-end infinite 10.1s; }
-      @keyframes tw {
-        from { clip-path: inset(0 100% 0 0); }
-        to   { clip-path: inset(0 0%   0 0); }
+
+      @keyframes fi {
+        to { opacity: 1; }
       }
-      @keyframes fi { to { opacity: 1; } }
       @keyframes bk {
-        0%,100% { opacity: 1; }
-        50%     { opacity: 0; }
+        0%, 100% { opacity: 1; }
+        50%      { opacity: 0; }
       }
+
+      .p1 { opacity: 0; animation: fi .01s ease 0.40s forwards; }
+      .o1 { opacity: 0; animation: fi .25s ease 1.15s forwards; }
+      .p2 { opacity: 0; animation: fi .01s ease 1.80s forwards; }
+      .o2a { opacity: 0; animation: fi .25s ease 3.10s forwards; }
+      .o2b { opacity: 0; animation: fi .25s ease 3.30s forwards; }
+      .o2c { opacity: 0; animation: fi .25s ease 3.50s forwards; }
+      .p3 { opacity: 0; animation: fi .01s ease 4.30s forwards; }
+      .o3a { opacity: 0; animation: fi .25s ease 5.65s forwards; }
+      .o3b { opacity: 0; animation: fi .25s ease 5.85s forwards; }
+      .o3c { opacity: 0; animation: fi .25s ease 6.05s forwards; }
+      .o3d { opacity: 0; animation: fi .25s ease 6.25s forwards; }
+      .p4 { opacity: 0; animation: fi .01s ease 7.00s forwards; }
+      .o4a { opacity: 0; animation: fi .25s ease 9.05s forwards; }
+      .o4b { opacity: 0; animation: fi .25s ease 9.35s forwards; }
+      .p5 { opacity: 0; animation: fi .01s ease 10.00s forwards; }
+      .cur { fill: #22c55e; animation: bk 1s step-end infinite 10.20s; }
+      .c1_0 { opacity: 0; animation: fi .01s ease 0.50s forwards; }
+      .c1_1 { opacity: 0; animation: fi .01s ease 0.58s forwards; }
+      .c1_2 { opacity: 0; animation: fi .01s ease 0.66s forwards; }
+      .c1_3 { opacity: 0; animation: fi .01s ease 0.74s forwards; }
+      .c1_4 { opacity: 0; animation: fi .01s ease 0.82s forwards; }
+      .c1_5 { opacity: 0; animation: fi .01s ease 0.90s forwards; }
+      .c2_0 { opacity: 0; animation: fi .01s ease 1.95s forwards; }
+      .c2_1 { opacity: 0; animation: fi .01s ease 2.02s forwards; }
+      .c2_2 { opacity: 0; animation: fi .01s ease 2.09s forwards; }
+      .c2_3 { opacity: 0; animation: fi .01s ease 2.16s forwards; }
+      .c2_4 { opacity: 0; animation: fi .01s ease 2.23s forwards; }
+      .c2_5 { opacity: 0; animation: fi .01s ease 2.30s forwards; }
+      .c2_6 { opacity: 0; animation: fi .01s ease 2.37s forwards; }
+      .c2_7 { opacity: 0; animation: fi .01s ease 2.43s forwards; }
+      .c2_8 { opacity: 0; animation: fi .01s ease 2.50s forwards; }
+      .c2_9 { opacity: 0; animation: fi .01s ease 2.57s forwards; }
+      .c2_10 { opacity: 0; animation: fi .01s ease 2.64s forwards; }
+      .c2_11 { opacity: 0; animation: fi .01s ease 2.71s forwards; }
+      .c2_12 { opacity: 0; animation: fi .01s ease 2.78s forwards; }
+      .c2_13 { opacity: 0; animation: fi .01s ease 2.85s forwards; }
+      .c3_0 { opacity: 0; animation: fi .01s ease 4.45s forwards; }
+      .c3_1 { opacity: 0; animation: fi .01s ease 4.52s forwards; }
+      .c3_2 { opacity: 0; animation: fi .01s ease 4.59s forwards; }
+      .c3_3 { opacity: 0; animation: fi .01s ease 4.66s forwards; }
+      .c3_4 { opacity: 0; animation: fi .01s ease 4.73s forwards; }
+      .c3_5 { opacity: 0; animation: fi .01s ease 4.80s forwards; }
+      .c3_6 { opacity: 0; animation: fi .01s ease 4.87s forwards; }
+      .c3_7 { opacity: 0; animation: fi .01s ease 4.94s forwards; }
+      .c3_8 { opacity: 0; animation: fi .01s ease 5.01s forwards; }
+      .c3_9 { opacity: 0; animation: fi .01s ease 5.08s forwards; }
+      .c3_10 { opacity: 0; animation: fi .01s ease 5.15s forwards; }
+      .c3_11 { opacity: 0; animation: fi .01s ease 5.22s forwards; }
+      .c3_12 { opacity: 0; animation: fi .01s ease 5.29s forwards; }
+      .c3_13 { opacity: 0; animation: fi .01s ease 5.36s forwards; }
+      .c3_14 { opacity: 0; animation: fi .01s ease 5.43s forwards; }
+      .c4_0 { opacity: 0; animation: fi .01s ease 7.15s forwards; }
+      .c4_1 { opacity: 0; animation: fi .01s ease 7.20s forwards; }
+      .c4_2 { opacity: 0; animation: fi .01s ease 7.25s forwards; }
+      .c4_3 { opacity: 0; animation: fi .01s ease 7.30s forwards; }
+      .c4_4 { opacity: 0; animation: fi .01s ease 7.35s forwards; }
+      .c4_5 { opacity: 0; animation: fi .01s ease 7.40s forwards; }
+      .c4_6 { opacity: 0; animation: fi .01s ease 7.45s forwards; }
+      .c4_7 { opacity: 0; animation: fi .01s ease 7.50s forwards; }
+      .c4_8 { opacity: 0; animation: fi .01s ease 7.55s forwards; }
+      .c4_9 { opacity: 0; animation: fi .01s ease 7.60s forwards; }
+      .c4_10 { opacity: 0; animation: fi .01s ease 7.65s forwards; }
+      .c4_11 { opacity: 0; animation: fi .01s ease 7.70s forwards; }
+      .c4_12 { opacity: 0; animation: fi .01s ease 7.75s forwards; }
+      .c4_13 { opacity: 0; animation: fi .01s ease 7.80s forwards; }
+      .c4_14 { opacity: 0; animation: fi .01s ease 7.85s forwards; }
+      .c4_15 { opacity: 0; animation: fi .01s ease 7.90s forwards; }
+      .c4_16 { opacity: 0; animation: fi .01s ease 7.95s forwards; }
+      .c4_17 { opacity: 0; animation: fi .01s ease 8.00s forwards; }
+      .c4_18 { opacity: 0; animation: fi .01s ease 8.05s forwards; }
+      .c4_19 { opacity: 0; animation: fi .01s ease 8.10s forwards; }
+      .c4_20 { opacity: 0; animation: fi .01s ease 8.15s forwards; }
+      .c4_21 { opacity: 0; animation: fi .01s ease 8.20s forwards; }
+      .c4_22 { opacity: 0; animation: fi .01s ease 8.25s forwards; }
+      .c4_23 { opacity: 0; animation: fi .01s ease 8.30s forwards; }
+      .c4_24 { opacity: 0; animation: fi .01s ease 8.35s forwards; }
+      .c4_25 { opacity: 0; animation: fi .01s ease 8.40s forwards; }
+      .c4_26 { opacity: 0; animation: fi .01s ease 8.45s forwards; }
+      .c4_27 { opacity: 0; animation: fi .01s ease 8.50s forwards; }
+      .c4_28 { opacity: 0; animation: fi .01s ease 8.55s forwards; }
+      .c4_29 { opacity: 0; animation: fi .01s ease 8.60s forwards; }
+      .c4_30 { opacity: 0; animation: fi .01s ease 8.65s forwards; }
+      .c4_31 { opacity: 0; animation: fi .01s ease 8.70s forwards; }
+      .c4_32 { opacity: 0; animation: fi .01s ease 8.75s forwards; }
+      .c4_33 { opacity: 0; animation: fi .01s ease 8.80s forwards; }
     </style>
     <filter id="glow" x="-10%" y="-30%" width="120%" height="160%">
       <feGaussianBlur stdDeviation="1.5" result="b"/>
@@ -77,7 +147,7 @@
     <text x="18" y="68" class="pa">&#x279C;</text>
     <text x="33" y="68" class="ph">ayon</text>
     <text x="67" y="68" class="pb"> &#x276E;main&#x276F;</text>
-    <text x="140" y="68" class="ct c1">whoami</text>
+    <text x="140" y="68" class="ct" xml:space="preserve"><tspan class="c1_0">w</tspan><tspan class="c1_1">h</tspan><tspan class="c1_2">o</tspan><tspan class="c1_3">a</tspan><tspan class="c1_4">m</tspan><tspan class="c1_5">i</tspan></text>
   </g>
   <text x="18" y="86" class="od o1">Ayon Moitra  &#x00B7;  Backend &#x00B7; Web3 &#x00B7; AI Systems Engineer &#x00B7; Bengaluru</text>
 
@@ -86,10 +156,10 @@
     <text x="18" y="112" class="pa">&#x279C;</text>
     <text x="33" y="112" class="ph">ayon</text>
     <text x="67" y="112" class="pb"> &#x276E;main&#x276F;</text>
-    <text x="140" y="112" class="ct c2">cat skills.txt</text>
+    <text x="140" y="112" class="ct" xml:space="preserve"><tspan class="c2_0">c</tspan><tspan class="c2_1">a</tspan><tspan class="c2_2">t</tspan><tspan class="c2_3">&#160;</tspan><tspan class="c2_4">s</tspan><tspan class="c2_5">k</tspan><tspan class="c2_6">i</tspan><tspan class="c2_7">l</tspan><tspan class="c2_8">l</tspan><tspan class="c2_9">s</tspan><tspan class="c2_10">.</tspan><tspan class="c2_11">t</tspan><tspan class="c2_12">x</tspan><tspan class="c2_13">t</tspan></text>
   </g>
   <text x="18" y="130" class="oc o2a">&#x251C;&#x2500;&#x2500; Web3     Solidity &#x00B7; Hardhat &#x00B7; Ethers.js &#x00B7; EIP-712 &#x00B7; Sepolia &#x00B7; Polygon Amoy</text>
-  <text x="18" y="146" class="og o2b">&#x251C;&#x2500;&#x2500; Backend  Java &#x00B7; TypeScript &#x00B7; Node.js &#x00B7; Express &#x00B7; PostgreSQL &#x00B7; MongoDB</text>
+  <text x="18" y="146" class="og o2b">&#x251C;&#x2500;&#x2500; Backend  Java &#x00B7; TypeScript &#x00B7; Node.js &#x00B7; PostgreSQL &#x00B7; MongoDB &#x00B7; Python</text>
   <text x="18" y="162" class="op o2c">&#x2514;&#x2500;&#x2500; AI/ML    Agentic Swarms &#x00B7; Vector Stores &#x00B7; LLM Pipelines &#x00B7; [IISc Certified]</text>
 
   <!-- ── PROMPT 3: ls projects/ ── -->
@@ -97,7 +167,7 @@
     <text x="18" y="190" class="pa">&#x279C;</text>
     <text x="33" y="190" class="ph">ayon</text>
     <text x="67" y="190" class="pb"> &#x276E;main&#x276F;</text>
-    <text x="140" y="190" class="ct c3">ls -1 projects/</text>
+    <text x="140" y="190" class="ct" xml:space="preserve"><tspan class="c3_0">l</tspan><tspan class="c3_1">s</tspan><tspan class="c3_2">&#160;</tspan><tspan class="c3_3">-</tspan><tspan class="c3_4">1</tspan><tspan class="c3_5">&#160;</tspan><tspan class="c3_6">p</tspan><tspan class="c3_7">r</tspan><tspan class="c3_8">o</tspan><tspan class="c3_9">j</tspan><tspan class="c3_10">e</tspan><tspan class="c3_11">c</tspan><tspan class="c3_12">t</tspan><tspan class="c3_13">s</tspan><tspan class="c3_14">/</tspan></text>
   </g>
   <text x="18" y="208" class="oy o3a">pharmatree/    Pharma provenance &#x00B7; Ethereum Sepolia &#x00B7; 21 passing tests</text>
   <text x="18" y="224" class="oc o3b">sonder/        Async Merkle royalty ledger &#x00B7; Polygon Amoy &#x00B7; GAAP accounting</text>
@@ -109,7 +179,7 @@
     <text x="18" y="284" class="pa">&#x279C;</text>
     <text x="33" y="284" class="ph">ayon</text>
     <text x="67" y="284" class="pb"> &#x276E;main&#x276F;</text>
-    <text x="140" y="284" class="ct c4">npx hardhat test --network sepolia</text>
+    <text x="140" y="284" class="ct" xml:space="preserve"><tspan class="c4_0">n</tspan><tspan class="c4_1">p</tspan><tspan class="c4_2">x</tspan><tspan class="c4_3">&#160;</tspan><tspan class="c4_4">h</tspan><tspan class="c4_5">a</tspan><tspan class="c4_6">r</tspan><tspan class="c4_7">d</tspan><tspan class="c4_8">h</tspan><tspan class="c4_9">a</tspan><tspan class="c4_10">t</tspan><tspan class="c4_11">&#160;</tspan><tspan class="c4_12">t</tspan><tspan class="c4_13">e</tspan><tspan class="c4_14">s</tspan><tspan class="c4_15">t</tspan><tspan class="c4_16">&#160;</tspan><tspan class="c4_17">-</tspan><tspan class="c4_18">-</tspan><tspan class="c4_19">n</tspan><tspan class="c4_20">e</tspan><tspan class="c4_21">t</tspan><tspan class="c4_22">w</tspan><tspan class="c4_23">o</tspan><tspan class="c4_24">r</tspan><tspan class="c4_25">k</tspan><tspan class="c4_26">&#160;</tspan><tspan class="c4_27">s</tspan><tspan class="c4_28">e</tspan><tspan class="c4_29">p</tspan><tspan class="c4_30">o</tspan><tspan class="c4_31">l</tspan><tspan class="c4_32">i</tspan><tspan class="c4_33">a</tspan></text>
   </g>
   <text x="18" y="302" class="og o4a" filter="url(#glow)">&#x2714;  21 passing  (0 failed &#x00B7; 100% assertions green)</text>
   <text x="18" y="318" class="od o4b">   Deployed: 0x2bAEd948286a073E5c026A4fCe47D93Eb198a044 &#x00B7; Etherscan VERIFIED</text>
@@ -137,11 +207,11 @@
   <text x="110" y="390" font-family="'Courier New',monospace" font-size="10" fill="#0d1117" font-weight="700" text-anchor="middle">&#x276E;main&#x276F;</text>
 
   <!-- Right info -->
-  <text x="790" y="390" class="od" font-size="10" text-anchor="end">MCA · Christ Univ  |  B.Sc. · VKSU  |  moitraayon14@gmail.com</text>
+  <text x="790" y="390" class="od" font-size="10" text-anchor="end">MSc. CSA &#x00B7; Christ Univ  |  MCA &#x00B7; Amity Univ  |  BCA &#x00B7; Christ Univ</text>
 
   <!-- Second status row: open to work -->
-  <text x="18" y="415" class="og" font-size="10.5">&#x25CF; Open to: Backend · Web3 · AI/ML Engineering roles</text>
-  <text x="790" y="415" class="od" font-size="10" text-anchor="end">linkedin.com/in/ayonmoitra</text>
+  <text x="18" y="415" class="og" font-size="10.5">&#x25CF; Open to: Backend &#x00B7; Web3 &#x00B7; AI/ML Engineering roles</text>
+  <text x="790" y="415" class="od" font-size="10" text-anchor="end">linkedin.com/in/ayon-moitra</text>
 
   <!-- Outer border -->
   <rect width="800" height="440" rx="12" stroke="#30363d" stroke-width="1" fill="none"/>
