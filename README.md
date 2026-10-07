@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/terminal.svg" alt="Ayon Moitra — Terminal" width="800"/>
+<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/terminal.svg" alt="Ayon Moitra — Terminal" width="800" height="440"/>
 
 </div>
 
