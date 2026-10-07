@@ -48,6 +48,6 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
 ### `$ ./connect`
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ayon-moitra)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:moitraayon14@gmail.com)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ayonmoitra57@gmail.com)
 
 </div>
