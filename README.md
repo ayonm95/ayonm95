@@ -12,7 +12,7 @@
 
 **Backend Engineer · Web3 Developer · AI Systems Builder**
 
-Bengaluru, India &nbsp;|&nbsp; MCA — Christ University &nbsp;|&nbsp; B.Sc. — VKSU
+Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ University &nbsp;|&nbsp; MCA — Amity University Noida &nbsp;|&nbsp; BCA — Christ University
 
 </div>
 
@@ -47,9 +47,7 @@ Bengaluru, India &nbsp;|&nbsp; MCA — Christ University &nbsp;|&nbsp; B.Sc. —
 
 ### `$ ./connect`
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ayonmoitra)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ayon-moitra)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:moitraayon14@gmail.com)
-
-*`[ayon@mesh]` Currently open to: Backend · Web3 · AI roles*
 
 </div>
