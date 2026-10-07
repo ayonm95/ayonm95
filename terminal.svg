@@ -209,8 +209,8 @@
   <!-- Right info -->
   <text x="790" y="390" class="od" font-size="10" text-anchor="end">MSc. CSA &#x00B7; Christ Univ  |  MCA &#x00B7; Amity Univ  |  BCA &#x00B7; Christ Univ</text>
 
-  <!-- Second status row: open to work -->
-  <text x="18" y="415" class="og" font-size="10.5">&#x25CF; Open to: Backend &#x00B7; Web3 &#x00B7; AI/ML Engineering roles</text>
+  <!-- Second status row: contact & links -->
+  <text x="18" y="415" class="od" font-size="10">moitraayon14@gmail.com</text>
   <text x="790" y="415" class="od" font-size="10" text-anchor="end">linkedin.com/in/ayon-moitra</text>
 
   <!-- Outer border -->
