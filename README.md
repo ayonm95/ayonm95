@@ -37,9 +37,9 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
 | Project | Stack | Highlight |
 |---|---|---|
 | **[PharmaTree](https://github.com/ayonm95/pharmatree)** | Solidity · Hardhat · EVM | Pharmaceutical provenance — 21 unit tests, 100% green, Sepolia verified |
-| **[Sonder](https://github.com/ayonm95/sonder)** | Node.js · Merkle Trees · Polygon Amoy | Async royalty ledger — GAAP double-entry bookkeeping on-chain |
-| **[DeliverMate](https://github.com/ayonm95/delivermate)** | Firebase · Google Maps API | 3-tier logistics dispatch system with real-time tracking |
-| **[FitMe](https://github.com/ayonm95/fitme)** | Flutter · Firestore | Cross-platform health & fitness tracker |
+| **[Sonder](https://github.com/ayonm95/sonder-web3-fintech)** | Node.js · Merkle Trees · Polygon Amoy | Async royalty ledger — GAAP double-entry bookkeeping on-chain |
+| **DeliverMate** | Firebase · Google Maps API | 3-tier logistics dispatch system with real-time tracking |
+| **[FitMe](https://github.com/ayonm95/fitme-mobile-app)** | Flutter · Firestore | Cross-platform health & fitness tracker |
 
 ---
 
