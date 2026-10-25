@@ -1,373 +1,621 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="440" viewBox="0 0 800 440">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="470" viewBox="0 0 800 470">
   <defs>
-    <style>
-      .tb  { fill: #0d1117; }
-      .hd  { fill: #161b22; }
-      .ht  { fill: #8b949e; font-family: 'Courier New',Courier,monospace; font-size: 11px; }
-      .dr  { fill: #ff5f57; }
-      .dy  { fill: #febc2e; }
-      .dg  { fill: #28c840; }
-      .bl  { stroke: #30363d; stroke-width: 1; fill: none; }
-      .pa  { fill: #22c55e; font-family: 'Courier New',monospace; font-size: 13px; font-weight: 700; }
-      .ph  { fill: #22c55e; font-family: 'Courier New',monospace; font-size: 13px; }
-      .pb  { fill: #a78bfa; font-family: 'Courier New',monospace; font-size: 13px; }
-      .ct  { fill: #e2e8f0; font-family: 'Courier New',monospace; font-size: 13px; }
-      .od  { fill: #8b949e; font-family: 'Courier New',monospace; font-size: 11.5px; }
-      .oc  { fill: #22d3ee; font-family: 'Courier New',monospace; font-size: 11.5px; }
-      .og  { fill: #4ade80; font-family: 'Courier New',monospace; font-size: 11.5px; }
-      .op  { fill: #c084fc; font-family: 'Courier New',monospace; font-size: 11.5px; }
-      .oy  { fill: #fbbf24; font-family: 'Courier New',monospace; font-size: 11.5px; }
-      .sb  { fill: #1c2128; }
+    <style><![CDATA[
+      .bg { fill: #12072b; }
+      .grid-line { stroke: #231245; stroke-width: 1; opacity: 0.65; }
+      
+      /* Studio Cockpit Bar */
+      .top-bar { fill: #180a38; stroke: #2d1859; stroke-width: 1; }
+      .top-title { fill: #d3c5f6; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11.5px; font-weight: 800; letter-spacing: 0.08em; }
+      .top-sub { fill: #f04c8a; font-weight: 800; }
+      
+      /* Traffic Lights */
+      .tr-r { fill: #ea3323; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer; }
+      .tr-y { fill: #fbd402; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer; }
+      .tr-g { fill: #c2ec40; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); cursor: pointer; }
+      .tr-r:hover, .tr-y:hover, .tr-g:hover { transform: scale(1.3); }
 
-      /* Accessibility: show everything if user prefers reduced motion */
-      @media (prefers-reduced-motion: reduce) {
-        *, tspan { animation: none !important; opacity: 1 !important; }
+      /* Status Pill */
+      .status-pill-bg { fill: #1f0b45; stroke: #c2ec40; stroke-width: 1; transition: fill 0.2s ease; cursor: pointer; }
+      .status-pill:hover .status-pill-bg { fill: #2c125e; }
+      .status-pill-text { fill: #c2ec40; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.04em; }
+
+      /* Terminal Syntax Colors */
+      .prompt-arrow { fill: #c2ec40; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; }
+      .prompt-user  { fill: #fbd402; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 700; }
+      .prompt-branch{ fill: #d3c5f6; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 12.5px; }
+      .cmd-text     { fill: #ffffff; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 12.5px; font-weight: 600; }
+      
+      .out-dim   { fill: #94a3b8; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 11px; }
+      .out-cyan  { fill: #22d3ee; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; }
+      .out-lime  { fill: #c2ec40; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; }
+      .out-pink  { fill: #f04c8a; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; }
+      .out-gold  { fill: #fbd402; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; }
+      .out-white { fill: #f8fafc; font-family: 'SF Mono', Monaco, Menlo, Consolas, monospace; font-size: 11px; }
+
+      /* Crency Starburst Spin */
+      @keyframes spinAnim {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
+      }
+      .starburst-spin {
+        transform-origin: 760px 21px;
+        animation: spinAnim 18s linear infinite;
+        cursor: pointer;
+      }
+      .starburst-spin:hover {
+        animation-duration: 3s;
       }
 
-      /* === Animations === */
-
-      @keyframes fi {
-        to { opacity: 1; }
+      /* Circular Text Badge Spin */
+      @keyframes spinBadge {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
       }
-      @keyframes bk {
-        0%, 100% { opacity: 1; }
-        50%      { opacity: 0; }
+      .circular-badge-group {
+        transform-origin: 645px 125px;
+        animation: spinBadge 24s linear infinite;
+      }
+      .badge-text {
+        fill: #d3c5f6;
+        font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+        font-size: 8.5px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
       }
 
-      .p1 { opacity: 0; animation: fi .01s ease 0.40s forwards; }
-      .o1 { opacity: 0; animation: fi .25s ease 1.15s forwards; }
-      .p2 { opacity: 0; animation: fi .01s ease 1.80s forwards; }
-      .o2a { opacity: 0; animation: fi .25s ease 3.10s forwards; }
-      .o2b { opacity: 0; animation: fi .25s ease 3.30s forwards; }
-      .o2c { opacity: 0; animation: fi .25s ease 3.50s forwards; }
-      .p3 { opacity: 0; animation: fi .01s ease 4.30s forwards; }
-      .o3a { opacity: 0; animation: fi .25s ease 5.65s forwards; }
-      .o3b { opacity: 0; animation: fi .25s ease 5.85s forwards; }
-      .o3c { opacity: 0; animation: fi .25s ease 6.05s forwards; }
-      .o3d { opacity: 0; animation: fi .25s ease 6.25s forwards; }
-      .p4 { opacity: 0; animation: fi .01s ease 7.00s forwards; }
-      .o4a { opacity: 0; animation: fi .25s ease 9.05s forwards; }
-      .o4b { opacity: 0; animation: fi .25s ease 9.35s forwards; }
-      .p5 { opacity: 0; animation: fi .01s ease 10.00s forwards; }
-      .cur { fill: #22c55e; animation: bk 1s step-end infinite 10.20s; }
-      .c1_0 { opacity: 0; animation: fi .01s ease 0.50s forwards; }
-      .c1_1 { opacity: 0; animation: fi .01s ease 0.58s forwards; }
-      .c1_2 { opacity: 0; animation: fi .01s ease 0.66s forwards; }
-      .c1_3 { opacity: 0; animation: fi .01s ease 0.74s forwards; }
-      .c1_4 { opacity: 0; animation: fi .01s ease 0.82s forwards; }
-      .c1_5 { opacity: 0; animation: fi .01s ease 0.90s forwards; }
-      .c2_0 { opacity: 0; animation: fi .01s ease 1.95s forwards; }
-      .c2_1 { opacity: 0; animation: fi .01s ease 2.02s forwards; }
-      .c2_2 { opacity: 0; animation: fi .01s ease 2.09s forwards; }
-      .c2_3 { opacity: 0; animation: fi .01s ease 2.16s forwards; }
-      .c2_4 { opacity: 0; animation: fi .01s ease 2.23s forwards; }
-      .c2_5 { opacity: 0; animation: fi .01s ease 2.30s forwards; }
-      .c2_6 { opacity: 0; animation: fi .01s ease 2.37s forwards; }
-      .c2_7 { opacity: 0; animation: fi .01s ease 2.43s forwards; }
-      .c2_8 { opacity: 0; animation: fi .01s ease 2.50s forwards; }
-      .c2_9 { opacity: 0; animation: fi .01s ease 2.57s forwards; }
-      .c2_10 { opacity: 0; animation: fi .01s ease 2.64s forwards; }
-      .c2_11 { opacity: 0; animation: fi .01s ease 2.71s forwards; }
-      .c2_12 { opacity: 0; animation: fi .01s ease 2.78s forwards; }
-      .c2_13 { opacity: 0; animation: fi .01s ease 2.85s forwards; }
-      .c3_0 { opacity: 0; animation: fi .01s ease 4.45s forwards; }
-      .c3_1 { opacity: 0; animation: fi .01s ease 4.52s forwards; }
-      .c3_2 { opacity: 0; animation: fi .01s ease 4.59s forwards; }
-      .c3_3 { opacity: 0; animation: fi .01s ease 4.66s forwards; }
-      .c3_4 { opacity: 0; animation: fi .01s ease 4.73s forwards; }
-      .c3_5 { opacity: 0; animation: fi .01s ease 4.80s forwards; }
-      .c3_6 { opacity: 0; animation: fi .01s ease 4.87s forwards; }
-      .c3_7 { opacity: 0; animation: fi .01s ease 4.94s forwards; }
-      .c3_8 { opacity: 0; animation: fi .01s ease 5.01s forwards; }
-      .c3_9 { opacity: 0; animation: fi .01s ease 5.08s forwards; }
-      .c3_10 { opacity: 0; animation: fi .01s ease 5.15s forwards; }
-      .c3_11 { opacity: 0; animation: fi .01s ease 5.22s forwards; }
-      .c3_12 { opacity: 0; animation: fi .01s ease 5.29s forwards; }
-      .c3_13 { opacity: 0; animation: fi .01s ease 5.36s forwards; }
-      .c3_14 { opacity: 0; animation: fi .01s ease 5.43s forwards; }
-      .c4_0 { opacity: 0; animation: fi .01s ease 7.15s forwards; }
-      .c4_1 { opacity: 0; animation: fi .01s ease 7.20s forwards; }
-      .c4_2 { opacity: 0; animation: fi .01s ease 7.25s forwards; }
-      .c4_3 { opacity: 0; animation: fi .01s ease 7.30s forwards; }
-      .c4_4 { opacity: 0; animation: fi .01s ease 7.35s forwards; }
-      .c4_5 { opacity: 0; animation: fi .01s ease 7.40s forwards; }
-      .c4_6 { opacity: 0; animation: fi .01s ease 7.45s forwards; }
-      .c4_7 { opacity: 0; animation: fi .01s ease 7.50s forwards; }
-      .c4_8 { opacity: 0; animation: fi .01s ease 7.55s forwards; }
-      .c4_9 { opacity: 0; animation: fi .01s ease 7.60s forwards; }
-      .c4_10 { opacity: 0; animation: fi .01s ease 7.65s forwards; }
-      .c4_11 { opacity: 0; animation: fi .01s ease 7.70s forwards; }
-      .c4_12 { opacity: 0; animation: fi .01s ease 7.75s forwards; }
-      .c4_13 { opacity: 0; animation: fi .01s ease 7.80s forwards; }
-      .c4_14 { opacity: 0; animation: fi .01s ease 7.85s forwards; }
-      .c4_15 { opacity: 0; animation: fi .01s ease 7.90s forwards; }
-      .c4_16 { opacity: 0; animation: fi .01s ease 7.95s forwards; }
-      .c4_17 { opacity: 0; animation: fi .01s ease 8.00s forwards; }
-      .c4_18 { opacity: 0; animation: fi .01s ease 8.05s forwards; }
-      .c4_19 { opacity: 0; animation: fi .01s ease 8.10s forwards; }
-      .c4_20 { opacity: 0; animation: fi .01s ease 8.15s forwards; }
-      .c4_21 { opacity: 0; animation: fi .01s ease 8.20s forwards; }
-      .c4_22 { opacity: 0; animation: fi .01s ease 8.25s forwards; }
-      .c4_23 { opacity: 0; animation: fi .01s ease 8.30s forwards; }
-      .c4_24 { opacity: 0; animation: fi .01s ease 8.35s forwards; }
-      .c4_25 { opacity: 0; animation: fi .01s ease 8.40s forwards; }
-      .c4_26 { opacity: 0; animation: fi .01s ease 8.45s forwards; }
-      .c4_27 { opacity: 0; animation: fi .01s ease 8.50s forwards; }
-      .c4_28 { opacity: 0; animation: fi .01s ease 8.55s forwards; }
-      .c4_29 { opacity: 0; animation: fi .01s ease 8.60s forwards; }
-      .c4_30 { opacity: 0; animation: fi .01s ease 8.65s forwards; }
-      .c4_31 { opacity: 0; animation: fi .01s ease 8.70s forwards; }
-      .c4_32 { opacity: 0; animation: fi .01s ease 8.75s forwards; }
-      .c4_33 { opacity: 0; animation: fi .01s ease 8.80s forwards; }
-
-      /* === Holographic Foreground Animation (React Bits / Design Thinking inspired) === */
-      @keyframes floatAnim {
+      /* 3D Holographic Polyhedron Float */
+      @keyframes floatPoly {
         0%, 100% {
           transform: translateY(0px) rotate(0deg);
         }
         50% {
-          transform: translateY(-11px) rotate(1.2deg);
+          transform: translateY(-9px) rotate(1.5deg);
         }
       }
+      .holo-levitation {
+        transform-origin: 645px 125px;
+        animation: floatPoly 4.5s ease-in-out infinite;
+      }
 
-      @keyframes pulseGlow {
-        0%, 100% {
-          opacity: 0.55;
-          transform: scale(0.96);
+      /* Orbital Ring Spins */
+      @keyframes orbit1 {
+        0%   { transform: rotate(28deg) rotateZ(0deg); }
+        100% { transform: rotate(28deg) rotateZ(360deg); }
+      }
+      @keyframes orbit2 {
+        0%   { transform: rotate(-32deg) rotateZ(360deg); }
+        100% { transform: rotate(-32deg) rotateZ(0deg); }
+      }
+      .ring-orbit-1 {
+        transform-origin: 645px 125px;
+        animation: orbit1 10s linear infinite;
+      }
+      .ring-orbit-2 {
+        transform-origin: 645px 125px;
+        animation: orbit2 15s linear infinite;
+      }
+
+      /* Dot Pulse */
+      @keyframes pulseDot {
+        0%, 100% { opacity: 0.4; transform: scale(0.9); }
+        50%      { opacity: 1; transform: scale(1.15); }
+      }
+      .pulse-item {
+        transform-origin: center;
+        animation: pulseDot 2s ease-in-out infinite;
+      }
+
+      /* Cursor Blink */
+      @keyframes blinkCursor {
+        0%, 100% { opacity: 1; }
+        50%      { opacity: 0; }
+      }
+      .cursor-blink {
+        fill: #c2ec40;
+        animation: blinkCursor 1s step-end infinite 10s;
+      }
+
+      /* Typewriter Fade-In */
+      @keyframes fi {
+        to { opacity: 1; }
+      }
+      .p1 { opacity: 0; animation: fi .01s ease 0.40s forwards; }
+      .o1 { opacity: 0; animation: fi .25s ease 1.05s forwards; }
+      .p2 { opacity: 0; animation: fi .01s ease 1.65s forwards; }
+      .o2a { opacity: 0; animation: fi .25s ease 2.90s forwards; }
+      .o2b { opacity: 0; animation: fi .25s ease 3.10s forwards; }
+      .o2c { opacity: 0; animation: fi .25s ease 3.30s forwards; }
+      .p3 { opacity: 0; animation: fi .01s ease 4.00s forwards; }
+      .o3a { opacity: 0; animation: fi .25s ease 5.30s forwards; }
+      .o3b { opacity: 0; animation: fi .25s ease 5.50s forwards; }
+      .o3c { opacity: 0; animation: fi .25s ease 5.70s forwards; }
+      .o3d { opacity: 0; animation: fi .25s ease 5.90s forwards; }
+      .p4 { opacity: 0; animation: fi .01s ease 6.60s forwards; }
+      .o4a { opacity: 0; animation: fi .25s ease 8.50s forwards; }
+      .o4b { opacity: 0; animation: fi .25s ease 8.80s forwards; }
+      .p5 { opacity: 0; animation: fi .01s ease 9.50s forwards; }
+
+      .c1_0 { opacity: 0; animation: fi .01s ease 0.48s forwards; }
+      .c1_1 { opacity: 0; animation: fi .01s ease 0.55s forwards; }
+      .c1_2 { opacity: 0; animation: fi .01s ease 0.62s forwards; }
+      .c1_3 { opacity: 0; animation: fi .01s ease 0.69s forwards; }
+      .c1_4 { opacity: 0; animation: fi .01s ease 0.76s forwards; }
+      .c1_5 { opacity: 0; animation: fi .01s ease 0.83s forwards; }
+
+      .c2_0 { opacity: 0; animation: fi .01s ease 1.78s forwards; }
+      .c2_1 { opacity: 0; animation: fi .01s ease 1.84s forwards; }
+      .c2_2 { opacity: 0; animation: fi .01s ease 1.90s forwards; }
+      .c2_3 { opacity: 0; animation: fi .01s ease 1.96s forwards; }
+      .c2_4 { opacity: 0; animation: fi .01s ease 2.02s forwards; }
+      .c2_5 { opacity: 0; animation: fi .01s ease 2.08s forwards; }
+      .c2_6 { opacity: 0; animation: fi .01s ease 2.14s forwards; }
+      .c2_7 { opacity: 0; animation: fi .01s ease 2.20s forwards; }
+      .c2_8 { opacity: 0; animation: fi .01s ease 2.26s forwards; }
+      .c2_9 { opacity: 0; animation: fi .01s ease 2.32s forwards; }
+      .c2_10 { opacity: 0; animation: fi .01s ease 2.38s forwards; }
+      .c2_11 { opacity: 0; animation: fi .01s ease 2.44s forwards; }
+
+      .c3_0 { opacity: 0; animation: fi .01s ease 4.12s forwards; }
+      .c3_1 { opacity: 0; animation: fi .01s ease 4.18s forwards; }
+      .c3_2 { opacity: 0; animation: fi .01s ease 4.24s forwards; }
+      .c3_3 { opacity: 0; animation: fi .01s ease 4.30s forwards; }
+      .c3_4 { opacity: 0; animation: fi .01s ease 4.36s forwards; }
+      .c3_5 { opacity: 0; animation: fi .01s ease 4.42s forwards; }
+      .c3_6 { opacity: 0; animation: fi .01s ease 4.48s forwards; }
+      .c3_7 { opacity: 0; animation: fi .01s ease 4.54s forwards; }
+      .c3_8 { opacity: 0; animation: fi .01s ease 4.60s forwards; }
+      .c3_9 { opacity: 0; animation: fi .01s ease 4.66s forwards; }
+      .c3_10 { opacity: 0; animation: fi .01s ease 4.72s forwards; }
+      .c3_11 { opacity: 0; animation: fi .01s ease 4.78s forwards; }
+      .c3_12 { opacity: 0; animation: fi .01s ease 4.84s forwards; }
+      .c3_13 { opacity: 0; animation: fi .01s ease 4.90s forwards; }
+      .c3_14 { opacity: 0; animation: fi .01s ease 4.96s forwards; }
+
+      .c4_0 { opacity: 0; animation: fi .01s ease 6.72s forwards; }
+      .c4_1 { opacity: 0; animation: fi .01s ease 6.76s forwards; }
+      .c4_2 { opacity: 0; animation: fi .01s ease 6.80s forwards; }
+      .c4_3 { opacity: 0; animation: fi .01s ease 6.84s forwards; }
+      .c4_4 { opacity: 0; animation: fi .01s ease 6.88s forwards; }
+      .c4_5 { opacity: 0; animation: fi .01s ease 6.92s forwards; }
+      .c4_6 { opacity: 0; animation: fi .01s ease 6.96s forwards; }
+      .c4_7 { opacity: 0; animation: fi .01s ease 7.00s forwards; }
+      .c4_8 { opacity: 0; animation: fi .01s ease 7.04s forwards; }
+      .c4_9 { opacity: 0; animation: fi .01s ease 7.08s forwards; }
+      .c4_10 { opacity: 0; animation: fi .01s ease 7.12s forwards; }
+      .c4_11 { opacity: 0; animation: fi .01s ease 7.16s forwards; }
+      .c4_12 { opacity: 0; animation: fi .01s ease 7.20s forwards; }
+      .c4_13 { opacity: 0; animation: fi .01s ease 7.24s forwards; }
+      .c4_14 { opacity: 0; animation: fi .01s ease 7.28s forwards; }
+      .c4_15 { opacity: 0; animation: fi .01s ease 7.32s forwards; }
+      .c4_16 { opacity: 0; animation: fi .01s ease 7.36s forwards; }
+      .c4_17 { opacity: 0; animation: fi .01s ease 7.40s forwards; }
+      .c4_18 { opacity: 0; animation: fi .01s ease 7.44s forwards; }
+      .c4_19 { opacity: 0; animation: fi .01s ease 7.48s forwards; }
+      .c4_20 { opacity: 0; animation: fi .01s ease 7.52s forwards; }
+      .c4_21 { opacity: 0; animation: fi .01s ease 7.56s forwards; }
+      .c4_22 { opacity: 0; animation: fi .01s ease 7.60s forwards; }
+      .c4_23 { opacity: 0; animation: fi .01s ease 7.64s forwards; }
+      .c4_24 { opacity: 0; animation: fi .01s ease 7.68s forwards; }
+      .c4_25 { opacity: 0; animation: fi .01s ease 7.72s forwards; }
+      .c4_26 { opacity: 0; animation: fi .01s ease 7.76s forwards; }
+      .c4_27 { opacity: 0; animation: fi .01s ease 7.80s forwards; }
+      .c4_28 { opacity: 0; animation: fi .01s ease 7.84s forwards; }
+      .c4_29 { opacity: 0; animation: fi .01s ease 7.88s forwards; }
+      .c4_30 { opacity: 0; animation: fi .01s ease 7.92s forwards; }
+      .c4_31 { opacity: 0; animation: fi .01s ease 7.96s forwards; }
+      .c4_32 { opacity: 0; animation: fi .01s ease 8.00s forwards; }
+      .c4_33 { opacity: 0; animation: fi .01s ease 8.04s forwards; }
+
+      /* === Progress Bar Kinetic Load (portfolio2u System 5) === */
+      @keyframes fillGreenBar {
+        0%   { width: 0px; }
+        100% { width: 240px; }
+      }
+      @keyframes fillPinkBar {
+        0%   { width: 0px; }
+        100% { width: 240px; }
+      }
+      .progress-green {
+        animation: fillGreenBar 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+      }
+      .progress-pink {
+        animation: fillPinkBar 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s backwards;
+      }
+
+      /* === Interactive Metric Cards (portfolio2u System 5) === */
+      .card-link {
+        text-decoration: none;
+      }
+      .metric-card {
+        cursor: pointer;
+        transition: transform 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .metric-card:hover {
+        transform: translateY(-4px) scale(1.02);
+      }
+      .metric-card:active {
+        transform: translateY(-1px) scale(0.99);
+      }
+      .metric-card-bg {
+        fill: #190938;
+        stroke: #391c75;
+        stroke-width: 1.2;
+        transition: stroke 0.25s ease, fill 0.25s ease;
+      }
+      .metric-card:hover .card-green {
+        stroke: #c2ec40;
+        fill: #220e4d;
+      }
+      .metric-card:hover .card-pink {
+        stroke: #f04c8a;
+        fill: #270f4a;
+      }
+
+      /* Interactive Contact Pills */
+      .contact-link {
+        text-decoration: none;
+      }
+      .contact-pill {
+        cursor: pointer;
+        transition: transform 0.22s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .contact-pill:hover {
+        transform: translateY(-2px);
+      }
+      .contact-pill-bg {
+        fill: #190b3b;
+        stroke: #3c1e7a;
+        stroke-width: 1;
+        transition: stroke 0.22s ease, fill 0.22s ease;
+      }
+      .contact-pill:hover .contact-pill-bg {
+        stroke: #22d3ee;
+        fill: #261157;
+      }
+      .contact-pill:hover .pill-text-email {
+        fill: #ffffff;
+      }
+      .contact-pill:hover .pill-text-linkedin {
+        fill: #ffffff;
+      }
+
+      /* Polyhedron Interactive Hover */
+      .holo-interactive {
+        cursor: pointer;
+        transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      .holo-interactive:hover {
+        transform: scale(1.18);
+      }
+
+      /* Accessibility: Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        *, tspan {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
         }
-        50% {
-          opacity: 0.95;
-          transform: scale(1.07);
-        }
       }
+    ]]></style>
 
-      @keyframes orbitSpin1 {
-        0% {
-          transform: rotate(25deg) rotateZ(0deg);
-        }
-        100% {
-          transform: rotate(25deg) rotateZ(360deg);
-        }
-      }
-
-      @keyframes orbitSpin2 {
-        0% {
-          transform: rotate(-35deg) rotateZ(360deg);
-        }
-        100% {
-          transform: rotate(-35deg) rotateZ(0deg);
-        }
-      }
-
-      @keyframes nodePulse {
-        0%, 100% { opacity: 0.4; }
-        50%      { opacity: 1; }
-      }
-
-      .holo-container {
-        transform-origin: 675px 200px;
-        animation: floatAnim 4.5s ease-in-out infinite;
-      }
-      .holo-glow {
-        transform-origin: 675px 200px;
-        animation: pulseGlow 3.5s ease-in-out infinite;
-      }
-      .ring-1 {
-        transform-origin: 675px 200px;
-        animation: orbitSpin1 12s linear infinite;
-      }
-      .ring-2 {
-        transform-origin: 675px 200px;
-        animation: orbitSpin2 16s linear infinite;
-      }
-      .node-p {
-        animation: nodePulse 2.5s ease-in-out infinite;
-      }
-    </style>
-    <filter id="glow" x="-10%" y="-30%" width="120%" height="160%">
-      <feGaussianBlur stdDeviation="1.5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-
-    <!-- Holographic EVM Crystal Gradients -->
-    <linearGradient id="facetTL" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.75"/>
-    </linearGradient>
-    <linearGradient id="facetTR" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.8"/>
-    </linearGradient>
-    <linearGradient id="facetBL" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.6"/>
-    </linearGradient>
-    <linearGradient id="facetBR" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.7"/>
-      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.55"/>
-    </linearGradient>
-    <radialGradient id="holoGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.32"/>
-      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="ringGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.9"/>
-      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.85"/>
-    </linearGradient>
-    <linearGradient id="ringGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.85"/>
-      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.75"/>
-    </linearGradient>
-
-    <filter id="bloom" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+    <!-- Visual Filters -->
+    <filter id="bloom" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <filter id="cardGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Gradients -->
+    <linearGradient id="cockpitBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f04c8a" stop-opacity="0.9"/>
+      <stop offset="45%" stop-color="#3d71ff" stop-opacity="0.75"/>
+      <stop offset="80%" stop-color="#c2ec40" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fbd402" stop-opacity="0.8"/>
+    </linearGradient>
+
+    <radialGradient id="polyAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#12072b" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Facet Gradients for EVM Glyph -->
+    <linearGradient id="facetTL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="facetTR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f04c8a" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="facetBL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d71ff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="facetBR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c2ec40" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <linearGradient id="ringGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c2ec40" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#f04c8a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="ringGradB" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbd402" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#f04c8a" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Circular Badge Path (Clockwise circle) -->
+    <path id="badgeOrbit" d="M 645, 125 m -52, 0 a 52,52 0 1,1 104,0 a 52,52 0 1,1 -104,0"/>
   </defs>
 
-  <!-- Main background -->
-  <rect width="800" height="440" rx="12" class="tb"/>
+  <!-- Deep Midnight Plum Background Canvas -->
+  <rect width="800" height="470" rx="14" class="bg"/>
 
-  <!-- Title bar bg -->
-  <rect width="800" height="40" rx="12" class="hd"/>
-  <rect y="20" width="800" height="20" class="hd"/>
+  <!-- Geometric Blueprint Grid Lines -->
+  <g class="grid-line">
+    <line x1="40" y1="42" x2="40" y2="425"/>
+    <line x1="180" y1="42" x2="180" y2="425"/>
+    <line x1="320" y1="42" x2="320" y2="425"/>
+    <line x1="488" y1="42" x2="488" y2="425"/>
+    <line x1="640" y1="42" x2="640" y2="425"/>
 
-  <!-- Traffic lights -->
-  <circle cx="22" cy="20" r="6" class="dr"/>
-  <circle cx="42" cy="20" r="6" class="dy"/>
-  <circle cx="62" cy="20" r="6" class="dg"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="275" x2="800" y2="275"/>
+    <line x1="0" y1="355" x2="800" y2="355"/>
+  </g>
 
-  <!-- Title -->
-  <text x="400" y="20" class="ht" text-anchor="middle" dominant-baseline="middle">ayon@bengaluru &#x2014; zsh &#x2014; 800&#xD7;440</text>
-  <line x1="0" y1="40" x2="800" y2="40" class="bl"/>
+  <!-- Split Pane Subtle Divider -->
+  <line x1="492" y1="42" x2="492" y2="425" stroke="#351a66" stroke-width="1.2" stroke-dasharray="4 4"/>
 
-  <!-- ── PROMPT 1: whoami ── -->
+  <!-- ── Top Cockpit Header Bar ── -->
+  <rect width="800" height="42" rx="14" class="top-bar"/>
+  <rect y="22" width="800" height="20" fill="#180a38"/>
+  <line x1="0" y1="42" x2="800" y2="42" stroke="#381b6e" stroke-width="1.2"/>
+
+  <!-- Window Controls -->
+  <circle cx="22" cy="21" r="5.5" class="tr-r"/>
+  <circle cx="40" cy="21" r="5.5" class="tr-y"/>
+  <circle cx="58" cy="21" r="5.5" class="tr-g"/>
+
+  <!-- Cockpit Header Identity -->
+  <text x="82" y="22" class="top-title" dominant-baseline="middle">
+    AYON MOITRA <tspan class="top-sub">//</tspan> CREATIVE BACKEND &amp; WEB3 COCKPIT
+  </text>
+
+  <!-- Live Status Chip -->
+  <g class="status-pill" transform="translate(540, 11)">
+    <rect width="165" height="20" rx="10" class="status-pill-bg"/>
+    <circle cx="12" cy="10" r="3.5" fill="#c2ec40" class="pulse-item"/>
+    <text x="23" y="10.5" class="status-pill-text" dominant-baseline="middle">LIVE ON SEPOLIA &amp; AMOY</text>
+  </g>
+
+  <!-- Crency 8-Point Rotating Starburst -->
+  <g class="starburst-spin">
+    <path d="M 760,12 L 762,19 L 769,21 L 762,23 L 760,30 L 758,23 L 751,21 L 758,19 Z" fill="#fbd402" filter="url(#bloom)"/>
+    <circle cx="760" cy="21" r="2.5" fill="#ffffff"/>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       LEFT PANE: KINETIC TERMINAL COMMAND STREAM
+       ══════════════════════════════════════════════════════ -->
+
+  <!-- ── Prompt 1: whoami ── -->
   <g class="p1">
-    <text x="18" y="68" class="pa">&#x279C;</text>
-    <text x="33" y="68" class="ph">ayon</text>
-    <text x="67" y="68" class="pb"> &#x276E;main&#x276F;</text>
-    <text x="140" y="68" class="ct" xml:space="preserve"><tspan class="c1_0">w</tspan><tspan class="c1_1">h</tspan><tspan class="c1_2">o</tspan><tspan class="c1_3">a</tspan><tspan class="c1_4">m</tspan><tspan class="c1_5">i</tspan></text>
+    <text x="18" y="70" class="prompt-arrow">&#x279C;</text>
+    <text x="33" y="70" class="prompt-user">ayon</text>
+    <text x="68" y="70" class="prompt-branch">&#x276E;main&#x276F;</text>
+    <text x="122" y="70" class="cmd-text" xml:space="preserve"><tspan class="c1_0">w</tspan><tspan class="c1_1">h</tspan><tspan class="c1_2">o</tspan><tspan class="c1_3">a</tspan><tspan class="c1_4">m</tspan><tspan class="c1_5">i</tspan></text>
   </g>
-  <text x="18" y="86" class="od o1">Ayon Moitra  &#x00B7;  Backend &#x00B7; Web3 Developer &#x00B7; Bengaluru</text>
+  <text x="18" y="88" class="out-dim o1">Ayon Moitra  &#x00B7;  Backend &#x00B7; Web3 Developer &#x00B7; Bengaluru</text>
 
-  <!-- ── PROMPT 2: cat skills.txt ── -->
+  <!-- ── Prompt 2: cat stack.sh ── -->
   <g class="p2">
-    <text x="18" y="112" class="pa">&#x279C;</text>
-    <text x="33" y="112" class="ph">ayon</text>
-    <text x="67" y="112" class="pb"> &#x276E;main&#x276F;</text>
-    <text x="140" y="112" class="ct" xml:space="preserve"><tspan class="c2_0">c</tspan><tspan class="c2_1">a</tspan><tspan class="c2_2">t</tspan><tspan class="c2_3">&#160;</tspan><tspan class="c2_4">s</tspan><tspan class="c2_5">k</tspan><tspan class="c2_6">i</tspan><tspan class="c2_7">l</tspan><tspan class="c2_8">l</tspan><tspan class="c2_9">s</tspan><tspan class="c2_10">.</tspan><tspan class="c2_11">t</tspan><tspan class="c2_12">x</tspan><tspan class="c2_13">t</tspan></text>
+    <text x="18" y="114" class="prompt-arrow">&#x279C;</text>
+    <text x="33" y="114" class="prompt-user">ayon</text>
+    <text x="68" y="114" class="prompt-branch">&#x276E;main&#x276F;</text>
+    <text x="122" y="114" class="cmd-text" xml:space="preserve"><tspan class="c2_0">c</tspan><tspan class="c2_1">a</tspan><tspan class="c2_2">t</tspan><tspan class="c2_3">&#160;</tspan><tspan class="c2_4">s</tspan><tspan class="c2_5">t</tspan><tspan class="c2_6">a</tspan><tspan class="c2_7">c</tspan><tspan class="c2_8">k</tspan><tspan class="c2_9">.</tspan><tspan class="c2_10">s</tspan><tspan class="c2_11">h</tspan></text>
   </g>
-  <text x="18" y="130" class="oc o2a">&#x251C;&#x2500;&#x2500; Web3     Solidity &#x00B7; Hardhat &#x00B7; Ethers.js &#x00B7; EIP-712 &#x00B7; Sepolia &#x00B7; Polygon Amoy</text>
-  <text x="18" y="146" class="og o2b">&#x251C;&#x2500;&#x2500; Backend  Java &#x00B7; TypeScript &#x00B7; Node.js &#x00B7; PostgreSQL &#x00B7; MongoDB &#x00B7; Python</text>
-  <text x="18" y="162" class="op o2c">&#x2514;&#x2500;&#x2500; AI/ML    Agentic Swarms &#x00B7; Vector Stores &#x00B7; LLM Pipelines</text>
+  <text x="18" y="132" class="out-cyan o2a">&#x251C;&#x2500;&#x2500; Web3     Solidity &#x00B7; Hardhat &#x00B7; Ethers.js &#x00B7; EIP-712 &#x00B7; Sepolia &#x00B7; Amoy</text>
+  <text x="18" y="148" class="out-lime o2b">&#x251C;&#x2500;&#x2500; Backend  Java &#x00B7; TypeScript &#x00B7; Node.js &#x00B7; PostgreSQL &#x00B7; MongoDB &#x00B7; Python</text>
+  <text x="18" y="164" class="out-pink o2c">&#x2514;&#x2500;&#x2500; AI/ML    Agentic Swarms &#x00B7; Vector Stores &#x00B7; LLM Pipelines</text>
 
-  <!-- ── PROMPT 3: ls projects/ ── -->
+  <!-- ── Prompt 3: ls -1 projects/ ── -->
   <g class="p3">
-    <text x="18" y="190" class="pa">&#x279C;</text>
-    <text x="33" y="190" class="ph">ayon</text>
-    <text x="67" y="190" class="pb"> &#x276E;main&#x276F;</text>
-    <text x="140" y="190" class="ct" xml:space="preserve"><tspan class="c3_0">l</tspan><tspan class="c3_1">s</tspan><tspan class="c3_2">&#160;</tspan><tspan class="c3_3">-</tspan><tspan class="c3_4">1</tspan><tspan class="c3_5">&#160;</tspan><tspan class="c3_6">p</tspan><tspan class="c3_7">r</tspan><tspan class="c3_8">o</tspan><tspan class="c3_9">j</tspan><tspan class="c3_10">e</tspan><tspan class="c3_11">c</tspan><tspan class="c3_12">t</tspan><tspan class="c3_13">s</tspan><tspan class="c3_14">/</tspan></text>
+    <text x="18" y="192" class="prompt-arrow">&#x279C;</text>
+    <text x="33" y="192" class="prompt-user">ayon</text>
+    <text x="68" y="192" class="prompt-branch">&#x276E;main&#x276F;</text>
+    <text x="122" y="192" class="cmd-text" xml:space="preserve"><tspan class="c3_0">l</tspan><tspan class="c3_1">s</tspan><tspan class="c3_2">&#160;</tspan><tspan class="c3_3">-</tspan><tspan class="c3_4">1</tspan><tspan class="c3_5">&#160;</tspan><tspan class="c3_6">p</tspan><tspan class="c3_7">r</tspan><tspan class="c3_8">o</tspan><tspan class="c3_9">j</tspan><tspan class="c3_10">e</tspan><tspan class="c3_11">c</tspan><tspan class="c3_12">t</tspan><tspan class="c3_13">s</tspan><tspan class="c3_14">/</tspan></text>
   </g>
-  <text x="18" y="208" class="oy o3a">pharmatree/    Pharma provenance &#x00B7; Ethereum Sepolia &#x00B7; 21 passing tests</text>
-  <text x="18" y="224" class="oc o3b">sonder/        Async Merkle royalty ledger &#x00B7; Polygon Amoy &#x00B7; GAAP accounting</text>
-  <text x="18" y="240" class="og o3c">delivermate/   3-tier logistics dispatch &#x00B7; Firebase &#x00B7; Google Maps API</text>
-  <text x="18" y="256" class="od o3d">fitme/         Cross-platform health tracker &#x00B7; Flutter &#x00B7; Cloud Firestore</text>
+  <text x="18" y="210" class="o3a">
+    <tspan class="out-gold">pharmatree/  </tspan><tspan class="out-dim">Pharma provenance &#x00B7; Sepolia &#x00B7; 21 tests</tspan>
+  </text>
+  <text x="18" y="226" class="o3b">
+    <tspan class="out-cyan">sonder/      </tspan><tspan class="out-dim">Async Merkle royalty ledger &#x00B7; Polygon Amoy</tspan>
+  </text>
+  <text x="18" y="242" class="o3c">
+    <tspan class="out-lime">delivermate/ </tspan><tspan class="out-dim">3-tier logistics dispatch &#x00B7; Maps API</tspan>
+  </text>
+  <text x="18" y="258" class="o3d">
+    <tspan class="out-pink">fitme/       </tspan><tspan class="out-dim">Cross-platform fitness tracker &#x00B7; Flutter</tspan>
+  </text>
 
-  <!-- ── PROMPT 4: npx hardhat test ── -->
+  <!-- ── Prompt 4: npx hardhat test ── -->
   <g class="p4">
-    <text x="18" y="284" class="pa">&#x279C;</text>
-    <text x="33" y="284" class="ph">ayon</text>
-    <text x="67" y="284" class="pb"> &#x276E;main&#x276F;</text>
-    <text x="140" y="284" class="ct" xml:space="preserve"><tspan class="c4_0">n</tspan><tspan class="c4_1">p</tspan><tspan class="c4_2">x</tspan><tspan class="c4_3">&#160;</tspan><tspan class="c4_4">h</tspan><tspan class="c4_5">a</tspan><tspan class="c4_6">r</tspan><tspan class="c4_7">d</tspan><tspan class="c4_8">h</tspan><tspan class="c4_9">a</tspan><tspan class="c4_10">t</tspan><tspan class="c4_11">&#160;</tspan><tspan class="c4_12">t</tspan><tspan class="c4_13">e</tspan><tspan class="c4_14">s</tspan><tspan class="c4_15">t</tspan><tspan class="c4_16">&#160;</tspan><tspan class="c4_17">-</tspan><tspan class="c4_18">-</tspan><tspan class="c4_19">n</tspan><tspan class="c4_20">e</tspan><tspan class="c4_21">t</tspan><tspan class="c4_22">w</tspan><tspan class="c4_23">o</tspan><tspan class="c4_24">r</tspan><tspan class="c4_25">k</tspan><tspan class="c4_26">&#160;</tspan><tspan class="c4_27">s</tspan><tspan class="c4_28">e</tspan><tspan class="c4_29">p</tspan><tspan class="c4_30">o</tspan><tspan class="c4_31">l</tspan><tspan class="c4_32">i</tspan><tspan class="c4_33">a</tspan></text>
+    <text x="18" y="286" class="prompt-arrow">&#x279C;</text>
+    <text x="33" y="286" class="prompt-user">ayon</text>
+    <text x="68" y="286" class="prompt-branch">&#x276E;main&#x276F;</text>
+    <text x="122" y="286" class="cmd-text" xml:space="preserve"><tspan class="c4_0">n</tspan><tspan class="c4_1">p</tspan><tspan class="c4_2">x</tspan><tspan class="c4_3">&#160;</tspan><tspan class="c4_4">h</tspan><tspan class="c4_5">a</tspan><tspan class="c4_6">r</tspan><tspan class="c4_7">d</tspan><tspan class="c4_8">h</tspan><tspan class="c4_9">a</tspan><tspan class="c4_10">t</tspan><tspan class="c4_11">&#160;</tspan><tspan class="c4_12">t</tspan><tspan class="c4_13">e</tspan><tspan class="c4_14">s</tspan><tspan class="c4_15">t</tspan><tspan class="c4_16">&#160;</tspan><tspan class="c4_17">-</tspan><tspan class="c4_18">-</tspan><tspan class="c4_19">n</tspan><tspan class="c4_20">e</tspan><tspan class="c4_21">t</tspan><tspan class="c4_22">w</tspan><tspan class="c4_23">o</tspan><tspan class="c4_24">r</tspan><tspan class="c4_25">k</tspan><tspan class="c4_26">&#160;</tspan><tspan class="c4_27">s</tspan><tspan class="c4_28">e</tspan><tspan class="c4_29">p</tspan><tspan class="c4_30">o</tspan><tspan class="c4_31">l</tspan><tspan class="c4_32">i</tspan><tspan class="c4_33">a</tspan></text>
   </g>
-  <text x="18" y="302" class="og o4a" filter="url(#glow)">&#x2714;  21 passing  (0 failed &#x00B7; 100% assertions green)</text>
-  <text x="18" y="318" class="od o4b">   Deployed: 0x2bAEd948286a073E5c026A4fCe47D93Eb198a044 &#x00B7; Etherscan VERIFIED</text>
+  <text x="18" y="304" class="out-lime o4a" filter="url(#bloom)">&#x2714;  21 passing  (0 failed &#x00B7; 100% assertions green)</text>
+  <text x="18" y="320" class="out-dim o4b">
+    <tspan fill="#38bdf8">   Sepolia Contract: </tspan>0x2bAEd948...198a044  &#x00B7;  <tspan fill="#c2ec40">VERIFIED</tspan>
+  </text>
 
-  <!-- ── PROMPT 5: idle cursor ── -->
+  <!-- ── Prompt 5: Active Terminal Input ── -->
   <g class="p5">
-    <text x="18" y="346" class="pa">&#x279C;</text>
-    <text x="33" y="346" class="ph">ayon</text>
-    <text x="67" y="346" class="pb"> &#x276E;main&#x276F;</text>
-    <rect x="140" y="334" width="8" height="15" class="cur"/>
+    <text x="18" y="352" class="prompt-arrow">&#x279C;</text>
+    <text x="33" y="352" class="prompt-user">ayon</text>
+    <text x="68" y="352" class="prompt-branch">&#x276E;main&#x276F;</text>
+    <rect x="122" y="340" width="8" height="15" class="cursor-blink"/>
   </g>
 
-  <!-- ── Status bar ── -->
-  <line x1="0" y1="368" x2="800" y2="368" class="bl"/>
-  <rect x="0" y="369" width="800" height="71" class="hd"/>
-  <rect x="0" y="427" width="800" height="13" rx="0" class="hd"/>
-  <rect x="0" y="428" width="800" height="12" rx="0" ry="0" class="hd"/>
-
-  <!-- Status left pill -->
-  <rect x="10" y="378" width="62" height="18" rx="3" fill="#22c55e"/>
-  <text x="41" y="390" font-family="'Courier New',monospace" font-size="10" fill="#0d1117" font-weight="700" text-anchor="middle">NORMAL</text>
-
-  <!-- Branch pill -->
-  <rect x="82" y="378" width="56" height="18" rx="3" fill="#a78bfa"/>
-  <text x="110" y="390" font-family="'Courier New',monospace" font-size="10" fill="#0d1117" font-weight="700" text-anchor="middle">&#x276E;main&#x276F;</text>
-
-  <!-- Right info -->
-  <text x="790" y="390" class="od" font-size="10" text-anchor="end">MSc. CSA &#x00B7; Christ Univ  |  MCA &#x00B7; Amity Univ  |  BCA &#x00B7; Christ Univ</text>
-
-  <!-- Second status row: contact & links -->
-  <text x="18" y="415" class="od" font-size="10">ayonmoitra57@gmail.com</text>
-  <text x="790" y="415" class="od" font-size="10" text-anchor="end">linkedin.com/in/ayon-moitra</text>
-
-
-  <!-- ── FOREGROUND: Holographic Web3/AI Levitation Artifact ── -->
-  <g class="holo-container">
-    <!-- Ambient Energy Aura -->
-    <circle cx="675" cy="200" r="105" fill="url(#holoGlow)" class="holo-glow"/>
-
-    <!-- Orbital Ring 2 (Deep Counter-Rotation) -->
-    <g class="ring-2">
-      <ellipse cx="675" cy="200" rx="80" ry="27" fill="none" stroke="url(#ringGrad2)" stroke-width="1.3" stroke-dasharray="135 35 55 25" opacity="0.75" filter="url(#bloom)"/>
-      <circle cx="755" cy="200" r="3" fill="#c084fc" class="node-p"/>
-      <circle cx="595" cy="200" r="2" fill="#38bdf8"/>
-    </g>
-
-    <!-- Orbital Ring 1 (Primary EVM Track) -->
-    <g class="ring-1">
-      <ellipse cx="675" cy="200" rx="68" ry="21" fill="none" stroke="url(#ringGrad1)" stroke-width="1.7" stroke-dasharray="95 25 35 15" opacity="0.85" filter="url(#bloom)"/>
-      <circle cx="743" cy="200" r="3.5" fill="#22d3ee" class="node-p"/>
-      <circle cx="607" cy="200" r="2.5" fill="#4ade80"/>
-    </g>
-
-    <!-- EVM Octahedron Core (Ethereum / Polygon Multichain Glyph) -->
-    <g transform="translate(675, 200)" filter="url(#bloom)">
-      <!-- Back Silhouette -->
-      <polygon points="0,-48 -28,0 0,8 28,0" fill="#1e1b4b" opacity="0.6"/>
-      <polygon points="0,8 -28,0 0,46 28,0" fill="#0f172a" opacity="0.6"/>
-
-      <!-- Interior Axis Lines -->
-      <line x1="0" y1="-48" x2="0" y2="46" stroke="#38bdf8" stroke-width="1" opacity="0.8"/>
-      <line x1="-28" y1="0" x2="28" y2="0" stroke="#818cf8" stroke-width="0.8" opacity="0.6"/>
-
-      <!-- Facet TL -->
-      <polygon points="0,-48 -28,0 0,8" fill="url(#facetTL)" stroke="#7dd3fc" stroke-width="0.8"/>
-      <!-- Facet TR -->
-      <polygon points="0,-48 0,8 28,0" fill="url(#facetTR)" stroke="#c084fc" stroke-width="0.8"/>
-      <!-- Facet BL -->
-      <polygon points="0,8 -28,0 0,46" fill="url(#facetBL)" stroke="#38bdf8" stroke-width="0.8"/>
-      <!-- Facet BR -->
-      <polygon points="0,8 28,0 0,46" fill="url(#facetBR)" stroke="#4ade80" stroke-width="0.8"/>
-
-      <!-- Central Vertex Gleams -->
-      <circle cx="0" cy="8" r="2.8" fill="#ffffff" opacity="0.95"/>
-      <circle cx="0" cy="-48" r="2" fill="#38bdf8"/>
-      <circle cx="0" cy="46" r="2" fill="#22c55e"/>
-    </g>
-
-    <!-- Holographic Platform Reflection -->
-    <ellipse cx="675" cy="272" rx="52" ry="8" fill="url(#holoGlow)" opacity="0.45"/>
-    <ellipse cx="675" cy="272" rx="40" ry="5" fill="none" stroke="#38bdf8" stroke-width="0.8" stroke-dasharray="10 7" opacity="0.35"/>
+  <!-- System Spec Micro-Row (Single Text Element with precise spacing) -->
+  <g transform="translate(18, 382)" opacity="0.9">
+    <rect width="454" height="24" rx="4" fill="#170933" stroke="#2d1354" stroke-width="1"/>
+    <text x="12" y="16" class="out-dim" font-size="10">
+      EVM: Hardhat Node  &#x00B7;  Node.js 20 LTS  &#x00B7;  <tspan fill="#c2ec40">&#x25CF; All Test Suites Passing</tspan>
+    </text>
   </g>
 
-  <!-- Outer border -->
-  <rect width="800" height="440" rx="12" stroke="#30363d" stroke-width="1" fill="none"/>
+
+  <!-- ══════════════════════════════════════════════════════
+       RIGHT PANE: CRENCY SHOWCASE & INTERACTIVE CARDS
+       ══════════════════════════════════════════════════════ -->
+
+  <!-- Top Showcase Badge: Rotating TextPath + Levitating Multichain Octahedron -->
+  <g class="holo-levitation">
+    <!-- Center Aura Glow -->
+    <circle cx="645" cy="125" r="75" fill="url(#polyAura)"/>
+
+    <!-- Counter-Rotating Orbit Rings -->
+    <g class="ring-orbit-2">
+      <ellipse cx="645" cy="125" rx="66" ry="22" fill="none" stroke="url(#ringGradB)" stroke-width="1.2" stroke-dasharray="80 20 40 15" opacity="0.75" filter="url(#bloom)"/>
+      <circle cx="711" cy="125" r="2.8" fill="#fbd402" class="pulse-item"/>
+    </g>
+
+    <g class="ring-orbit-1">
+      <ellipse cx="645" cy="125" rx="56" ry="18" fill="none" stroke="url(#ringGradA)" stroke-width="1.5" stroke-dasharray="60 15 30 10" opacity="0.85" filter="url(#bloom)"/>
+      <circle cx="701" cy="125" r="3" fill="#c2ec40" class="pulse-item"/>
+    </g>
+
+    <!-- Circular Spinning SVG textPath -->
+    <g class="circular-badge-group">
+      <text class="badge-text">
+        <textPath xlink:href="#badgeOrbit" startOffset="0%">
+          &#x2726; WEB3 ARCHITECT &#x2726; SYSTEM DESIGN &#x2726; HIGH PERFORMANCE &#x2726;
+        </textPath>
+      </text>
+    </g>
+
+    <!-- 3D Multichain Polyhedral Octahedron (Interactive Hover) -->
+    <g class="holo-interactive" transform="translate(645, 125)" filter="url(#bloom)">
+      <!-- Back Shadow Silhouette -->
+      <polygon points="0,-36 -21,0 0,6 21,0" fill="#130b2e" opacity="0.7"/>
+      <polygon points="0,6 -21,0 0,35 21,0" fill="#0d0722" opacity="0.7"/>
+
+      <!-- Interior Axis Refraction -->
+      <line x1="0" y1="-36" x2="0" y2="35" stroke="#38bdf8" stroke-width="0.9" opacity="0.75"/>
+      <line x1="-21" y1="0" x2="21" y2="0" stroke="#f04c8a" stroke-width="0.7" opacity="0.65"/>
+
+      <!-- Facets -->
+      <polygon points="0,-36 -21,0 0,6" fill="url(#facetTL)" stroke="#7dd3fc" stroke-width="0.8"/>
+      <polygon points="0,-36 0,6 21,0" fill="url(#facetTR)" stroke="#f472b6" stroke-width="0.8"/>
+      <polygon points="0,6 -21,0 0,35" fill="url(#facetBL)" stroke="#60a5fa" stroke-width="0.8"/>
+      <polygon points="0,6 21,0 0,35" fill="url(#facetBR)" stroke="#a3e635" stroke-width="0.8"/>
+
+      <!-- Center Spark Vertex Nodes -->
+      <circle cx="0" cy="6" r="2.5" fill="#ffffff"/>
+      <circle cx="0" cy="-36" r="2" fill="#38bdf8"/>
+      <circle cx="0" cy="35" r="2" fill="#c2ec40"/>
+    </g>
+  </g>
+
+  <!-- ── Crency Interactive Metric Card 1: PharmaTree ── -->
+  <a xlink:href="https://github.com/ayonm95/pharmatree" target="_blank" class="card-link">
+    <g class="metric-card" transform="translate(508, 218)">
+      <rect width="272" height="66" rx="8" class="metric-card-bg card-green"/>
+      <!-- Card Top Header -->
+      <circle cx="16" cy="18" r="3.5" fill="#c2ec40"/>
+      <text x="26" y="21" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="0.04em">PHARMATREE SEPOLIA</text>
+      <rect x="204" y="9" width="56" height="18" rx="4" fill="#220e48" stroke="#c2ec40" stroke-width="0.8"/>
+      <text x="232" y="21.5" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9" font-weight="700" fill="#c2ec40" text-anchor="middle">100% PASS</text>
+      <!-- Subtitle Spec -->
+      <text x="16" y="38" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9.5" fill="#94a3b8">21/21 Unit Tests &#x00B7; Zero Failures</text>
+      <!-- Progress Bar Track (portfolio2u System 5) -->
+      <rect x="16" y="47" width="240" height="7" rx="3.5" fill="#2a1254"/>
+      <rect x="16" y="47" width="240" height="7" rx="3.5" fill="#c2ec40" class="progress-green" filter="url(#cardGlow)"/>
+    </g>
+  </a>
+
+  <!-- ── Crency Interactive Metric Card 2: Sonder Merkle ── -->
+  <a xlink:href="https://github.com/ayonm95/sonder-web3-fintech" target="_blank" class="card-link">
+    <g class="metric-card" transform="translate(508, 296)">
+      <rect width="272" height="66" rx="8" class="metric-card-bg card-pink"/>
+      <!-- Card Top Header -->
+      <circle cx="16" cy="18" r="3.5" fill="#f04c8a"/>
+      <text x="26" y="21" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff" letter-spacing="0.04em">SONDER MERKLE GAAP</text>
+      <rect x="204" y="9" width="56" height="18" rx="4" fill="#290e42" stroke="#f04c8a" stroke-width="0.8"/>
+      <text x="232" y="21.5" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9" font-weight="700" fill="#f04c8a" text-anchor="middle">100% AUDIT</text>
+      <!-- Subtitle Spec -->
+      <text x="16" y="38" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9.5" fill="#94a3b8">Polygon Amoy &#x00B7; Double-Entry Ledger</text>
+      <!-- Progress Bar Track (portfolio2u System 5) -->
+      <rect x="16" y="47" width="240" height="7" rx="3.5" fill="#2a1254"/>
+      <rect x="16" y="47" width="240" height="7" rx="3.5" fill="#f04c8a" class="progress-pink" filter="url(#cardGlow)"/>
+    </g>
+  </a>
+
+  <!-- Interactive Quick-Badge Row (DeliverMate & FitMe) -->
+  <g transform="translate(508, 374)">
+    <g class="contact-pill" transform="translate(0, 0)">
+      <rect width="130" height="32" rx="6" class="contact-pill-bg"/>
+      <text x="12" y="19" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9.5" font-weight="700" fill="#22d3ee">&#x25B8; DeliverMate</text>
+      <text x="118" y="19" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="8.5" fill="#94a3b8" text-anchor="end">Maps</text>
+    </g>
+    <a xlink:href="https://github.com/ayonm95/fitme-mobile-app" target="_blank" class="card-link">
+      <g class="contact-pill" transform="translate(142, 0)">
+        <rect width="130" height="32" rx="6" class="contact-pill-bg"/>
+        <text x="12" y="19" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9.5" font-weight="700" fill="#fbd402">&#x25B8; FitMe App</text>
+        <text x="118" y="19" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="8.5" fill="#94a3b8" text-anchor="end">Flutter</text>
+      </g>
+    </a>
+  </g>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       BOTTOM CONSOLE BAR: CONTACT & CREDENTIALS
+       ══════════════════════════════════════════════════════ -->
+  <line x1="0" y1="425" x2="800" y2="425" stroke="#351a66" stroke-width="1.2"/>
+  <rect y="426" width="800" height="44" rx="14" fill="#14082e"/>
+  <rect y="426" width="800" height="20" fill="#14082e"/>
+
+  <!-- Contact Pill 1: Email -->
+  <a xlink:href="mailto:ayonmoitra57@gmail.com" target="_blank" class="contact-link">
+    <g class="contact-pill" transform="translate(18, 434)">
+      <rect width="200" height="26" rx="5" class="contact-pill-bg"/>
+      <text x="12" y="17" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="10" font-weight="500" fill="#22d3ee" class="pill-text-email">&#x2709; ayonmoitra57@gmail.com</text>
+    </g>
+  </a>
+
+  <!-- Contact Pill 2: LinkedIn -->
+  <a xlink:href="https://linkedin.com/in/ayon-moitra" target="_blank" class="contact-link">
+    <g class="contact-pill" transform="translate(226, 434)">
+      <rect width="190" height="26" rx="5" class="contact-pill-bg"/>
+      <text x="12" y="17" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="10" font-weight="500" fill="#d3c5f6" class="pill-text-linkedin">&#x1F517; in/ayon-moitra</text>
+    </g>
+  </a>
+
+  <!-- Degree Credentials -->
+  <text x="782" y="451" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="10" fill="#94a3b8" text-anchor="end">
+    MSc. CSA &#x00B7; Christ Univ  |  MCA &#x00B7; Amity  |  BCA &#x00B7; Christ Univ
+  </text>
+
+  <!-- Outer Border -->
+  <rect width="800" height="470" rx="14" stroke="url(#cockpitBorder)" stroke-width="1.5" fill="none"/>
 </svg>

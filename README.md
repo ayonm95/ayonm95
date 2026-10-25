@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/terminal.svg" alt="Ayon Moitra — Terminal" width="800" height="440"/>
+<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/terminal.svg" alt="Ayon Moitra — Terminal" width="800" height="470"/>
 
 </div>
 
@@ -25,7 +25,7 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
   "web3":    ["Solidity", "Hardhat", "Ethers.js", "EIP-712", "Sepolia", "Polygon Amoy"],
   "backend": ["Java", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "Python"],
   "mobile":  ["Flutter", "Dart", "Firebase", "Cloud Firestore"],
-  "ai_ml":   ["Agentic Swarms", "Vector Stores", "LLM Pipelines"]
+  "ai_ml":   ["Agentic Swarms", "Vector Stores", "LLM Pipelines"],
   "tools":   ["Git", "Docker", "Google Cloud", "Google Maps Platform"]
 }
 ```
