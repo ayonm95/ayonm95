@@ -1,0 +1,47 @@
+name: GitHub-Profile-3D-Contrib
+
+on:
+  schedule:
+    - cron: "0 18 * * *" # Runs daily at 18:00 UTC
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'profile-3d-contrib/**'
+      - 'contrib-3d.svg'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: generate-github-profile-3d-contrib
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate 3D Contributions
+        uses: yoshi389111/github-profile-3d-contrib@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Mirror to contrib-3d.svg
+        run: |
+          cp profile-3d-contrib/profile-night-green.svg contrib-3d.svg
+
+      - name: Commit & Push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add profile-3d-contrib/ contrib-3d.svg
+          if git diff --staged --quiet; then
+            echo "No changes in 3D contribution graph."
+          else
+            git commit -m "chore(contrib): update 3d contribution graph [skip ci]"
+            git push origin main
+          fi

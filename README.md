@@ -43,11 +43,11 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
 
 ---
 
-### `$ ./activity --view=3d-topography`
+### `$ ./activity --view=3d-contrib`
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/contrib-3d.svg" alt="Ayon Moitra — 3D Activity Topography Map" width="800" height="440"/>
+<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/profile-3d-contrib/profile-night-green.svg" alt="Ayon Moitra — 3D Contribution Graph" width="100%"/>
 
 </div>
 
