@@ -131,7 +131,7 @@
   <g class="hud-pill" transform="translate(26, 54)">
     <rect width="170" height="30" rx="6" class="hud-pill-bg"/>
     <circle cx="14" cy="15" r="3.5" fill="#c2ec40"/>
-    <text x="26" y="19" class="stat-label">TOTAL COMMITS: <tspan class="stat-val-green">109</tspan></text>
+    <text x="26" y="19" class="stat-label">TOTAL COMMITS: <tspan class="stat-val-green">110</tspan></text>
   </g>
 
   <g class="hud-pill" transform="translate(208, 54)">
@@ -483,7 +483,12 @@
     <polygon points="648.4,283.5 654.6,287.0 648.4,290.5 642.2,287.0" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
     <polygon points="524.6,330.0 530.8,333.5 524.6,337.0 518.4,333.5" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
     <polygon points="576.6,311.9 582.8,315.4 576.6,318.9 570.4,315.4" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
-    <polygon points="628.6,293.8 634.8,297.3 628.6,300.8 622.4,297.3" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
+    <g class="tile">
+      <title>1 contributions on 2026-09-07</title>
+      <polygon points="622.4,287.3 628.6,290.8 628.6,303.8 622.4,300.3" fill="#0284c7" stroke="#7dd3fc" stroke-width="0.6"/>
+      <polygon points="628.6,290.8 634.8,287.3 634.8,300.3 628.6,303.8" fill="#0369a1" stroke="#7dd3fc" stroke-width="0.6"/>
+      <polygon points="628.6,283.8 634.8,287.3 628.6,290.8 622.4,287.3" fill="#38bdf8" stroke="#7dd3fc" stroke-width="0.7"/>
+    </g>
     <polygon points="504.8,340.3 511.0,343.8 504.8,347.3 498.6,343.8" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
     <polygon points="556.8,322.2 563.0,325.7 556.8,329.2 550.6,325.7" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
     <g class="tile">
@@ -524,7 +529,7 @@
     <polygon points="685.6,291.0 691.8,294.5 685.6,298.0 679.4,294.5" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
     <polygon points="561.8,337.5 568.0,341.0 561.8,344.5 555.6,341.0" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
     <g class="tile" filter="url(#tileGlow)">
-      <title>15 contributions on 2026-09-09</title>
+      <title>14 contributions on 2026-09-09</title>
       <polygon points="607.6,267.9 613.8,271.4 613.8,329.4 607.6,325.9" fill="#eab308" stroke="#fef08a" stroke-width="0.6"/>
       <polygon points="613.8,271.4 620.0,267.9 620.0,325.9 613.8,329.4" fill="#ca8a04" stroke="#fef08a" stroke-width="0.6"/>
       <polygon points="613.8,264.4 620.0,267.9 613.8,271.4 607.6,267.9" fill="#fbd402" stroke="#fef08a" stroke-width="0.7"/>
@@ -552,11 +557,11 @@
     <polygon points="566.8,352.8 573.0,356.3 566.8,359.8 560.6,356.3" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
     <polygon points="618.8,334.7 625.0,338.2 618.8,341.7 612.6,338.2" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
     <polygon points="670.8,316.6 677.0,320.1 670.8,323.6 664.6,320.1" fill="#1b0c36" stroke="#28124d" stroke-width="0.5"/>
-    <g class="tile">
-      <title>2 contributions on 2026-10-25</title>
-      <polygon points="716.6,292.0 722.8,295.5 722.8,308.5 716.6,305.0" fill="#0284c7" stroke="#7dd3fc" stroke-width="0.6"/>
-      <polygon points="722.8,295.5 729.0,292.0 729.0,305.0 722.8,308.5" fill="#0369a1" stroke="#7dd3fc" stroke-width="0.6"/>
-      <polygon points="722.8,288.5 729.0,292.0 722.8,295.5 716.6,292.0" fill="#38bdf8" stroke="#7dd3fc" stroke-width="0.7"/>
+    <g class="tile" filter="url(#tileGlow)">
+      <title>3 contributions on 2026-10-25</title>
+      <polygon points="716.6,279.0 722.8,282.5 722.8,308.5 716.6,305.0" fill="#06b6d4" stroke="#67e8f9" stroke-width="0.6"/>
+      <polygon points="722.8,282.5 729.0,279.0 729.0,305.0 722.8,308.5" fill="#0891b2" stroke="#67e8f9" stroke-width="0.6"/>
+      <polygon points="722.8,275.5 729.0,279.0 722.8,282.5 716.6,279.0" fill="#22d3ee" stroke="#67e8f9" stroke-width="0.7"/>
     </g>
     <g class="tile" filter="url(#tileGlow)">
       <title>5 contributions on 2026-09-11</title>
