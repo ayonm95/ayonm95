@@ -19,20 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     name: generate-github-profile-3d-contrib
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Generate 3D Contributions
-        uses: yoshi389111/github-profile-3d-contrib@latest
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate 3D Contribution Map (Past 5 Months)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-
-      - name: Mirror to contrib-3d.svg
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
         run: |
-          cp profile-3d-contrib/profile-night-green.svg contrib-3d.svg
+          python3 scripts/generate_contrib_3d.py
 
       - name: Commit & Push if changed
         run: |
@@ -42,7 +44,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes in 3D contribution graph."
           else
-            git commit -m "chore(contrib): update 3d contribution graph [skip ci]"
+            git commit -m "chore(contrib): update 3d contribution graph (past 5 months) [skip ci]"
             git pull --rebase origin main
             git push origin main
           fi
