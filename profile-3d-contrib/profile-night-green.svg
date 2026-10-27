@@ -30,7 +30,7 @@
     <!-- Timeframe Pill -->
     <rect x="570" y="-3" width="190" height="20" rx="10" fill="#161b22" stroke="rgba(240, 246, 252, 0.25)" stroke-width="1" />
     <circle cx="582" cy="7" r="3" fill="#39d353" />
-    <text x="592" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 5 Months (122 Commits)</text>
+    <text x="592" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 5 Months (124 Commits)</text>
   </g>
 
   <!-- Divider Line -->
@@ -538,6 +538,20 @@
   
 </g>
 <polygon points="565.6,300.0 581.1,305.5 569.4,314.5 553.9,309.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
+<g >
+  <!-- Right Shadow Wall -->
+  <polygon points="619.4,298.5 631.1,289.5 631.1,271.5 619.4,280.5" fill="#173926" stroke="#388e5a" stroke-width="0.6" />
+  <!-- Front Sunlit Wall -->
+  <polygon points="603.9,293.0 619.4,298.5 619.4,280.5 603.9,275.0" fill="#1f4831" stroke="#388e5a" stroke-width="0.6" />
+  <!-- Architectural Facade Grid (Stories & Windows) -->
+  <line x1="603.9" y1="284.0" x2="619.4" y2="289.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="619.4" y1="289.5" x2="631.1" y2="280.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <!-- Rooftop Parapet Surface -->
+  <polygon points="615.6,266.0 631.1,271.5 619.4,280.5 603.9,275.0" fill="#2b5c40" stroke="#388e5a" stroke-width="0.8" />
+  <!-- Inset Roof Terrace / Crown -->
+  <polygon points="616.3,268.9 625.7,272.2 618.7,277.6 609.3,274.3" fill="#1f4831" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" opacity="0.9" />
+  
+</g>
 <polygon points="550.6,311.5 566.1,317.0 554.4,326.0 538.9,320.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="535.6,323.0 551.1,328.5 539.4,337.5 523.9,332.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
   
@@ -554,7 +568,7 @@
   
   <g transform="translate(20, 366)">
     <text x="0" y="0" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">122 contributions</tspan> from 2026-05-31 to 2026-10-26
+      <tspan fill="#39d353" font-weight="700">124 contributions</tspan> from 2026-05-31 to 2026-10-27
     </text>
   </g>
   
