@@ -54,7 +54,7 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
 
 ---
 
-### `$ ./activity --view=3d-contrib`
+### `$ activity `
 
 <div align="center">
 
