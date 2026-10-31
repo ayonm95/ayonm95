@@ -119,106 +119,110 @@
         animation: pulseDot 2s ease-in-out infinite;
       }
 
-      /* Cursor Blink (Snappy entrance, active immediately) */
+      /* Cursor Blink (Synchronized with terminal prompt lifecycle) */
       @keyframes blinkCursor {
         0%, 100% { opacity: 1; }
         50%      { opacity: 0; }
       }
       .cursor-blink {
         fill: #3fb950;
-        animation: blinkCursor 0.9s step-end infinite 0.82s;
+        animation: blinkCursor 0.9s step-end infinite 6.00s;
       }
 
-      /* Typewriter Fast Silk/Snap Entrance (Payload readable in < 0.85s) */
+      /* Authentic Terminal Cadence: keystroke rhythm, command-line pauses & stdout streaming */
       @keyframes fi {
         to { opacity: 1; }
       }
-      .p1 { opacity: 0; animation: fi .01s ease 0.04s forwards; }
-      .o1 { opacity: 0; animation: fi .18s ease 0.12s forwards; }
-      .p2 { opacity: 0; animation: fi .01s ease 0.18s forwards; }
-      .o2a { opacity: 0; animation: fi .18s ease 0.28s forwards; }
-      .o2b { opacity: 0; animation: fi .18s ease 0.31s forwards; }
-      .o2c { opacity: 0; animation: fi .18s ease 0.34s forwards; }
-      .p3 { opacity: 0; animation: fi .01s ease 0.40s forwards; }
-      .o3a { opacity: 0; animation: fi .18s ease 0.49s forwards; }
-      .o3b { opacity: 0; animation: fi .18s ease 0.52s forwards; }
-      .o3c { opacity: 0; animation: fi .18s ease 0.55s forwards; }
-      .o3d { opacity: 0; animation: fi .18s ease 0.58s forwards; }
-      .p4 { opacity: 0; animation: fi .01s ease 0.63s forwards; }
-      .o4a { opacity: 0; animation: fi .18s ease 0.73s forwards; }
-      .o4b { opacity: 0; animation: fi .18s ease 0.77s forwards; }
-      .p5 { opacity: 0; animation: fi .01s ease 0.82s forwards; }
+      .p1 { opacity: 0; animation: fi .01s ease 0.20s forwards; }
+      .o1 { opacity: 0; animation: fi .20s ease 0.80s forwards; }
+      .p2 { opacity: 0; animation: fi .01s ease 1.20s forwards; }
+      .o2a { opacity: 0; animation: fi .20s ease 1.95s forwards; }
+      .o2b { opacity: 0; animation: fi .20s ease 2.08s forwards; }
+      .o2c { opacity: 0; animation: fi .20s ease 2.21s forwards; }
+      .p3 { opacity: 0; animation: fi .01s ease 2.60s forwards; }
+      .o3a { opacity: 0; animation: fi .20s ease 3.35s forwards; }
+      .o3b { opacity: 0; animation: fi .20s ease 3.44s forwards; }
+      .o3c { opacity: 0; animation: fi .20s ease 3.53s forwards; }
+      .o3d { opacity: 0; animation: fi .20s ease 3.62s forwards; }
+      .p4 { opacity: 0; animation: fi .01s ease 4.05s forwards; }
+      .o4a { opacity: 0; animation: fi .20s ease 5.48s forwards; }
+      .o4b { opacity: 0; animation: fi .20s ease 5.68s forwards; }
+      .p5 { opacity: 0; animation: fi .01s ease 6.00s forwards; }
 
-      .c1_0 { opacity: 0; animation: fi .01s ease 0.05s forwards; }
-      .c1_1 { opacity: 0; animation: fi .01s ease 0.06s forwards; }
-      .c1_2 { opacity: 0; animation: fi .01s ease 0.07s forwards; }
-      .c1_3 { opacity: 0; animation: fi .01s ease 0.08s forwards; }
-      .c1_4 { opacity: 0; animation: fi .01s ease 0.09s forwards; }
-      .c1_5 { opacity: 0; animation: fi .01s ease 0.10s forwards; }
+      /* Command 1 Keystrokes: whoami */
+      .c1_0 { opacity: 0; animation: fi .01s ease 0.28s forwards; }
+      .c1_1 { opacity: 0; animation: fi .01s ease 0.35s forwards; }
+      .c1_2 { opacity: 0; animation: fi .01s ease 0.42s forwards; }
+      .c1_3 { opacity: 0; animation: fi .01s ease 0.49s forwards; }
+      .c1_4 { opacity: 0; animation: fi .01s ease 0.56s forwards; }
+      .c1_5 { opacity: 0; animation: fi .01s ease 0.63s forwards; }
 
-      .c2_0 { opacity: 0; animation: fi .01s ease 0.19s forwards; }
-      .c2_1 { opacity: 0; animation: fi .01s ease 0.20s forwards; }
-      .c2_2 { opacity: 0; animation: fi .01s ease 0.21s forwards; }
-      .c2_3 { opacity: 0; animation: fi .01s ease 0.22s forwards; }
-      .c2_4 { opacity: 0; animation: fi .01s ease 0.23s forwards; }
-      .c2_5 { opacity: 0; animation: fi .01s ease 0.24s forwards; }
-      .c2_6 { opacity: 0; animation: fi .01s ease 0.25s forwards; }
-      .c2_7 { opacity: 0; animation: fi .01s ease 0.26s forwards; }
-      .c2_8 { opacity: 0; animation: fi .01s ease 0.27s forwards; }
-      .c2_9 { opacity: 0; animation: fi .01s ease 0.28s forwards; }
-      .c2_10 { opacity: 0; animation: fi .01s ease 0.29s forwards; }
-      .c2_11 { opacity: 0; animation: fi .01s ease 0.30s forwards; }
+      /* Command 2 Keystrokes: cat stack.sh */
+      .c2_0 { opacity: 0; animation: fi .01s ease 1.26s forwards; }
+      .c2_1 { opacity: 0; animation: fi .01s ease 1.31s forwards; }
+      .c2_2 { opacity: 0; animation: fi .01s ease 1.36s forwards; }
+      .c2_3 { opacity: 0; animation: fi .01s ease 1.41s forwards; }
+      .c2_4 { opacity: 0; animation: fi .01s ease 1.46s forwards; }
+      .c2_5 { opacity: 0; animation: fi .01s ease 1.51s forwards; }
+      .c2_6 { opacity: 0; animation: fi .01s ease 1.56s forwards; }
+      .c2_7 { opacity: 0; animation: fi .01s ease 1.61s forwards; }
+      .c2_8 { opacity: 0; animation: fi .01s ease 1.66s forwards; }
+      .c2_9 { opacity: 0; animation: fi .01s ease 1.71s forwards; }
+      .c2_10 { opacity: 0; animation: fi .01s ease 1.76s forwards; }
+      .c2_11 { opacity: 0; animation: fi .01s ease 1.81s forwards; }
 
-      .c3_0 { opacity: 0; animation: fi .01s ease 0.41s forwards; }
-      .c3_1 { opacity: 0; animation: fi .01s ease 0.415s forwards; }
-      .c3_2 { opacity: 0; animation: fi .01s ease 0.42s forwards; }
-      .c3_3 { opacity: 0; animation: fi .01s ease 0.425s forwards; }
-      .c3_4 { opacity: 0; animation: fi .01s ease 0.43s forwards; }
-      .c3_5 { opacity: 0; animation: fi .01s ease 0.435s forwards; }
-      .c3_6 { opacity: 0; animation: fi .01s ease 0.44s forwards; }
-      .c3_7 { opacity: 0; animation: fi .01s ease 0.445s forwards; }
-      .c3_8 { opacity: 0; animation: fi .01s ease 0.45s forwards; }
-      .c3_9 { opacity: 0; animation: fi .01s ease 0.455s forwards; }
-      .c3_10 { opacity: 0; animation: fi .01s ease 0.46s forwards; }
-      .c3_11 { opacity: 0; animation: fi .01s ease 0.465s forwards; }
-      .c3_12 { opacity: 0; animation: fi .01s ease 0.47s forwards; }
-      .c3_13 { opacity: 0; animation: fi .01s ease 0.475s forwards; }
-      .c3_14 { opacity: 0; animation: fi .01s ease 0.48s forwards; }
+      /* Command 3 Keystrokes: ls -1 projects/ */
+      .c3_0 { opacity: 0; animation: fi .01s ease 2.66s forwards; }
+      .c3_1 { opacity: 0; animation: fi .01s ease 2.70s forwards; }
+      .c3_2 { opacity: 0; animation: fi .01s ease 2.74s forwards; }
+      .c3_3 { opacity: 0; animation: fi .01s ease 2.78s forwards; }
+      .c3_4 { opacity: 0; animation: fi .01s ease 2.82s forwards; }
+      .c3_5 { opacity: 0; animation: fi .01s ease 2.86s forwards; }
+      .c3_6 { opacity: 0; animation: fi .01s ease 2.90s forwards; }
+      .c3_7 { opacity: 0; animation: fi .01s ease 2.94s forwards; }
+      .c3_8 { opacity: 0; animation: fi .01s ease 2.98s forwards; }
+      .c3_9 { opacity: 0; animation: fi .01s ease 3.02s forwards; }
+      .c3_10 { opacity: 0; animation: fi .01s ease 3.06s forwards; }
+      .c3_11 { opacity: 0; animation: fi .01s ease 3.10s forwards; }
+      .c3_12 { opacity: 0; animation: fi .01s ease 3.14s forwards; }
+      .c3_13 { opacity: 0; animation: fi .01s ease 3.18s forwards; }
+      .c3_14 { opacity: 0; animation: fi .01s ease 3.22s forwards; }
 
-      .c4_0 { opacity: 0; animation: fi .01s ease 0.64s forwards; }
-      .c4_1 { opacity: 0; animation: fi .01s ease 0.642s forwards; }
-      .c4_2 { opacity: 0; animation: fi .01s ease 0.644s forwards; }
-      .c4_3 { opacity: 0; animation: fi .01s ease 0.646s forwards; }
-      .c4_4 { opacity: 0; animation: fi .01s ease 0.648s forwards; }
-      .c4_5 { opacity: 0; animation: fi .01s ease 0.650s forwards; }
-      .c4_6 { opacity: 0; animation: fi .01s ease 0.652s forwards; }
-      .c4_7 { opacity: 0; animation: fi .01s ease 0.654s forwards; }
-      .c4_8 { opacity: 0; animation: fi .01s ease 0.656s forwards; }
-      .c4_9 { opacity: 0; animation: fi .01s ease 0.658s forwards; }
-      .c4_10 { opacity: 0; animation: fi .01s ease 0.660s forwards; }
-      .c4_11 { opacity: 0; animation: fi .01s ease 0.662s forwards; }
-      .c4_12 { opacity: 0; animation: fi .01s ease 0.664s forwards; }
-      .c4_13 { opacity: 0; animation: fi .01s ease 0.666s forwards; }
-      .c4_14 { opacity: 0; animation: fi .01s ease 0.668s forwards; }
-      .c4_15 { opacity: 0; animation: fi .01s ease 0.670s forwards; }
-      .c4_16 { opacity: 0; animation: fi .01s ease 0.672s forwards; }
-      .c4_17 { opacity: 0; animation: fi .01s ease 0.674s forwards; }
-      .c4_18 { opacity: 0; animation: fi .01s ease 0.676s forwards; }
-      .c4_19 { opacity: 0; animation: fi .01s ease 0.678s forwards; }
-      .c4_20 { opacity: 0; animation: fi .01s ease 0.680s forwards; }
-      .c4_21 { opacity: 0; animation: fi .01s ease 0.682s forwards; }
-      .c4_22 { opacity: 0; animation: fi .01s ease 0.684s forwards; }
-      .c4_23 { opacity: 0; animation: fi .01s ease 0.686s forwards; }
-      .c4_24 { opacity: 0; animation: fi .01s ease 0.688s forwards; }
-      .c4_25 { opacity: 0; animation: fi .01s ease 0.690s forwards; }
-      .c4_26 { opacity: 0; animation: fi .01s ease 0.692s forwards; }
-      .c4_27 { opacity: 0; animation: fi .01s ease 0.694s forwards; }
-      .c4_28 { opacity: 0; animation: fi .01s ease 0.696s forwards; }
-      .c4_29 { opacity: 0; animation: fi .01s ease 0.698s forwards; }
-      .c4_30 { opacity: 0; animation: fi .01s ease 0.700s forwards; }
-      .c4_31 { opacity: 0; animation: fi .01s ease 0.702s forwards; }
-      .c4_32 { opacity: 0; animation: fi .01s ease 0.704s forwards; }
-      .c4_33 { opacity: 0; animation: fi .01s ease 0.706s forwards; }
+      /* Command 4 Keystrokes: npx hardhat test --network sepolia */
+      .c4_0 { opacity: 0; animation: fi .01s ease 4.100s forwards; }
+      .c4_1 { opacity: 0; animation: fi .01s ease 4.135s forwards; }
+      .c4_2 { opacity: 0; animation: fi .01s ease 4.170s forwards; }
+      .c4_3 { opacity: 0; animation: fi .01s ease 4.205s forwards; }
+      .c4_4 { opacity: 0; animation: fi .01s ease 4.240s forwards; }
+      .c4_5 { opacity: 0; animation: fi .01s ease 4.275s forwards; }
+      .c4_6 { opacity: 0; animation: fi .01s ease 4.310s forwards; }
+      .c4_7 { opacity: 0; animation: fi .01s ease 4.345s forwards; }
+      .c4_8 { opacity: 0; animation: fi .01s ease 4.380s forwards; }
+      .c4_9 { opacity: 0; animation: fi .01s ease 4.415s forwards; }
+      .c4_10 { opacity: 0; animation: fi .01s ease 4.450s forwards; }
+      .c4_11 { opacity: 0; animation: fi .01s ease 4.485s forwards; }
+      .c4_12 { opacity: 0; animation: fi .01s ease 4.520s forwards; }
+      .c4_13 { opacity: 0; animation: fi .01s ease 4.555s forwards; }
+      .c4_14 { opacity: 0; animation: fi .01s ease 4.590s forwards; }
+      .c4_15 { opacity: 0; animation: fi .01s ease 4.625s forwards; }
+      .c4_16 { opacity: 0; animation: fi .01s ease 4.660s forwards; }
+      .c4_17 { opacity: 0; animation: fi .01s ease 4.695s forwards; }
+      .c4_18 { opacity: 0; animation: fi .01s ease 4.730s forwards; }
+      .c4_19 { opacity: 0; animation: fi .01s ease 4.765s forwards; }
+      .c4_20 { opacity: 0; animation: fi .01s ease 4.800s forwards; }
+      .c4_21 { opacity: 0; animation: fi .01s ease 4.835s forwards; }
+      .c4_22 { opacity: 0; animation: fi .01s ease 4.870s forwards; }
+      .c4_23 { opacity: 0; animation: fi .01s ease 4.905s forwards; }
+      .c4_24 { opacity: 0; animation: fi .01s ease 4.940s forwards; }
+      .c4_25 { opacity: 0; animation: fi .01s ease 4.975s forwards; }
+      .c4_26 { opacity: 0; animation: fi .01s ease 5.010s forwards; }
+      .c4_27 { opacity: 0; animation: fi .01s ease 5.045s forwards; }
+      .c4_28 { opacity: 0; animation: fi .01s ease 5.080s forwards; }
+      .c4_29 { opacity: 0; animation: fi .01s ease 5.115s forwards; }
+      .c4_30 { opacity: 0; animation: fi .01s ease 5.150s forwards; }
+      .c4_31 { opacity: 0; animation: fi .01s ease 5.185s forwards; }
+      .c4_32 { opacity: 0; animation: fi .01s ease 5.220s forwards; }
+      .c4_33 { opacity: 0; animation: fi .01s ease 5.255s forwards; }
 
       /* === Progress Bar Kinetic Load (portfolio2u System 5) === */
       @keyframes fillGreenBar {
@@ -230,10 +234,10 @@
         100% { width: 240px; }
       }
       .progress-green {
-        animation: fillGreenBar 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
+        animation: fillGreenBar 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.8s backwards;
       }
       .progress-pink {
-        animation: fillPinkBar 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+        animation: fillPinkBar 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.5s backwards;
       }
 
       /* Accessibility: Respect Reduced Motion */
