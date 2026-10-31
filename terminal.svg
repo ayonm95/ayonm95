@@ -119,106 +119,106 @@
         animation: pulseDot 2s ease-in-out infinite;
       }
 
-      /* Cursor Blink */
+      /* Cursor Blink (Snappy entrance, active immediately) */
       @keyframes blinkCursor {
         0%, 100% { opacity: 1; }
         50%      { opacity: 0; }
       }
       .cursor-blink {
         fill: #3fb950;
-        animation: blinkCursor 1s step-end infinite 10s;
+        animation: blinkCursor 0.9s step-end infinite 0.82s;
       }
 
-      /* Typewriter Fade-In */
+      /* Typewriter Fast Silk/Snap Entrance (Payload readable in < 0.85s) */
       @keyframes fi {
         to { opacity: 1; }
       }
-      .p1 { opacity: 0; animation: fi .01s ease 0.40s forwards; }
-      .o1 { opacity: 0; animation: fi .25s ease 1.05s forwards; }
-      .p2 { opacity: 0; animation: fi .01s ease 1.65s forwards; }
-      .o2a { opacity: 0; animation: fi .25s ease 2.90s forwards; }
-      .o2b { opacity: 0; animation: fi .25s ease 3.10s forwards; }
-      .o2c { opacity: 0; animation: fi .25s ease 3.30s forwards; }
-      .p3 { opacity: 0; animation: fi .01s ease 4.00s forwards; }
-      .o3a { opacity: 0; animation: fi .25s ease 5.30s forwards; }
-      .o3b { opacity: 0; animation: fi .25s ease 5.50s forwards; }
-      .o3c { opacity: 0; animation: fi .25s ease 5.70s forwards; }
-      .o3d { opacity: 0; animation: fi .25s ease 5.90s forwards; }
-      .p4 { opacity: 0; animation: fi .01s ease 6.60s forwards; }
-      .o4a { opacity: 0; animation: fi .25s ease 8.50s forwards; }
-      .o4b { opacity: 0; animation: fi .25s ease 8.80s forwards; }
-      .p5 { opacity: 0; animation: fi .01s ease 9.50s forwards; }
+      .p1 { opacity: 0; animation: fi .01s ease 0.04s forwards; }
+      .o1 { opacity: 0; animation: fi .18s ease 0.12s forwards; }
+      .p2 { opacity: 0; animation: fi .01s ease 0.18s forwards; }
+      .o2a { opacity: 0; animation: fi .18s ease 0.28s forwards; }
+      .o2b { opacity: 0; animation: fi .18s ease 0.31s forwards; }
+      .o2c { opacity: 0; animation: fi .18s ease 0.34s forwards; }
+      .p3 { opacity: 0; animation: fi .01s ease 0.40s forwards; }
+      .o3a { opacity: 0; animation: fi .18s ease 0.49s forwards; }
+      .o3b { opacity: 0; animation: fi .18s ease 0.52s forwards; }
+      .o3c { opacity: 0; animation: fi .18s ease 0.55s forwards; }
+      .o3d { opacity: 0; animation: fi .18s ease 0.58s forwards; }
+      .p4 { opacity: 0; animation: fi .01s ease 0.63s forwards; }
+      .o4a { opacity: 0; animation: fi .18s ease 0.73s forwards; }
+      .o4b { opacity: 0; animation: fi .18s ease 0.77s forwards; }
+      .p5 { opacity: 0; animation: fi .01s ease 0.82s forwards; }
 
-      .c1_0 { opacity: 0; animation: fi .01s ease 0.48s forwards; }
-      .c1_1 { opacity: 0; animation: fi .01s ease 0.55s forwards; }
-      .c1_2 { opacity: 0; animation: fi .01s ease 0.62s forwards; }
-      .c1_3 { opacity: 0; animation: fi .01s ease 0.69s forwards; }
-      .c1_4 { opacity: 0; animation: fi .01s ease 0.76s forwards; }
-      .c1_5 { opacity: 0; animation: fi .01s ease 0.83s forwards; }
+      .c1_0 { opacity: 0; animation: fi .01s ease 0.05s forwards; }
+      .c1_1 { opacity: 0; animation: fi .01s ease 0.06s forwards; }
+      .c1_2 { opacity: 0; animation: fi .01s ease 0.07s forwards; }
+      .c1_3 { opacity: 0; animation: fi .01s ease 0.08s forwards; }
+      .c1_4 { opacity: 0; animation: fi .01s ease 0.09s forwards; }
+      .c1_5 { opacity: 0; animation: fi .01s ease 0.10s forwards; }
 
-      .c2_0 { opacity: 0; animation: fi .01s ease 1.78s forwards; }
-      .c2_1 { opacity: 0; animation: fi .01s ease 1.84s forwards; }
-      .c2_2 { opacity: 0; animation: fi .01s ease 1.90s forwards; }
-      .c2_3 { opacity: 0; animation: fi .01s ease 1.96s forwards; }
-      .c2_4 { opacity: 0; animation: fi .01s ease 2.02s forwards; }
-      .c2_5 { opacity: 0; animation: fi .01s ease 2.08s forwards; }
-      .c2_6 { opacity: 0; animation: fi .01s ease 2.14s forwards; }
-      .c2_7 { opacity: 0; animation: fi .01s ease 2.20s forwards; }
-      .c2_8 { opacity: 0; animation: fi .01s ease 2.26s forwards; }
-      .c2_9 { opacity: 0; animation: fi .01s ease 2.32s forwards; }
-      .c2_10 { opacity: 0; animation: fi .01s ease 2.38s forwards; }
-      .c2_11 { opacity: 0; animation: fi .01s ease 2.44s forwards; }
+      .c2_0 { opacity: 0; animation: fi .01s ease 0.19s forwards; }
+      .c2_1 { opacity: 0; animation: fi .01s ease 0.20s forwards; }
+      .c2_2 { opacity: 0; animation: fi .01s ease 0.21s forwards; }
+      .c2_3 { opacity: 0; animation: fi .01s ease 0.22s forwards; }
+      .c2_4 { opacity: 0; animation: fi .01s ease 0.23s forwards; }
+      .c2_5 { opacity: 0; animation: fi .01s ease 0.24s forwards; }
+      .c2_6 { opacity: 0; animation: fi .01s ease 0.25s forwards; }
+      .c2_7 { opacity: 0; animation: fi .01s ease 0.26s forwards; }
+      .c2_8 { opacity: 0; animation: fi .01s ease 0.27s forwards; }
+      .c2_9 { opacity: 0; animation: fi .01s ease 0.28s forwards; }
+      .c2_10 { opacity: 0; animation: fi .01s ease 0.29s forwards; }
+      .c2_11 { opacity: 0; animation: fi .01s ease 0.30s forwards; }
 
-      .c3_0 { opacity: 0; animation: fi .01s ease 4.12s forwards; }
-      .c3_1 { opacity: 0; animation: fi .01s ease 4.18s forwards; }
-      .c3_2 { opacity: 0; animation: fi .01s ease 4.24s forwards; }
-      .c3_3 { opacity: 0; animation: fi .01s ease 4.30s forwards; }
-      .c3_4 { opacity: 0; animation: fi .01s ease 4.36s forwards; }
-      .c3_5 { opacity: 0; animation: fi .01s ease 4.42s forwards; }
-      .c3_6 { opacity: 0; animation: fi .01s ease 4.48s forwards; }
-      .c3_7 { opacity: 0; animation: fi .01s ease 4.54s forwards; }
-      .c3_8 { opacity: 0; animation: fi .01s ease 4.60s forwards; }
-      .c3_9 { opacity: 0; animation: fi .01s ease 4.66s forwards; }
-      .c3_10 { opacity: 0; animation: fi .01s ease 4.72s forwards; }
-      .c3_11 { opacity: 0; animation: fi .01s ease 4.78s forwards; }
-      .c3_12 { opacity: 0; animation: fi .01s ease 4.84s forwards; }
-      .c3_13 { opacity: 0; animation: fi .01s ease 4.90s forwards; }
-      .c3_14 { opacity: 0; animation: fi .01s ease 4.96s forwards; }
+      .c3_0 { opacity: 0; animation: fi .01s ease 0.41s forwards; }
+      .c3_1 { opacity: 0; animation: fi .01s ease 0.415s forwards; }
+      .c3_2 { opacity: 0; animation: fi .01s ease 0.42s forwards; }
+      .c3_3 { opacity: 0; animation: fi .01s ease 0.425s forwards; }
+      .c3_4 { opacity: 0; animation: fi .01s ease 0.43s forwards; }
+      .c3_5 { opacity: 0; animation: fi .01s ease 0.435s forwards; }
+      .c3_6 { opacity: 0; animation: fi .01s ease 0.44s forwards; }
+      .c3_7 { opacity: 0; animation: fi .01s ease 0.445s forwards; }
+      .c3_8 { opacity: 0; animation: fi .01s ease 0.45s forwards; }
+      .c3_9 { opacity: 0; animation: fi .01s ease 0.455s forwards; }
+      .c3_10 { opacity: 0; animation: fi .01s ease 0.46s forwards; }
+      .c3_11 { opacity: 0; animation: fi .01s ease 0.465s forwards; }
+      .c3_12 { opacity: 0; animation: fi .01s ease 0.47s forwards; }
+      .c3_13 { opacity: 0; animation: fi .01s ease 0.475s forwards; }
+      .c3_14 { opacity: 0; animation: fi .01s ease 0.48s forwards; }
 
-      .c4_0 { opacity: 0; animation: fi .01s ease 6.72s forwards; }
-      .c4_1 { opacity: 0; animation: fi .01s ease 6.76s forwards; }
-      .c4_2 { opacity: 0; animation: fi .01s ease 6.80s forwards; }
-      .c4_3 { opacity: 0; animation: fi .01s ease 6.84s forwards; }
-      .c4_4 { opacity: 0; animation: fi .01s ease 6.88s forwards; }
-      .c4_5 { opacity: 0; animation: fi .01s ease 6.92s forwards; }
-      .c4_6 { opacity: 0; animation: fi .01s ease 6.96s forwards; }
-      .c4_7 { opacity: 0; animation: fi .01s ease 7.00s forwards; }
-      .c4_8 { opacity: 0; animation: fi .01s ease 7.04s forwards; }
-      .c4_9 { opacity: 0; animation: fi .01s ease 7.08s forwards; }
-      .c4_10 { opacity: 0; animation: fi .01s ease 7.12s forwards; }
-      .c4_11 { opacity: 0; animation: fi .01s ease 7.16s forwards; }
-      .c4_12 { opacity: 0; animation: fi .01s ease 7.20s forwards; }
-      .c4_13 { opacity: 0; animation: fi .01s ease 7.24s forwards; }
-      .c4_14 { opacity: 0; animation: fi .01s ease 7.28s forwards; }
-      .c4_15 { opacity: 0; animation: fi .01s ease 7.32s forwards; }
-      .c4_16 { opacity: 0; animation: fi .01s ease 7.36s forwards; }
-      .c4_17 { opacity: 0; animation: fi .01s ease 7.40s forwards; }
-      .c4_18 { opacity: 0; animation: fi .01s ease 7.44s forwards; }
-      .c4_19 { opacity: 0; animation: fi .01s ease 7.48s forwards; }
-      .c4_20 { opacity: 0; animation: fi .01s ease 7.52s forwards; }
-      .c4_21 { opacity: 0; animation: fi .01s ease 7.56s forwards; }
-      .c4_22 { opacity: 0; animation: fi .01s ease 7.60s forwards; }
-      .c4_23 { opacity: 0; animation: fi .01s ease 7.64s forwards; }
-      .c4_24 { opacity: 0; animation: fi .01s ease 7.68s forwards; }
-      .c4_25 { opacity: 0; animation: fi .01s ease 7.72s forwards; }
-      .c4_26 { opacity: 0; animation: fi .01s ease 7.76s forwards; }
-      .c4_27 { opacity: 0; animation: fi .01s ease 7.80s forwards; }
-      .c4_28 { opacity: 0; animation: fi .01s ease 7.84s forwards; }
-      .c4_29 { opacity: 0; animation: fi .01s ease 7.88s forwards; }
-      .c4_30 { opacity: 0; animation: fi .01s ease 7.92s forwards; }
-      .c4_31 { opacity: 0; animation: fi .01s ease 7.96s forwards; }
-      .c4_32 { opacity: 0; animation: fi .01s ease 8.00s forwards; }
-      .c4_33 { opacity: 0; animation: fi .01s ease 8.04s forwards; }
+      .c4_0 { opacity: 0; animation: fi .01s ease 0.64s forwards; }
+      .c4_1 { opacity: 0; animation: fi .01s ease 0.642s forwards; }
+      .c4_2 { opacity: 0; animation: fi .01s ease 0.644s forwards; }
+      .c4_3 { opacity: 0; animation: fi .01s ease 0.646s forwards; }
+      .c4_4 { opacity: 0; animation: fi .01s ease 0.648s forwards; }
+      .c4_5 { opacity: 0; animation: fi .01s ease 0.650s forwards; }
+      .c4_6 { opacity: 0; animation: fi .01s ease 0.652s forwards; }
+      .c4_7 { opacity: 0; animation: fi .01s ease 0.654s forwards; }
+      .c4_8 { opacity: 0; animation: fi .01s ease 0.656s forwards; }
+      .c4_9 { opacity: 0; animation: fi .01s ease 0.658s forwards; }
+      .c4_10 { opacity: 0; animation: fi .01s ease 0.660s forwards; }
+      .c4_11 { opacity: 0; animation: fi .01s ease 0.662s forwards; }
+      .c4_12 { opacity: 0; animation: fi .01s ease 0.664s forwards; }
+      .c4_13 { opacity: 0; animation: fi .01s ease 0.666s forwards; }
+      .c4_14 { opacity: 0; animation: fi .01s ease 0.668s forwards; }
+      .c4_15 { opacity: 0; animation: fi .01s ease 0.670s forwards; }
+      .c4_16 { opacity: 0; animation: fi .01s ease 0.672s forwards; }
+      .c4_17 { opacity: 0; animation: fi .01s ease 0.674s forwards; }
+      .c4_18 { opacity: 0; animation: fi .01s ease 0.676s forwards; }
+      .c4_19 { opacity: 0; animation: fi .01s ease 0.678s forwards; }
+      .c4_20 { opacity: 0; animation: fi .01s ease 0.680s forwards; }
+      .c4_21 { opacity: 0; animation: fi .01s ease 0.682s forwards; }
+      .c4_22 { opacity: 0; animation: fi .01s ease 0.684s forwards; }
+      .c4_23 { opacity: 0; animation: fi .01s ease 0.686s forwards; }
+      .c4_24 { opacity: 0; animation: fi .01s ease 0.688s forwards; }
+      .c4_25 { opacity: 0; animation: fi .01s ease 0.690s forwards; }
+      .c4_26 { opacity: 0; animation: fi .01s ease 0.692s forwards; }
+      .c4_27 { opacity: 0; animation: fi .01s ease 0.694s forwards; }
+      .c4_28 { opacity: 0; animation: fi .01s ease 0.696s forwards; }
+      .c4_29 { opacity: 0; animation: fi .01s ease 0.698s forwards; }
+      .c4_30 { opacity: 0; animation: fi .01s ease 0.700s forwards; }
+      .c4_31 { opacity: 0; animation: fi .01s ease 0.702s forwards; }
+      .c4_32 { opacity: 0; animation: fi .01s ease 0.704s forwards; }
+      .c4_33 { opacity: 0; animation: fi .01s ease 0.706s forwards; }
 
       /* === Progress Bar Kinetic Load (portfolio2u System 5) === */
       @keyframes fillGreenBar {
@@ -230,10 +230,26 @@
         100% { width: 240px; }
       }
       .progress-green {
-        animation: fillGreenBar 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+        animation: fillGreenBar 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
       }
       .progress-pink {
-        animation: fillPinkBar 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s backwards;
+        animation: fillPinkBar 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+      }
+
+      /* Accessibility: Respect Reduced Motion */
+      @media (prefers-reduced-motion: reduce) {
+        .p1, .o1, .p2, .o2a, .o2b, .o2c, .p3, .o3a, .o3b, .o3c, .o3d, .p4, .o4a, .o4b, .p5,
+        [class^="c1_"], [class^="c2_"], [class^="c3_"], [class^="c4_"] {
+          opacity: 1 !important;
+          animation: none !important;
+        }
+        .progress-green, .progress-pink {
+          animation: none !important;
+          width: 240px !important;
+        }
+        .holo-levitation, .circular-badge-group, .ring-orbit-1, .ring-orbit-2, .celestial-star, .star-rays, .cursor-blink {
+          animation: none !important;
+        }
       }
 
       /* === Interactive Metric Cards (portfolio2u System 5) === */
@@ -509,7 +525,7 @@
     <tspan class="out-cyan">sonder/      </tspan><tspan class="out-dim">Async Merkle royalty ledger &#x00B7; Polygon Amoy</tspan>
   </text>
   <text x="18" y="242" class="o3c">
-    <tspan class="out-lime">delivermate/ </tspan><tspan class="out-dim">3-tier logistics dispatch &#x00B7; Maps API</tspan>
+    <tspan class="out-lime">quizgenius/  </tspan><tspan class="out-dim">AI MCQ solver &#x00B7; Groq 120B CoT &#x00B7; Moodle</tspan>
   </text>
   <text x="18" y="258" class="o3d">
     <tspan class="out-pink">fitme/       </tspan><tspan class="out-dim">Cross-platform fitness tracker &#x00B7; Flutter</tspan>
@@ -630,13 +646,15 @@
     </g>
   </a>
 
-  <!-- Interactive Quick-Badge Row (DeliverMate & FitMe) -->
+  <!-- Interactive Quick-Badge Row (QuizGenius & FitMe) -->
   <g transform="translate(508, 374)">
-    <g class="contact-pill" transform="translate(0, 0)">
-      <rect width="130" height="32" rx="6" class="contact-pill-bg"/>
-      <text x="12" y="19" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9.5" font-weight="700" fill="#22d3ee">&#x25B8; DeliverMate</text>
-      <text x="118" y="19" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="8.5" fill="#94a3b8" text-anchor="end">Maps</text>
-    </g>
+    <a xlink:href="https://github.com/ayonm95/quizgenius-extension" target="_blank" class="card-link">
+      <g class="contact-pill" transform="translate(0, 0)">
+        <rect width="130" height="32" rx="6" class="contact-pill-bg"/>
+        <text x="12" y="19" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9.5" font-weight="700" fill="#22d3ee">&#x25B8; QuizGenius</text>
+        <text x="118" y="19" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="8.5" fill="#94a3b8" text-anchor="end">AI</text>
+      </g>
+    </a>
     <a xlink:href="https://github.com/ayonm95/fitme-mobile-app" target="_blank" class="card-link">
       <g class="contact-pill" transform="translate(142, 0)">
         <rect width="130" height="32" rx="6" class="contact-pill-bg"/>
