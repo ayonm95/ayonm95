@@ -30,7 +30,7 @@
     <!-- Timeframe Pill -->
     <rect x="570" y="-3" width="190" height="20" rx="10" fill="#161b22" stroke="rgba(240, 246, 252, 0.25)" stroke-width="1" />
     <circle cx="582" cy="7" r="3" fill="#39d353" />
-    <text x="592" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 5 Months (153 Commits)</text>
+    <text x="592" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 5 Months (160 Commits)</text>
   </g>
 
   <!-- Divider Line -->
@@ -545,18 +545,28 @@
   <polygon points="596.3,261.9 605.7,265.2 598.7,270.6 589.3,267.3" fill="#1f4831" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" opacity="0.9" />
   
 </g>
-<g >
+<g filter="url(#greenGlow)" >
   <!-- Right Shadow Wall -->
-  <polygon points="649.4,275.5 661.1,266.5 661.1,248.5 649.4,257.5" fill="#173926" stroke="#388e5a" stroke-width="0.6" />
+  <polygon points="649.4,275.5 661.1,266.5 661.1,212.5 649.4,221.5" fill="#146427" stroke="#56ff74" stroke-width="0.6" />
   <!-- Front Sunlit Wall -->
-  <polygon points="633.9,270.0 649.4,275.5 649.4,257.5 633.9,252.0" fill="#1f4831" stroke="#388e5a" stroke-width="0.6" />
+  <polygon points="633.9,270.0 649.4,275.5 649.4,221.5 633.9,216.0" fill="#1a7e32" stroke="#56ff74" stroke-width="0.6" />
   <!-- Architectural Facade Grid (Stories & Windows) -->
   <line x1="633.9" y1="261.0" x2="649.4" y2="266.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
   <line x1="649.4" y1="266.5" x2="661.1" y2="257.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="633.9" y1="252.0" x2="649.4" y2="257.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="649.4" y1="257.5" x2="661.1" y2="248.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="633.9" y1="243.0" x2="649.4" y2="248.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="649.4" y1="248.5" x2="661.1" y2="239.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="633.9" y1="234.0" x2="649.4" y2="239.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="649.4" y1="239.5" x2="661.1" y2="230.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="633.9" y1="225.0" x2="649.4" y2="230.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="649.4" y1="230.5" x2="661.1" y2="221.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="639.0" y1="271.8" x2="639.0" y2="217.8" stroke="rgba(255,255,255,0.12)" stroke-width="0.4" stroke-dasharray="1,2" />
+  <line x1="644.3" y1="273.7" x2="644.3" y2="219.7" stroke="rgba(255,255,255,0.12)" stroke-width="0.4" stroke-dasharray="1,2" />
   <!-- Rooftop Parapet Surface -->
-  <polygon points="645.6,243.0 661.1,248.5 649.4,257.5 633.9,252.0" fill="#2b5c40" stroke="#388e5a" stroke-width="0.8" />
+  <polygon points="645.6,207.0 661.1,212.5 649.4,221.5 633.9,216.0" fill="#26a641" stroke="#56ff74" stroke-width="0.8" />
   <!-- Inset Roof Terrace / Crown -->
-  <polygon points="646.3,245.9 655.7,249.2 648.7,254.6 639.3,251.3" fill="#1f4831" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" opacity="0.9" />
+  <polygon points="646.3,209.9 655.7,213.2 648.7,218.6 639.3,215.3" fill="#1a7e32" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" opacity="0.9" />
   
 </g>
 <polygon points="530.6,304.5 546.1,310.0 534.4,319.0 518.9,313.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
@@ -623,7 +633,7 @@
   
   <g transform="translate(20, 366)">
     <text x="0" y="0" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">153 contributions</tspan> from 2026-06-07 to 2026-11-01
+      <tspan fill="#39d353" font-weight="700">160 contributions</tspan> from 2026-06-07 to 2026-11-01
     </text>
   </g>
   
