@@ -91,22 +91,27 @@
         animation: floatPoly 4.5s ease-in-out infinite;
       }
 
-      /* Orbital Ring Spins */
-      @keyframes orbit1 {
-        0%   { transform: rotate(28deg) rotateZ(0deg); }
-        100% { transform: rotate(28deg) rotateZ(360deg); }
+      /* === Harmonious 3D Orbital Rings (GSAP Precision Physics) === */
+      @keyframes spinCW {
+        from { transform: rotate(0deg); }
+        to   { transform: rotate(360deg); }
       }
-      @keyframes orbit2 {
-        0%   { transform: rotate(-32deg) rotateZ(360deg); }
-        100% { transform: rotate(-32deg) rotateZ(0deg); }
+      @keyframes spinCCW {
+        from { transform: rotate(360deg); }
+        to   { transform: rotate(0deg); }
       }
-      .ring-orbit-1 {
-        transform-origin: 645px 125px;
-        animation: orbit1 10s linear infinite;
+
+      .dot-rot-1 {
+        transform-origin: 0 0;
+        animation: spinCCW 7.5s linear infinite;
       }
-      .ring-orbit-2 {
-        transform-origin: 645px 125px;
-        animation: orbit2 15s linear infinite;
+      .dot-rot-2 {
+        transform-origin: 0 0;
+        animation: spinCW 5.8s linear infinite;
+      }
+      .dot-rot-3 {
+        transform-origin: 0 0;
+        animation: spinCW 9.2s linear infinite;
       }
 
       /* Dot Pulse */
@@ -251,7 +256,7 @@
           animation: none !important;
           width: 240px !important;
         }
-        .holo-levitation, .circular-badge-group, .ring-orbit-1, .ring-orbit-2, .celestial-star, .star-rays, .cursor-blink {
+        .holo-levitation, .circular-badge-group, .dot-rot-1, .dot-rot-2, .dot-rot-3, .celestial-star, .star-rays, .cursor-blink {
           animation: none !important;
         }
       }
@@ -389,6 +394,11 @@
       <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.75"/>
       <stop offset="50%" stop-color="#818cf8" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="#34d399" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="ringGradC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#fb923c" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#facc15" stop-opacity="0.85"/>
     </linearGradient>
 
     
@@ -573,15 +583,35 @@
     <!-- Center Aura Glow -->
     <circle cx="645" cy="125" r="75" fill="url(#polyAura)"/>
 
-    <!-- Counter-Rotating Orbit Rings -->
-    <g class="ring-orbit-2">
-      <ellipse cx="645" cy="125" rx="66" ry="22" fill="none" stroke="url(#ringGradB)" stroke-width="1.2" stroke-dasharray="80 20 40 15" opacity="0.75" filter="url(#bloom)"/>
-      <circle cx="711" cy="125" r="2.8" fill="#38bdf8" class="pulse-item"/>
+    <!-- 3 Harmonious Perspective Orbit Rings (Bounded strictly r <= 46 inside r=52 text badge) -->
+    <!-- Orbit 1: Cyan Ring (tilted -26deg, rx=44, ry=16) -->
+    <g transform="translate(645, 125) rotate(-26)">
+      <ellipse cx="0" cy="0" rx="44" ry="16" fill="none" stroke="url(#ringGradB)" stroke-width="1.3" stroke-dasharray="60 15 30 12" opacity="0.85" filter="url(#bloom)"/>
+      <g transform="scale(1, 0.3636)">
+        <g class="dot-rot-1">
+          <circle cx="44" cy="0" r="3" fill="#38bdf8" filter="url(#bloom)" transform="scale(1, 2.75)"/>
+        </g>
+      </g>
     </g>
 
-    <g class="ring-orbit-1">
-      <ellipse cx="645" cy="125" rx="56" ry="18" fill="none" stroke="url(#ringGradA)" stroke-width="1.5" stroke-dasharray="60 15 30 10" opacity="0.85" filter="url(#bloom)"/>
-      <circle cx="701" cy="125" r="3" fill="#3fb950" class="pulse-item"/>
+    <!-- Orbit 2: Emerald Ring (tilted +28deg, rx=38, ry=14) -->
+    <g transform="translate(645, 125) rotate(28)">
+      <ellipse cx="0" cy="0" rx="38" ry="14" fill="none" stroke="url(#ringGradA)" stroke-width="1.3" stroke-dasharray="50 12 25 10" opacity="0.85" filter="url(#bloom)"/>
+      <g transform="scale(1, 0.3684)">
+        <g class="dot-rot-2">
+          <circle cx="38" cy="0" r="2.8" fill="#34d399" filter="url(#bloom)" transform="scale(1, 2.71)"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Orbit 3: Amber/Gold Ring (tilted -65deg, rx=46, ry=15) -->
+    <g transform="translate(645, 125) rotate(-65)">
+      <ellipse cx="0" cy="0" rx="46" ry="15" fill="none" stroke="url(#ringGradC)" stroke-width="1.2" stroke-dasharray="40 10 20 8" opacity="0.8" filter="url(#bloom)"/>
+      <g transform="scale(1, 0.326)">
+        <g class="dot-rot-3">
+          <circle cx="46" cy="0" r="2.6" fill="#facc15" filter="url(#bloom)" transform="scale(1, 3.06)"/>
+        </g>
+      </g>
     </g>
 
     <!-- Circular Spinning SVG textPath -->
