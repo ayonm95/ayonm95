@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <defs>
+    <linearGradient id="facetA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="facetB" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="facetC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="facetD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbcfe8" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <filter id="sparkleGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes floatCrystal {
+        0%, 100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-2.5px) rotate(2deg);
+        }
+      }
+
+      @keyframes rayPulse {
+        0%, 100% {
+          opacity: 0.65;
+          transform: scale(0.92);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.18);
+        }
+      }
+
+      @keyframes twinkleA {
+        0%, 100% {
+          opacity: 0.3;
+          transform: scale(0.6);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.3);
+        }
+      }
+
+      @keyframes twinkleB {
+        0%, 100% {
+          opacity: 1;
+          transform: scale(1.25);
+        }
+        50% {
+          opacity: 0.25;
+          transform: scale(0.6);
+        }
+      }
+
+      .crystal-group {
+        transform-origin: 16px 16px;
+        animation: floatCrystal 3s ease-in-out infinite;
+      }
+
+      .cross-rays {
+        transform-origin: 16px 16px;
+        animation: rayPulse 2.4s ease-in-out infinite;
+      }
+
+      .glint-1 {
+        transform-origin: 25px 7px;
+        animation: twinkleA 2s ease-in-out infinite;
+      }
+
+      .glint-2 {
+        transform-origin: 7px 24px;
+        animation: twinkleB 2.2s ease-in-out infinite;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .crystal-group, .cross-rays, .glint-1, .glint-2 {
+          animation: none !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Ambient Light Rays -->
+  <g class="cross-rays" filter="url(#sparkleGlow)">
+    <line x1="16" y1="2" x2="16" y2="30" stroke="#f472b6" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+    <line x1="2" y1="16" x2="30" y2="16" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+    <line x1="6" y1="6" x2="26" y2="26" stroke="#c084fc" stroke-width="0.75" stroke-linecap="round" opacity="0.65" />
+    <line x1="26" y1="6" x2="6" y2="26" stroke="#c084fc" stroke-width="0.75" stroke-linecap="round" opacity="0.65" />
+  </g>
+
+  <!-- 3D Polyhedral Diamond Core -->
+  <g class="crystal-group">
+    <!-- Top-Left Facet -->
+    <polygon points="16,6 9,16 16,16" fill="url(#facetA)" stroke="#e0f2fe" stroke-width="0.5" />
+    <!-- Top-Right Facet -->
+    <polygon points="16,6 23,16 16,16" fill="url(#facetB)" stroke="#fdf2f8" stroke-width="0.5" />
+    <!-- Bottom-Left Facet -->
+    <polygon points="16,26 9,16 16,16" fill="url(#facetC)" stroke="#ede9fe" stroke-width="0.5" />
+    <!-- Bottom-Right Facet -->
+    <polygon points="16,26 23,16 16,16" fill="url(#facetD)" stroke="#fce7f3" stroke-width="0.5" />
+
+    <!-- Center Light Intersection Axis -->
+    <circle cx="16" cy="16" r="1.8" fill="#ffffff" filter="url(#sparkleGlow)" />
+  </g>
+
+  <!-- Twinkling Orbit Sparkles -->
+  <g class="glint-1">
+    <polygon points="25,4 26,7 29,7 26.5,9 27.5,12 25,10 22.5,12 23.5,9 21,7 24,7" fill="#fde047" />
+  </g>
+  <g class="glint-2">
+    <circle cx="7" cy="24" r="1.8" fill="#38bdf8" filter="url(#sparkleGlow)" />
+    <circle cx="7" cy="24" r="0.9" fill="#ffffff" />
+  </g>
+</svg>

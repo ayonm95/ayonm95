@@ -45,16 +45,16 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
 
 | Repository | Architecture & Stack | Key Achievements & Proof-of-Work |
 |---|---|---|
-| 💊 **[PharmaTree](https://github.com/ayonm95/pharmatree)** | Solidity · Hardhat · Next.js · EVM | Decentralized pharmaceutical supply chain with 5-tier packaging provenance, anti-counterfeit QR checks, **21/21 Hardhat unit tests (100% green)**, and Sepolia contract verification. |
-| 🎵 **[Sonder](https://github.com/ayonm95/sonder-web3-fintech)** | TypeScript · Merkle Trees · Polygon Amoy | Production-grade Web3 & FinTech royalty engine featuring Web Audio streaming, **GAAP double-entry ledger**, EIP-712 gasless rights attestation, and cryptographic Merkle payouts. |
-| ⚡ **[QuizGenius](https://github.com/ayonm95/quizgenius-extension)** | JavaScript · Manifest V3 · Groq API | AI-powered MCQ & quiz reasoning assistant with **Groq 120B Chain-of-Thought (CoT)** reasoning, automated DOM parsing, and Moodle LMS automation. |
-| ✨ **[Portfolio 3D](https://github.com/ayonm95/portfolio_minimal)** | Three.js · WebGL Shaders · Lenis · GSAP | Luxury editorial 3D interactive portfolio featuring custom **WebGL/WebGPU ripple shaders**, smooth kinetic virtual scroll, and reactive typography. |
-| 🎓 **[Student ERP](https://github.com/ayonm95/student-erp)** | Node.js · Express · MongoDB Atlas · React | Full-stack academic ERP system with secure **JWT authentication**, role-based access control (Admin & Student portals), and real-time student record management. |
-| 🏋️‍♂️ **[FitMe](https://github.com/ayonm95/fitme-mobile-app)** | Flutter · Dart · Firebase · Cloud Firestore | Cross-platform personal health and workout tracker with **Firebase Auth**, real-time Firestore sync, and kinetic mobile UI. |
+| <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/pharma-capsule.svg" width="18" height="18" align="absmiddle" alt="PharmaTree"/>&nbsp; **[PharmaTree](https://github.com/ayonm95/pharmatree)**</nobr> | Solidity · Hardhat · Next.js · EVM | Decentralized pharmaceutical supply chain with 5-tier packaging provenance, anti-counterfeit QR checks, **21/21 Hardhat unit tests (100% green)**, and Sepolia contract verification. |
+| <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/music-wave.svg" width="18" height="18" align="absmiddle" alt="Sonder"/>&nbsp; **[Sonder](https://github.com/ayonm95/sonder-web3-fintech)**</nobr> | TypeScript · Merkle Trees · Polygon Amoy | Production-grade Web3 & FinTech royalty engine featuring Web Audio streaming, **GAAP double-entry ledger**, EIP-712 gasless rights attestation, and cryptographic Merkle payouts. |
+| <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/lightning-ai.svg" width="18" height="18" align="absmiddle" alt="QuizGenius"/>&nbsp; **[QuizGenius](https://github.com/ayonm95/quizgenius-extension)**</nobr> | JavaScript · Manifest V3 · Groq API | AI-powered MCQ & quiz reasoning assistant with **Groq 120B Chain-of-Thought (CoT)** reasoning, automated DOM parsing, and Moodle LMS automation. |
+| <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/sparkle-3d.svg" width="18" height="18" align="absmiddle" alt="Portfolio 3D"/>&nbsp; **[Portfolio 3D](https://github.com/ayonm95/portfolio_minimal)**</nobr> | Three.js · WebGL Shaders · Lenis · GSAP | Luxury editorial 3D interactive portfolio featuring custom **WebGL/WebGPU ripple shaders**, smooth kinetic virtual scroll, and reactive typography. |
+| <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/student-cap.svg" width="18" height="18" align="absmiddle" alt="Student ERP"/>&nbsp; **[Student ERP](https://github.com/ayonm95/student-erp)**</nobr> | Node.js · Express · MongoDB Atlas · React | Full-stack academic ERP system with secure **JWT authentication**, role-based access control (Admin & Student portals), and real-time student record management. |
+| <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/fitness-pulse.svg" width="18" height="18" align="absmiddle" alt="FitMe"/>&nbsp; **[FitMe](https://github.com/ayonm95/fitme-mobile-app)**</nobr> | Flutter · Dart · Firebase · Cloud Firestore | Cross-platform personal health and workout tracker with **Firebase Auth**, real-time Firestore sync, and kinetic mobile UI. |
 
 ---
 
-### `$ activity `
+### <img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/activity-radar.svg" width="22" height="22" align="absmiddle" alt="Activity"/> `$ activity`
 
 <div align="center">
 
@@ -66,7 +66,7 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
 
 <div align="center">
 
-### `$ ./connect`
+### <img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/handshake.svg" width="26" height="26" align="absmiddle" alt="Connect"/> `$ ./connect`
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ayon-moitra)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:ayonmoitra57@gmail.com)

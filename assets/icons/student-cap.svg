@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <defs>
+    <linearGradient id="capIndigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="tasselGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <filter id="capGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes floatCap {
+        0%, 100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-2px) rotate(1deg);
+        }
+      }
+
+      @keyframes swayTassel {
+        0%, 100% {
+          transform: rotate(-16deg);
+        }
+        50% {
+          transform: rotate(18deg);
+        }
+      }
+
+      .cap-group {
+        transform-origin: 16px 16px;
+        animation: floatCap 2.8s ease-in-out infinite;
+      }
+
+      .tassel-group {
+        transform-origin: 16px 10px;
+        animation: swayTassel 1.8s ease-in-out infinite;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cap-group, .tassel-group {
+          animation: none !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- Animated Cap Group -->
+  <g class="cap-group">
+    <!-- Cap Skull Base -->
+    <path d="M10 16 L10 20 C10 22.5 12.7 24.5 16 24.5 C19.3 24.5 22 22.5 22 20 L22 16" fill="#3730a3" stroke="#6366f1" stroke-width="0.8" />
+    
+    <!-- Top Diamond Platter -->
+    <polygon points="16,6 29,12 16,18 3,12" fill="url(#capIndigo)" stroke="#a5b4fc" stroke-width="0.8" />
+    
+    <!-- Diamond Highlight Edge -->
+    <line x1="3" y1="12" x2="16" y2="18" stroke="#ffffff" stroke-width="0.8" opacity="0.6" />
+    <line x1="16" y1="18" x2="29" y2="12" stroke="#4338ca" stroke-width="0.8" opacity="0.8" />
+
+    <!-- Center Button Pin -->
+    <circle cx="16" cy="10.5" r="1.6" fill="#fbbf24" stroke="#ffffff" stroke-width="0.5" />
+
+    <!-- Hanging Swaying Tassel -->
+    <g class="tassel-group">
+      <!-- Tassel Ribbon Strand -->
+      <path d="M16 10.5 Q20 14 24 16 L24 23" stroke="#facc15" stroke-width="1.2" stroke-linecap="round" fill="none" />
+      <!-- Tassel Fringe Tip -->
+      <polygon points="22.5,23 25.5,23 25,27 23,27" fill="url(#tasselGold)" />
+      <circle cx="24" cy="23" r="1.2" fill="#ca8a04" />
+    </g>
+  </g>
+</svg>
