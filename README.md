@@ -4,11 +4,11 @@
 
 <br/>
 
-[![Sepolia Testnet](https://img.shields.io/badge/Sepolia%20Testnet-0x2bAEd948...198a044-8A2BE2?style=flat-square&logo=ethereum&logoColor=white)](https://sepolia.etherscan.io)
-[![Hardhat Tests](https://img.shields.io/badge/Hardhat%20Suites-21%2F21%20Passing%20(100%25)-brightgreen?style=flat-square&logo=hardhat&logoColor=white)](https://github.com/ayonm95/pharmatree)
+[![Sepolia Testnet](https://img.shields.io/badge/Sepolia%20Testnet-0x3f8E34B3...01007Cc-8A2BE2?style=flat-square&logo=ethereum&logoColor=white)](https://sepolia.etherscan.io/address/0x3f8E34B3D371253B47704bf1e1938a8dc01007Cc)
+[![Hardhat Tests](https://img.shields.io/badge/Hardhat%20Suites-89%2F89%20Passing%20(100%25)-brightgreen?style=flat-square&logo=hardhat&logoColor=white)](https://github.com/ayonm95/pharmatree)
 [![Polygon Amoy](https://img.shields.io/badge/Polygon%20Amoy-Merkle%20GAAP-8247E5?style=flat-square&logo=polygon&logoColor=white)](https://github.com/ayonm95/sonder-web3-fintech)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Solidity](https://img.shields.io/badge/Solidity-^0.8.20-363636?style=flat-square&logo=solidity&logoColor=white)](https://soliditylang.org)
+[![Solidity](https://img.shields.io/badge/Solidity-^0.8.24-363636?style=flat-square&logo=solidity&logoColor=white)](https://soliditylang.org)
 
 </div>
 
@@ -45,7 +45,7 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
 
 | Repository | Architecture & Stack | Key Achievements & Proof-of-Work |
 |---|---|---|
-| <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/pharma-capsule.svg" width="32" height="32" align="absmiddle" alt="PharmaTree"/>&nbsp; **[PharmaTree](https://github.com/ayonm95/pharmatree)**</nobr> | Solidity · Hardhat · Next.js · EVM | Decentralized pharmaceutical supply chain with 5-tier packaging provenance, anti-counterfeit QR checks, **21/21 Hardhat unit tests (100% green)**, and Sepolia contract verification. |
+| <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/pharma-capsule.svg" width="32" height="32" align="absmiddle" alt="PharmaTree"/>&nbsp; **[PharmaTree](https://github.com/ayonm95/pharmatree)**</nobr> | Solidity · Hardhat · Next.js · EVM | Decentralized pharmaceutical supply chain with 5-tier packaging provenance, anti-counterfeit QR checks, **89/89 Hardhat & invariant tests (156 automated tests, 100% green)**, and Sepolia contract verification. |
 | <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/music-wave.svg" width="32" height="32" align="absmiddle" alt="Sonder"/>&nbsp; **[Sonder](https://github.com/ayonm95/sonder-web3-fintech)**</nobr> | TypeScript · Merkle Trees · Polygon Amoy | Production-grade Web3 & FinTech royalty engine featuring Web Audio streaming, **GAAP double-entry ledger**, EIP-712 gasless rights attestation, and cryptographic Merkle payouts. |
 | <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/lightning-ai.svg" width="32" height="32" align="absmiddle" alt="QuizGenius"/>&nbsp; **[QuizGenius](https://github.com/ayonm95/quizgenius-extension)**</nobr> | JavaScript · Manifest V3 · Groq API | AI-powered MCQ & quiz reasoning assistant with **Groq 120B Chain-of-Thought (CoT)** reasoning, automated DOM parsing, and Moodle LMS automation. |
 | <nobr><img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/assets/icons/night-owl.svg" width="32" height="32" align="absmiddle" alt="Nightowler"/>&nbsp; **[Nightowler](https://github.com/ayonm95/nightowler)**</nobr> | Swift 5.9+ · SwiftUI · IOKit · AppleSMC | Autonomous macOS nocturnal clamshell guardian engineered in native Swift for AI agents and background workloads with **IOKit kernel power assertions**, direct AppleSMC hardware fan telemetry, and verified zero-sleep lid closure. |

@@ -536,7 +536,7 @@
     <text x="122" y="192" class="cmd-text" xml:space="preserve"><tspan class="c3_0">l</tspan><tspan class="c3_1">s</tspan><tspan class="c3_2">&#160;</tspan><tspan class="c3_3">-</tspan><tspan class="c3_4">1</tspan><tspan class="c3_5">&#160;</tspan><tspan class="c3_6">p</tspan><tspan class="c3_7">r</tspan><tspan class="c3_8">o</tspan><tspan class="c3_9">j</tspan><tspan class="c3_10">e</tspan><tspan class="c3_11">c</tspan><tspan class="c3_12">t</tspan><tspan class="c3_13">s</tspan><tspan class="c3_14">/</tspan></text>
   </g>
   <text x="18" y="210" class="o3a">
-    <tspan class="out-gold">pharmatree/  </tspan><tspan class="out-dim">Pharma provenance &#x00B7; Sepolia &#x00B7; 21 tests</tspan>
+    <tspan class="out-gold">pharmatree/  </tspan><tspan class="out-dim">Pharma provenance &#x00B7; Sepolia &#x00B7; 89 tests</tspan>
   </text>
   <text x="18" y="226" class="o3b">
     <tspan class="out-cyan">sonder/      </tspan><tspan class="out-dim">Async Merkle royalty ledger &#x00B7; Polygon Amoy</tspan>
@@ -555,9 +555,9 @@
     <text x="68" y="286" class="prompt-branch">&#x276E;main&#x276F;</text>
     <text x="122" y="286" class="cmd-text" xml:space="preserve"><tspan class="c4_0">n</tspan><tspan class="c4_1">p</tspan><tspan class="c4_2">x</tspan><tspan class="c4_3">&#160;</tspan><tspan class="c4_4">h</tspan><tspan class="c4_5">a</tspan><tspan class="c4_6">r</tspan><tspan class="c4_7">d</tspan><tspan class="c4_8">h</tspan><tspan class="c4_9">a</tspan><tspan class="c4_10">t</tspan><tspan class="c4_11">&#160;</tspan><tspan class="c4_12">t</tspan><tspan class="c4_13">e</tspan><tspan class="c4_14">s</tspan><tspan class="c4_15">t</tspan><tspan class="c4_16">&#160;</tspan><tspan class="c4_17">-</tspan><tspan class="c4_18">-</tspan><tspan class="c4_19">n</tspan><tspan class="c4_20">e</tspan><tspan class="c4_21">t</tspan><tspan class="c4_22">w</tspan><tspan class="c4_23">o</tspan><tspan class="c4_24">r</tspan><tspan class="c4_25">k</tspan><tspan class="c4_26">&#160;</tspan><tspan class="c4_27">s</tspan><tspan class="c4_28">e</tspan><tspan class="c4_29">p</tspan><tspan class="c4_30">o</tspan><tspan class="c4_31">l</tspan><tspan class="c4_32">i</tspan><tspan class="c4_33">a</tspan></text>
   </g>
-  <text x="18" y="304" class="out-lime o4a" filter="url(#bloom)">&#x2714;  21 passing  (0 failed &#x00B7; 100% assertions green)</text>
+  <text x="18" y="304" class="out-lime o4a" filter="url(#bloom)">&#x2714;  89 passing  (0 failed &#x00B7; 100% assertions green)</text>
   <text x="18" y="320" class="out-dim o4b">
-    <tspan fill="#38bdf8">   Sepolia Contract: </tspan>0x2bAEd948...198a044  &#x00B7;  <tspan fill="#3fb950">VERIFIED</tspan>
+    <tspan fill="#38bdf8">   Sepolia Contract: </tspan>0x3f8E34B3...01007Cc  &#x00B7;  <tspan fill="#3fb950">VERIFIED</tspan>
   </text>
 
   <!-- ── Prompt 5: Active Terminal Input ── -->
@@ -647,7 +647,7 @@
       <rect x="204" y="9" width="56" height="18" rx="4" fill="#101f18" stroke="#238636" stroke-width="0.8"/>
       <text x="232" y="21.5" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9" font-weight="700" fill="#c2ec40" text-anchor="middle">100% PASS</text>
       <!-- Subtitle Spec -->
-      <text x="16" y="38" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9.5" fill="#94a3b8">21/21 Unit Tests &#x00B7; Zero Failures</text>
+      <text x="16" y="38" font-family="'SF Mono', Monaco, Menlo, monospace" font-size="9.5" fill="#94a3b8">89/89 Unit Tests &#x00B7; Zero Failures</text>
       <!-- Progress Bar Track (portfolio2u System 5) -->
       <rect x="16" y="47" width="240" height="7" rx="3.5" fill="#171f2b"/>
       <rect x="16" y="47" width="240" height="7" rx="3.5" fill="#3fb950" class="progress-green" filter="url(#cardGlow)"/>
