@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate a realistic 3D architectural micro-cityscape GitHub contribution map for the past 5 months (22 weeks).
+Generate a realistic 3D architectural micro-cityscape GitHub contribution map for the past 4 months (18 weeks).
 Pure Python standard library (no external dependencies required).
 """
 
@@ -54,9 +54,9 @@ def fetch_contributions(username="ayonm95"):
 
 def generate_svg(cal):
     all_weeks = cal['weeks']
-    # Keep last 22 weeks (~5 months: 154 days)
-    weeks = all_weeks[-22:]
-    total_commits_5m = sum(d['contributionCount'] for w in weeks for d in w['contributionDays'])
+    # Keep last 18 weeks (~4 months: 126 days)
+    weeks = all_weeks[-18:]
+    total_commits_4m = sum(d['contributionCount'] for w in weeks for d in w['contributionDays'])
 
     # Canvas Dimensions
     WIDTH = 800
@@ -111,13 +111,12 @@ def generate_svg(cal):
                 'stroke': '#7ee787', 'glow': True, 'spire': True
             }
 
-    # Month milestones across the 22 weeks (Jun, Jul, Aug, Sep, Oct)
+    # Month milestones across the 18 weeks (Jul, Aug, Sep, Oct)
     clean_months = [
-        ("Jun", 2.0),
-        ("Jul", 6.5),
-        ("Aug", 11.0),
-        ("Sep", 15.5),
-        ("Oct", 19.5),
+        ("Jul", 2.0),
+        ("Aug", 6.5),
+        ("Sep", 11.0),
+        ("Oct", 15.5),
     ]
 
     month_svg_parts = []
@@ -332,7 +331,7 @@ def generate_svg(cal):
     <!-- Timeframe Pill -->
     <rect x="{WIDTH-230}" y="-3" width="190" height="20" rx="10" fill="#161b22" stroke="rgba(240, 246, 252, 0.25)" stroke-width="1" />
     <circle cx="{WIDTH-218}" cy="7" r="3" fill="#39d353" />
-    <text x="{WIDTH-208}" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 5 Months ({total_commits_5m} Commits)</text>
+    <text x="{WIDTH-208}" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 4 Months ({total_commits_4m} Commits)</text>
   </g>
 
   <!-- Divider Line -->
@@ -358,7 +357,7 @@ def generate_svg(cal):
   
   <g transform="translate(20, {HEIGHT-24})">
     <text x="0" y="0" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">{total_commits_5m} contributions</tspan> from {start_date_str} to {end_date_str}
+      <tspan fill="#39d353" font-weight="700">{total_commits_4m} contributions</tspan> from {start_date_str} to {end_date_str}
     </text>
   </g>
   
