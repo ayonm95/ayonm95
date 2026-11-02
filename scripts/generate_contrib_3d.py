@@ -82,11 +82,11 @@ def generate_svg(cal):
     )
 
     # Canvas Dimensions
-    WIDTH = 800
-    HEIGHT = 390
+    WIDTH = 680
+    HEIGHT = 430
 
     # 3D Grid Parameters (Isometric Projection)
-    X0 = 225.0
+    X0 = 190.0
     Y0 = 112.0
     dx_w = 20.0   # along week axis (0..21)
     dy_w = 7.0
@@ -148,7 +148,7 @@ def generate_svg(cal):
     for m_name, w_pos in clean_months:
         mx = X0 + w_pos * dx_w - 7.5 * dx_d * 0.3
         month_svg_parts.append(
-            f'<text x="{mx:.1f}" y="76" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',Helvetica,Arial,sans-serif" font-weight="600" text-anchor="middle">{m_name}</text>'
+            f'<text x="{mx:.1f}" y="82" fill="#8b949e" font-size="13" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',Helvetica,Arial,sans-serif" font-weight="600" text-anchor="middle">{m_name}</text>'
         )
 
     # Weekday labels
@@ -157,7 +157,7 @@ def generate_svg(cal):
     for d_idx, d_name in day_labels:
         lx, ly = proj(0, d_idx, h=0)
         day_svg_parts.append(
-            f'<text x="{lx-18:.1f}" y="{ly+6:.1f}" fill="#7d8590" font-size="10" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',Helvetica,Arial,sans-serif" font-weight="500" text-anchor="end">{d_name}</text>'
+            f'<text x="{lx-18:.1f}" y="{ly+6:.1f}" fill="#7d8590" font-size="12" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',Helvetica,Arial,sans-serif" font-weight="500" text-anchor="end">{d_name}</text>'
         )
 
     # Base Pedestal Slab with Light Silver/Platinum Accent Rim
@@ -336,7 +336,7 @@ def generate_svg(cal):
     <line x1="0" y1="0" x2="0" y2="-16" stroke="#56ff74" stroke-width="1.2" stroke-dasharray="2,2" />
     <circle cx="0" cy="0" r="3" fill="#ffffff" stroke="#39d353" stroke-width="1.2" />
     <rect x="-46" y="-32" width="92" height="18" rx="4" fill="#141c24" stroke="#56ff74" stroke-width="1" />
-    <text x="0" y="-20" fill="#7ee787" font-size="9" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',monospace" font-weight="700" text-anchor="middle">Peak: {peak_item['count']} commits</text>
+    <text x="0" y="-20" fill="#7ee787" font-size="11" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',monospace" font-weight="700" text-anchor="middle">Peak: {peak_item['count']} commits</text>
   </g>'''
 
     visible_dates = [
@@ -387,22 +387,22 @@ def generate_svg(cal):
     <circle cx="6" cy="6" r="4" fill="#ff5f56" />
     <circle cx="20" cy="6" r="4" fill="#ffbd2e" />
     <circle cx="34" cy="6" r="4" fill="#27c93f" />
-    <text x="50" y="9.5" fill="#f0f6fc" font-size="12" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="600">ayonm95 <tspan fill="#8b949e">/ Activity Skyline</tspan></text>
+    <text x="50" y="10.5" fill="#f0f6fc" font-size="14" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="600">ayonm95 <tspan fill="#8b949e">/ Activity Skyline</tspan></text>
     
     <!-- Timeframe Pill -->
     <rect x="{WIDTH-230}" y="-3" width="190" height="20" rx="10" fill="#161b22" stroke="rgba(240, 246, 252, 0.25)" stroke-width="1" />
     <circle cx="{WIDTH-218}" cy="7" r="3" fill="#39d353" />
-    <text x="{WIDTH-208}" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 4 Months ({total_commits_4m} Commits)</text>
+    <text x="{WIDTH-208}" y="11.5" fill="#e6edf3" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 4 Months ({total_commits_4m} Commits)</text>
   </g>
   <g transform="translate(20, 52)">
     <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
-    <text x="10" y="9" fill="#7ee787" font-size="7" font-family="monospace" letter-spacing="1">ACTIVE DAYS</text>
-    <text x="10" y="18" fill="#f0f6fc" font-size="9" font-family="monospace" font-weight="700">{active_days}</text>
+    <text x="10" y="9" fill="#7ee787" font-size="8" font-family="monospace" letter-spacing="1">ACTIVE DAYS</text>
+    <text x="10" y="19" fill="#f0f6fc" font-size="10" font-family="monospace" font-weight="700">{active_days}</text>
   </g>
   <g transform="translate(144, 52)">
     <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
-    <text x="10" y="9" fill="#7ee787" font-size="7" font-family="monospace" letter-spacing="1">CITY BLOCKS</text>
-    <text x="10" y="18" fill="#f0f6fc" font-size="9" font-family="monospace" font-weight="700">{len(weeks) * 7}</text>
+    <text x="10" y="9" fill="#7ee787" font-size="8" font-family="monospace" letter-spacing="1">CITY BLOCKS</text>
+    <text x="10" y="19" fill="#f0f6fc" font-size="10" font-family="monospace" font-weight="700">{len(weeks) * 7}</text>
   </g>
 
   <!-- Divider Line -->
@@ -427,19 +427,19 @@ def generate_svg(cal):
   <line x1="0" y1="{HEIGHT-44}" x2="{WIDTH}" y2="{HEIGHT-44}" stroke="#21262d" stroke-width="1" />
   
   <g transform="translate(20, {HEIGHT-24})">
-    <text x="0" y="0" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="500">
+    <text x="0" y="0" fill="#8b949e" font-size="13" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="500">
       <tspan fill="#39d353" font-weight="700">{total_commits_4m} contributions</tspan> from {start_date_str} to {end_date_str}
     </text>
   </g>
   
   <g transform="translate({WIDTH-180}, {HEIGHT-24})">
-    <text x="-8" y="0" fill="#8b949e" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" text-anchor="end">Less</text>
+    <text x="-8" y="0" fill="#8b949e" font-size="12" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" text-anchor="end">Less</text>
     <rect x="0" y="-8" width="10" height="10" rx="2" fill="#161c24" stroke="rgba(240, 246, 252, 0.2)" stroke-width="0.8" />
     <rect x="14" y="-8" width="10" height="10" rx="2" fill="#2b5c40" stroke="#388e5a" stroke-width="0.5" />
     <rect x="28" y="-8" width="10" height="10" rx="2" fill="#1e7b44" stroke="#34b34b" stroke-width="0.5" />
     <rect x="42" y="-8" width="10" height="10" rx="2" fill="#26a641" stroke="#56ff74" stroke-width="0.5" />
     <rect x="56" y="-8" width="10" height="10" rx="2" fill="#39d353" stroke="#7ee787" stroke-width="0.5" />
-    <text x="74" y="0" fill="#8b949e" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace">More</text>
+    <text x="74" y="0" fill="#8b949e" font-size="12" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace">More</text>
   </g>
 </svg>'''
 
