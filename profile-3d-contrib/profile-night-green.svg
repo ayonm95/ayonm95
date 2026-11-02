@@ -45,7 +45,7 @@
   <g transform="translate(20, 52)">
     <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
     <text x="10" y="9" fill="#7ee787" font-size="7" font-family="monospace" letter-spacing="1">ACTIVE DAYS</text>
-    <text x="10" y="18" fill="#f0f6fc" font-size="9" font-family="monospace" font-weight="700">21</text>
+    <text x="10" y="18" fill="#f0f6fc" font-size="9" font-family="monospace" font-weight="700">22</text>
   </g>
   <g transform="translate(144, 52)">
     <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
@@ -149,7 +149,21 @@
 <polygon points="265.6,128.0 281.2,133.5 269.4,142.5 253.8,137.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="150.5,171.5 166.2,177.0 154.5,186.0 138.8,180.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="200.5,155.5 216.2,161.0 204.5,170.0 188.8,164.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
-<polygon points="250.5,139.5 266.2,145.0 254.5,154.0 238.8,148.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
+<g >
+  <!-- Right Shadow Wall -->
+  <polygon points="254.5,154.0 266.2,145.0 266.2,127.0 254.5,136.0" fill="#173926" stroke="#388e5a" stroke-width="0.6" />
+  <!-- Front Sunlit Wall -->
+  <polygon points="238.8,148.5 254.5,154.0 254.5,136.0 238.8,130.5" fill="#1f4831" stroke="#388e5a" stroke-width="0.6" />
+  <!-- Architectural Facade Grid (Stories & Windows) -->
+  <line x1="238.8" y1="139.5" x2="254.5" y2="145.0" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="254.5" y1="145.0" x2="266.2" y2="136.0" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+
+  <!-- Rooftop Parapet Surface -->
+  <polygon points="250.5,121.5 266.2,127.0 254.5,136.0 238.8,130.5" fill="#2b5c40" stroke="#388e5a" stroke-width="0.8" />
+  <!-- Inset Roof Terrace / Crown -->
+  <polygon points="251.3,124.4 260.7,127.7 253.7,133.1 244.3,129.8" fill="#1f4831" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" opacity="0.9" />
+
+</g>
 <polygon points="135.5,183.0 151.2,188.5 139.5,197.5 123.8,192.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="185.5,167.0 201.2,172.5 189.5,181.5 173.8,176.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <g filter="url(#greenGlow)" >
@@ -560,21 +574,6 @@
 </g>
 <polygon points="295.5,239.0 311.1,244.5 299.5,253.5 283.9,248.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="345.5,223.0 361.1,228.5 349.5,237.5 333.9,232.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
-<g >
-  <!-- Right Shadow Wall -->
-  <polygon points="399.4,221.5 411.2,212.5 411.2,194.5 399.4,203.5" fill="#173926" stroke="#388e5a" stroke-width="0.6" />
-  <!-- Front Sunlit Wall -->
-  <polygon points="383.8,216.0 399.4,221.5 399.4,203.5 383.8,198.0" fill="#1f4831" stroke="#388e5a" stroke-width="0.6" />
-  <!-- Architectural Facade Grid (Stories & Windows) -->
-  <line x1="383.8" y1="207.0" x2="399.4" y2="212.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
-  <line x1="399.4" y1="212.5" x2="411.2" y2="203.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
-
-  <!-- Rooftop Parapet Surface -->
-  <polygon points="395.6,189.0 411.2,194.5 399.4,203.5 383.8,198.0" fill="#2b5c40" stroke="#388e5a" stroke-width="0.8" />
-  <!-- Inset Roof Terrace / Crown -->
-  <polygon points="396.3,191.9 405.7,195.2 398.7,200.6 389.3,197.3" fill="#1f4831" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" opacity="0.9" />
-
-</g>
 <g >
   <!-- Right Shadow Wall -->
   <polygon points="334.5,249.0 346.1,240.0 346.1,222.0 334.5,231.0" fill="#173926" stroke="#388e5a" stroke-width="0.6" />

@@ -201,6 +201,8 @@ def generate_svg(cal):
         for d in range(len(weeks[w]['contributionDays'])):
             c_count = weeks[w]['contributionDays'][d].get('contributionCount', 0)
             c_date = weeks[w]['contributionDays'][d].get('date', '')
+            if c_date > today_str:
+                continue
             info = get_building_info(c_count)
             item = {
                 'w': w, 'd': d,
@@ -210,8 +212,6 @@ def generate_svg(cal):
                 'depth': w * 2.0 + d * 1.0
             }
             items.append(item)
-            if c_date > today_str:
-                continue
             if c_count > max_count:
                 max_count = c_count
                 peak_item = item
