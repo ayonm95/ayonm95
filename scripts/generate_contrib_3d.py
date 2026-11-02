@@ -448,9 +448,11 @@ def main():
     cal = fetch_contributions(username)
     svg = "\n".join(line.rstrip() for line in generate_svg(cal).splitlines()) + "\n"
 
-    # Save to contrib-3d.svg and profile-3d-contrib/profile-night-green.svg and profile-green.svg
+    # Save the versioned profile asset under a new name to avoid stale README image caches.
     os.makedirs("profile-3d-contrib", exist_ok=True)
     with open("contrib-3d.svg", "w", encoding="utf-8") as f:
+        f.write(svg)
+    with open("profile-3d-contrib/activity-skyline.svg", "w", encoding="utf-8") as f:
         f.write(svg)
     with open("profile-3d-contrib/profile-night-green.svg", "w", encoding="utf-8") as f:
         f.write(svg)
