@@ -168,7 +168,20 @@
 <polygon points="405.6,177.0 421.2,182.5 409.4,191.5 393.8,186.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="290.6,220.5 306.1,226.0 294.4,235.0 278.9,229.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="340.6,204.5 356.2,210.0 344.4,219.0 328.8,213.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
-<polygon points="390.6,188.5 406.2,194.0 394.4,203.0 378.8,197.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
+<g >
+  <!-- Right Shadow Wall -->
+  <polygon points="394.4,203.0 406.2,194.0 406.2,176.0 394.4,185.0" fill="#173926" stroke="#388e5a" stroke-width="0.6" />
+  <!-- Front Sunlit Wall -->
+  <polygon points="378.8,197.5 394.4,203.0 394.4,185.0 378.8,179.5" fill="#1f4831" stroke="#388e5a" stroke-width="0.6" />
+  <!-- Architectural Facade Grid (Stories & Windows) -->
+  <line x1="378.8" y1="188.5" x2="394.4" y2="194.0" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="394.4" y1="194.0" x2="406.2" y2="185.0" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <!-- Rooftop Parapet Surface -->
+  <polygon points="390.6,170.5 406.2,176.0 394.4,185.0 378.8,179.5" fill="#2b5c40" stroke="#388e5a" stroke-width="0.8" />
+  <!-- Inset Roof Terrace / Crown -->
+  <polygon points="391.3,173.4 400.7,176.7 393.7,182.1 384.3,178.8" fill="#1f4831" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" opacity="0.9" />
+  
+</g>
 <polygon points="275.6,232.0 291.1,237.5 279.4,246.5 263.9,241.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="325.5,216.0 341.1,221.5 329.5,230.5 313.9,225.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <g filter="url(#greenGlow)" >
@@ -563,7 +576,6 @@
 </g>
 <polygon points="435.6,288.0 451.1,293.5 439.4,302.5 423.9,297.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="485.6,272.0 501.1,277.5 489.4,286.5 473.9,281.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
-<polygon points="535.6,256.0 551.1,261.5 539.4,270.5 523.9,265.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <g >
   <!-- Right Shadow Wall -->
   <polygon points="474.4,298.0 486.1,289.0 486.1,271.0 474.4,280.0" fill="#173926" stroke="#388e5a" stroke-width="0.6" />
@@ -624,7 +636,7 @@
   
   <g transform="translate(20, 366)">
     <text x="0" y="0" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">181 contributions</tspan> from 2026-07-05 to 2026-11-03
+      <tspan fill="#39d353" font-weight="700">181 contributions</tspan> from 2026-07-05 to 2026-11-02
     </text>
   </g>
   
