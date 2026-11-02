@@ -58,7 +58,7 @@ Bengaluru, India &nbsp;|&nbsp; MSc. Computer Science and Applications — Christ
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/profile-3d-contrib/profile-night-green.svg" alt="Ayon Moitra — 3D Contribution Graph" width="100%"/>
+<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/profile-3d-contrib/profile-night-green.svg?v=7229812" alt="Ayon Moitra — 3D Contribution Graph" width="100%"/>
 
 </div>
 
