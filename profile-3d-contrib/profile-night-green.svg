@@ -30,7 +30,7 @@
     <!-- Timeframe Pill -->
     <rect x="570" y="-3" width="190" height="20" rx="10" fill="#161b22" stroke="rgba(240, 246, 252, 0.25)" stroke-width="1" />
     <circle cx="582" cy="7" r="3" fill="#39d353" />
-    <text x="592" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 5 Months (161 Commits)</text>
+    <text x="592" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 5 Months (178 Commits)</text>
   </g>
 
   <!-- Divider Line -->
@@ -571,6 +571,38 @@
 </g>
 <polygon points="530.6,304.5 546.1,310.0 534.4,319.0 518.9,313.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="580.6,288.5 596.1,294.0 584.4,303.0 568.9,297.5" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
+<g filter="url(#greenGlow)" >
+  <!-- Right Shadow Wall -->
+  <polygon points="634.4,287.0 646.1,278.0 646.1,202.0 634.4,211.0" fill="#1d8332" stroke="#7ee787" stroke-width="0.6" />
+  <!-- Front Sunlit Wall -->
+  <polygon points="618.9,281.5 634.4,287.0 634.4,211.0 618.9,205.5" fill="#249e3d" stroke="#7ee787" stroke-width="0.6" />
+  <!-- Architectural Facade Grid (Stories & Windows) -->
+  <line x1="618.9" y1="272.0" x2="634.4" y2="277.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="634.4" y1="277.5" x2="646.1" y2="268.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="618.9" y1="262.5" x2="634.4" y2="268.0" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="634.4" y1="268.0" x2="646.1" y2="259.0" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="618.9" y1="253.0" x2="634.4" y2="258.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="634.4" y1="258.5" x2="646.1" y2="249.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="618.9" y1="243.5" x2="634.4" y2="249.0" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="634.4" y1="249.0" x2="646.1" y2="240.0" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="618.9" y1="234.0" x2="634.4" y2="239.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="634.4" y1="239.5" x2="646.1" y2="230.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="618.9" y1="224.5" x2="634.4" y2="230.0" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="634.4" y1="230.0" x2="646.1" y2="221.0" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="618.9" y1="215.0" x2="634.4" y2="220.5" stroke="rgba(255,255,255,0.22)" stroke-width="0.5" />
+  <line x1="634.4" y1="220.5" x2="646.1" y2="211.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+  <line x1="624.0" y1="283.3" x2="624.0" y2="207.3" stroke="rgba(255,255,255,0.12)" stroke-width="0.4" stroke-dasharray="1,2" />
+  <line x1="629.3" y1="285.2" x2="629.3" y2="209.2" stroke="rgba(255,255,255,0.12)" stroke-width="0.4" stroke-dasharray="1,2" />
+  <!-- Rooftop Parapet Surface -->
+  <polygon points="630.6,196.5 646.1,202.0 634.4,211.0 618.9,205.5" fill="#39d353" stroke="#7ee787" stroke-width="0.8" />
+  <!-- Inset Roof Terrace / Crown -->
+  <polygon points="631.3,199.4 640.7,202.7 633.7,208.1 624.3,204.8" fill="#249e3d" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" opacity="0.9" />
+  
+  <!-- Architectural Spire Antenna & Beacon Light -->
+  <line x1="632.5" y1="203.8" x2="632.5" y2="191.8" stroke="#ffffff" stroke-width="1" />
+  <circle cx="632.5" cy="191.8" r="2.2" fill="#ffffff" filter="url(#beaconGlow)" />
+
+</g>
 <polygon points="515.6,316.0 531.1,321.5 519.4,330.5 503.9,325.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <polygon points="565.6,300.0 581.1,305.5 569.4,314.5 553.9,309.0" fill="#161c24" stroke="rgba(240, 246, 252, 0.16)" stroke-width="0.65" />
 <g >
@@ -633,7 +665,7 @@
   
   <g transform="translate(20, 366)">
     <text x="0" y="0" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">161 contributions</tspan> from 2026-06-07 to 2026-11-01
+      <tspan fill="#39d353" font-weight="700">178 contributions</tspan> from 2026-06-07 to 2026-11-02
     </text>
   </g>
   
