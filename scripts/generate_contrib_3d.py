@@ -9,6 +9,8 @@ import sys
 import json
 import urllib.request
 import subprocess
+from datetime import date
+from calendar import month_abbr
 
 def fetch_contributions(username="ayonm95"):
     query = """
@@ -54,9 +56,29 @@ def fetch_contributions(username="ayonm95"):
 
 def generate_svg(cal):
     all_weeks = cal['weeks']
-    # Keep last 18 weeks (~4 months: 126 days)
+    # Keep the latest four months, then start the scene at the first real
+    # contribution week so an inactive July does not create an empty facade.
     weeks = all_weeks[-18:]
-    total_commits_4m = sum(d['contributionCount'] for w in weeks for d in w['contributionDays'])
+    today_str = date.today().isoformat()
+    active_week = next(
+        (idx for idx, week in enumerate(weeks)
+         if any(day['date'] <= today_str and day.get('contributionCount', 0) > 0
+                for day in week['contributionDays'])),
+        0,
+    )
+    weeks = weeks[active_week:]
+    total_commits_4m = sum(
+        d['contributionCount']
+        for w in weeks
+        for d in w['contributionDays']
+        if d['date'] <= today_str
+    )
+    active_days = sum(
+        d['contributionCount'] > 0
+        for w in weeks
+        for d in w['contributionDays']
+        if d['date'] <= today_str
+    )
 
     # Canvas Dimensions
     WIDTH = 800
@@ -111,13 +133,15 @@ def generate_svg(cal):
                 'stroke': '#7ee787', 'glow': True, 'spire': True
             }
 
-    # Month milestones across the 18 weeks (Jul, Aug, Sep, Oct)
-    clean_months = [
-        ("Jul", 2.0),
-        ("Aug", 6.5),
-        ("Sep", 11.0),
-        ("Oct", 15.5),
-    ]
+    # Put month labels where each month actually begins in the visible data.
+    clean_months = []
+    seen_months = set()
+    for w_idx, week in enumerate(weeks):
+        for day in week['contributionDays']:
+            month_key = day['date'][:7]
+            if month_key not in seen_months and day['date'] <= today_str:
+                seen_months.add(month_key)
+                clean_months.append((month_abbr[int(month_key[5:])], w_idx))
 
     month_svg_parts = []
     for m_name, w_pos in clean_months:
@@ -148,7 +172,14 @@ def generate_svg(cal):
   <polygon points="{p0D[0]:.1f},{p0D[1]+thick+8:.1f} {pWD[0]:.1f},{pWD[1]+thick+8:.1f} {pWD[0]+16:.1f},{pWD[1]+thick+2:.1f} {p0D[0]-16:.1f},{p0D[1]+thick+2:.1f}" fill="#000000" opacity="0.45" filter="url(#shadowBlur)" />
 
   <!-- Pedestal Base Top Surface (Light-tinted architectural granite/slate) -->
-  <polygon points="{p00[0]:.1f},{p00[1]:.1f} {pW0[0]:.1f},{pW0[1]:.1f} {pWD[0]:.1f},{pWD[1]:.1f} {p0D[0]:.1f},{p0D[1]:.1f}" fill="#151b24" stroke="rgba(240, 246, 252, 0.3)" stroke-width="1.2" />
+  <polygon points="{p00[0]:.1f},{p00[1]:.1f} {pW0[0]:.1f},{pW0[1]:.1f} {pWD[0]:.1f},{pWD[1]:.1f} {p0D[0]:.1f},{p0D[1]:.1f}" fill="url(#groundGrad)" stroke="rgba(240, 246, 252, 0.3)" stroke-width="1.2" />
+
+  <!-- Ground plane: isometric streets and parcel seams -->
+  <g opacity="0.34" stroke="#7ee787" stroke-width="0.45">
+    {''.join(f'<line x1="{proj(w, 0)[0]:.1f}" y1="{proj(w, 0)[1]:.1f}" x2="{proj(w, 7)[0]:.1f}" y2="{proj(w, 7)[1]:.1f}" />' for w in range(num_weeks + 1))}
+    {''.join(f'<line x1="{proj(0, d)[0]:.1f}" y1="{proj(0, d)[1]:.1f}" x2="{proj(num_weeks, d)[0]:.1f}" y2="{proj(num_weeks, d)[1]:.1f}" />' for d in range(8))}
+  </g>
+  <polyline points="{proj(0, 3.5)[0]:.1f},{proj(0, 3.5)[1]:.1f} {proj(num_weeks, 3.5)[0]:.1f},{proj(num_weeks, 3.5)[1]:.1f}" fill="none" stroke="#39d353" stroke-width="1.4" stroke-dasharray="3,4" opacity="0.42" />
 
   <!-- Illuminated Light-Colored Bevel Rim (Subtle Silver/Platinum Accent) -->
   <polyline points="{p00[0]:.1f},{p00[1]:.1f} {p0D[0]:.1f},{p0D[1]:.1f} {pWD[0]:.1f},{pWD[1]:.1f}" fill="none" stroke="rgba(240, 246, 252, 0.55)" stroke-width="1.2" />
@@ -179,6 +210,8 @@ def generate_svg(cal):
                 'depth': w * 2.0 + d * 1.0
             }
             items.append(item)
+            if c_date > today_str:
+                continue
             if c_count > max_count:
                 max_count = c_count
                 peak_item = item
@@ -216,11 +249,11 @@ def generate_svg(cal):
             pts_right = f"{p_c[0]:.1f},{p_c[1]:.1f} {p_b[0]:.1f},{p_b[1]:.1f} {t_b[0]:.1f},{t_b[1]:.1f} {t_c[0]:.1f},{t_c[1]:.1f}"
             pts_top = f"{t_a[0]:.1f},{t_a[1]:.1f} {t_b[0]:.1f},{t_b[1]:.1f} {t_c[0]:.1f},{t_c[1]:.1f} {t_d[0]:.1f},{t_d[1]:.1f}"
             
-            # Floor bands (story division lines)
+            # Floor bands and inset window bays turn each stack into a building.
             floor_lines = []
+            windows = []
             for s in range(1, stories):
                 frac = s / stories
-                fy_base = p_d[1] * (1 - frac) + t_d[1] * frac
                 # Front wall floor band
                 f1_x = p_d[0]
                 f1_y = p_d[1] - h * frac
@@ -231,6 +264,14 @@ def generate_svg(cal):
                 f3_x = p_b[0]
                 f3_y = p_b[1] - h * frac
                 floor_lines.append(f'<line x1="{f2_x:.1f}" y1="{f2_y:.1f}" x2="{f3_x:.1f}" y2="{f3_y:.1f}" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />')
+                if stories >= 4:
+                    bay = 0.22
+                    y0 = p_d[1] - h * (frac - 0.72 / stories)
+                    y1 = p_d[1] - h * (frac - 0.18 / stories)
+                    for u in (0.18, 0.58):
+                        x0 = p_d[0] + u * (p_c[0] - p_d[0])
+                        x1 = p_d[0] + (u + bay) * (p_c[0] - p_d[0])
+                        windows.append(f'<polygon points="{x0:.1f},{y0:.1f} {x1:.1f},{y0:.1f} {x1:.1f},{y1:.1f} {x0:.1f},{y1:.1f}" fill="#b9ffd0" opacity="0.28" />')
 
             # Vertical window mullions for taller towers (stories >= 4)
             mullions = []
@@ -269,6 +310,7 @@ def generate_svg(cal):
   <polygon points="{pts_front}" fill="{info['front']}" stroke="{info['stroke']}" stroke-width="0.6" />
   <!-- Architectural Facade Grid (Stories & Windows) -->
   {floors_str}{mullions_str}
+  {"".join(windows)}
   <!-- Rooftop Parapet Surface -->
   <polygon points="{pts_top}" fill="{info['top']}" stroke="{info['stroke']}" stroke-width="0.8" />
   <!-- Inset Roof Terrace / Crown -->
@@ -296,8 +338,16 @@ def generate_svg(cal):
     <text x="0" y="-20" fill="#7ee787" font-size="9" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',monospace" font-weight="700" text-anchor="middle">Peak: {peak_item['count']} commits</text>
   </g>'''
 
-    start_date_str = weeks[0]['contributionDays'][0]['date']
-    end_date_str = weeks[-1]['contributionDays'][-1]['date']
+    visible_dates = [
+        d['date'] for w in weeks for d in w['contributionDays']
+        if d['date'] <= today_str
+    ]
+    start_date_str = next(
+        (d['date'] for w in weeks for d in w['contributionDays']
+         if d['date'] <= today_str and d.get('contributionCount', 0) > 0),
+        visible_dates[0],
+    )
+    end_date_str = visible_dates[-1]
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" width="{WIDTH}" height="{HEIGHT}">
   <defs>
@@ -316,22 +366,42 @@ def generate_svg(cal):
     <filter id="shadowBlur" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="6" />
     </filter>
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b2b2b" />
+      <stop offset="55%" stop-color="#101c22" />
+      <stop offset="100%" stop-color="#0a1118" />
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3c31" />
+      <stop offset="100%" stop-color="#0b1715" />
+    </linearGradient>
   </defs>
 
   <!-- Background Canvas -->
   <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="12" fill="url(#bgGrad)" stroke="#30363d" stroke-width="1" />
+  <path d="M0 42 H800" stroke="#39d353" stroke-width="1" opacity="0.18" />
 
   <!-- Top Navigation Header -->
   <g transform="translate(20, 16)">
     <circle cx="6" cy="6" r="4" fill="#ff5f56" />
     <circle cx="20" cy="6" r="4" fill="#ffbd2e" />
     <circle cx="34" cy="6" r="4" fill="#27c93f" />
-    <text x="50" y="9.5" fill="#f0f6fc" font-size="12" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="600">ayonm95 <tspan fill="#8b949e">/ 3D Architectural Topography</tspan></text>
+    <text x="50" y="9.5" fill="#f0f6fc" font-size="12" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="600">ayonm95 <tspan fill="#8b949e">/ Activity Skyline</tspan></text>
     
     <!-- Timeframe Pill -->
     <rect x="{WIDTH-230}" y="-3" width="190" height="20" rx="10" fill="#161b22" stroke="rgba(240, 246, 252, 0.25)" stroke-width="1" />
     <circle cx="{WIDTH-218}" cy="7" r="3" fill="#39d353" />
     <text x="{WIDTH-208}" y="10.5" fill="#e6edf3" font-size="10" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 4 Months ({total_commits_4m} Commits)</text>
+  </g>
+  <g transform="translate(20, 52)">
+    <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
+    <text x="10" y="9" fill="#7ee787" font-size="7" font-family="monospace" letter-spacing="1">ACTIVE DAYS</text>
+    <text x="10" y="18" fill="#f0f6fc" font-size="9" font-family="monospace" font-weight="700">{active_days}</text>
+  </g>
+  <g transform="translate(144, 52)">
+    <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
+    <text x="10" y="9" fill="#7ee787" font-size="7" font-family="monospace" letter-spacing="1">CITY BLOCKS</text>
+    <text x="10" y="18" fill="#f0f6fc" font-size="9" font-family="monospace" font-weight="700">{len(weeks) * 7}</text>
   </g>
 
   <!-- Divider Line -->
@@ -376,7 +446,7 @@ def main():
     username = os.environ.get("GITHUB_REPOSITORY_OWNER") or os.environ.get("USERNAME") or "ayonm95"
     print(f"Fetching GitHub contributions for {username}...")
     cal = fetch_contributions(username)
-    svg = generate_svg(cal)
+    svg = "\n".join(line.rstrip() for line in generate_svg(cal).splitlines()) + "\n"
 
     # Save to contrib-3d.svg and profile-3d-contrib/profile-night-green.svg and profile-green.svg
     os.makedirs("profile-3d-contrib", exist_ok=True)
