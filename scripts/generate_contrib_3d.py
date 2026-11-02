@@ -9,6 +9,7 @@ import sys
 import json
 import urllib.request
 import subprocess
+import re
 from datetime import date
 from calendar import month_abbr
 
@@ -442,11 +443,19 @@ def generate_svg(cal):
   </g>
 </svg>'''
 
+def sanitize_svg(svg):
+    return re.sub(
+        r'rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*[\d.]+\s*\)',
+        r'rgb(\1,\2,\3)',
+        svg,
+    )
+
 def main():
     username = os.environ.get("GITHUB_REPOSITORY_OWNER") or os.environ.get("USERNAME") or "ayonm95"
     print(f"Fetching GitHub contributions for {username}...")
     cal = fetch_contributions(username)
-    svg = "\n".join(line.rstrip() for line in generate_svg(cal).splitlines()) + "\n"
+    svg = sanitize_svg(generate_svg(cal))
+    svg = "\n".join(line.rstrip() for line in svg.splitlines()) + "\n"
 
     # Save the versioned profile asset under a new name to avoid stale README image caches.
     os.makedirs("profile-3d-contrib", exist_ok=True)
