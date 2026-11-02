@@ -45,7 +45,7 @@
   <g transform="translate(20, 52)">
     <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
     <text x="10" y="9" fill="#7ee787" font-size="8" font-family="monospace" letter-spacing="1">ACTIVE DAYS</text>
-    <text x="10" y="19" fill="#f0f6fc" font-size="10" font-family="monospace" font-weight="700">21</text>
+    <text x="10" y="19" fill="#f0f6fc" font-size="10" font-family="monospace" font-weight="700">22</text>
   </g>
   <g transform="translate(144, 52)">
     <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
@@ -149,7 +149,21 @@
 <polygon points="230.5,128.0 246.2,133.5 234.5,142.5 218.8,137.0" fill="#161c24" stroke="rgb(240,246,252)" stroke-width="0.65" />
 <polygon points="115.5,171.5 131.2,177.0 119.5,186.0 103.8,180.5" fill="#161c24" stroke="rgb(240,246,252)" stroke-width="0.65" />
 <polygon points="165.5,155.5 181.2,161.0 169.5,170.0 153.8,164.5" fill="#161c24" stroke="rgb(240,246,252)" stroke-width="0.65" />
-<polygon points="215.5,139.5 231.2,145.0 219.5,154.0 203.8,148.5" fill="#161c24" stroke="rgb(240,246,252)" stroke-width="0.65" />
+<g >
+  <!-- Right Shadow Wall -->
+  <polygon points="219.5,154.0 231.2,145.0 231.2,127.0 219.5,136.0" fill="#173926" stroke="#388e5a" stroke-width="0.6" />
+  <!-- Front Sunlit Wall -->
+  <polygon points="203.8,148.5 219.5,154.0 219.5,136.0 203.8,130.5" fill="#1f4831" stroke="#388e5a" stroke-width="0.6" />
+  <!-- Architectural Facade Grid (Stories & Windows) -->
+  <line x1="203.8" y1="139.5" x2="219.5" y2="145.0" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="219.5" y1="145.0" x2="231.2" y2="136.0" stroke="rgb(255,255,255)" stroke-width="0.5" />
+
+  <!-- Rooftop Parapet Surface -->
+  <polygon points="215.5,121.5 231.2,127.0 219.5,136.0 203.8,130.5" fill="#2b5c40" stroke="#388e5a" stroke-width="0.8" />
+  <!-- Inset Roof Terrace / Crown -->
+  <polygon points="216.3,124.4 225.7,127.7 218.7,133.1 209.3,129.8" fill="#1f4831" stroke="rgb(255,255,255)" stroke-width="0.5" opacity="0.9" />
+
+</g>
 <polygon points="100.5,183.0 116.2,188.5 104.5,197.5 88.8,192.0" fill="#161c24" stroke="rgb(240,246,252)" stroke-width="0.65" />
 <polygon points="150.5,167.0 166.2,172.5 154.5,181.5 138.8,176.0" fill="#161c24" stroke="rgb(240,246,252)" stroke-width="0.65" />
 <g filter="url(#greenGlow)" >
