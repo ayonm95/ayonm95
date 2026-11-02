@@ -444,11 +444,11 @@ def generate_svg(cal):
 </svg>'''
 
 def sanitize_svg(svg):
-return re.sub(
-    r'rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*[\d.]+\s*\)',
-    r'rgb(\1,\2,\3)',
-    svg,
-)
+    return re.sub(
+        r'rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*[\d.]+\s*\)',
+        r'rgb(\1,\2,\3)',
+        svg,
+    )
 
 def main():
     username = os.environ.get("GITHUB_REPOSITORY_OWNER") or os.environ.get("USERNAME") or "ayonm95"
