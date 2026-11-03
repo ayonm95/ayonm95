@@ -40,12 +40,12 @@
     <!-- Timeframe Pill -->
     <rect x="450" y="-3" width="190" height="20" rx="10" fill="#161b22" stroke="rgb(240,246,252)" stroke-width="1" />
     <circle cx="462" cy="7" r="3" fill="#39d353" />
-    <text x="472" y="11.5" fill="#e6edf3" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 4 Months (192 Commits)</text>
+    <text x="472" y="11.5" fill="#e6edf3" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="600">Past 4 Months (207 Commits)</text>
   </g>
   <g transform="translate(20, 52)">
     <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
     <text x="10" y="9" fill="#7ee787" font-size="8" font-family="monospace" letter-spacing="1">ACTIVE DAYS</text>
-    <text x="10" y="19" fill="#f0f6fc" font-size="10" font-family="monospace" font-weight="700">22</text>
+    <text x="10" y="19" fill="#f0f6fc" font-size="10" font-family="monospace" font-weight="700">23</text>
   </g>
   <g transform="translate(144, 52)">
     <rect x="0" y="0" width="116" height="22" rx="6" fill="url(#panelGrad)" stroke="#214b36" />
@@ -574,6 +574,31 @@
 </g>
 <polygon points="260.5,239.0 276.1,244.5 264.5,253.5 248.8,248.0" fill="#161c24" stroke="rgb(240,246,252)" stroke-width="0.65" />
 <polygon points="310.5,223.0 326.1,228.5 314.5,237.5 298.9,232.0" fill="#161c24" stroke="rgb(240,246,252)" stroke-width="0.65" />
+<g filter="url(#greenGlow)" >
+  <!-- Right Shadow Wall -->
+  <polygon points="364.4,221.5 376.2,212.5 376.2,158.5 364.4,167.5" fill="#146427" stroke="#56ff74" stroke-width="0.6" />
+  <!-- Front Sunlit Wall -->
+  <polygon points="348.8,216.0 364.4,221.5 364.4,167.5 348.8,162.0" fill="#1a7e32" stroke="#56ff74" stroke-width="0.6" />
+  <!-- Architectural Facade Grid (Stories & Windows) -->
+  <line x1="348.8" y1="207.0" x2="364.4" y2="212.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="364.4" y1="212.5" x2="376.2" y2="203.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="348.8" y1="198.0" x2="364.4" y2="203.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="364.4" y1="203.5" x2="376.2" y2="194.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="348.8" y1="189.0" x2="364.4" y2="194.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="364.4" y1="194.5" x2="376.2" y2="185.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="348.8" y1="180.0" x2="364.4" y2="185.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="364.4" y1="185.5" x2="376.2" y2="176.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="348.8" y1="171.0" x2="364.4" y2="176.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="364.4" y1="176.5" x2="376.2" y2="167.5" stroke="rgb(255,255,255)" stroke-width="0.5" />
+  <line x1="354.0" y1="217.8" x2="354.0" y2="163.8" stroke="rgb(255,255,255)" stroke-width="0.4" stroke-dasharray="1,2" />
+  <line x1="359.3" y1="219.7" x2="359.3" y2="165.7" stroke="rgb(255,255,255)" stroke-width="0.4" stroke-dasharray="1,2" />
+  <polygon points="351.7,213.5 355.1,213.5 355.1,208.6 351.7,208.6" fill="#b9ffd0" opacity="0.28" /><polygon points="357.9,213.5 361.3,213.5 361.3,208.6 357.9,208.6" fill="#b9ffd0" opacity="0.28" /><polygon points="351.7,204.5 355.1,204.5 355.1,199.6 351.7,199.6" fill="#b9ffd0" opacity="0.28" /><polygon points="357.9,204.5 361.3,204.5 361.3,199.6 357.9,199.6" fill="#b9ffd0" opacity="0.28" /><polygon points="351.7,195.5 355.1,195.5 355.1,190.6 351.7,190.6" fill="#b9ffd0" opacity="0.28" /><polygon points="357.9,195.5 361.3,195.5 361.3,190.6 357.9,190.6" fill="#b9ffd0" opacity="0.28" /><polygon points="351.7,186.5 355.1,186.5 355.1,181.6 351.7,181.6" fill="#b9ffd0" opacity="0.28" /><polygon points="357.9,186.5 361.3,186.5 361.3,181.6 357.9,181.6" fill="#b9ffd0" opacity="0.28" /><polygon points="351.7,177.5 355.1,177.5 355.1,172.6 351.7,172.6" fill="#b9ffd0" opacity="0.28" /><polygon points="357.9,177.5 361.3,177.5 361.3,172.6 357.9,172.6" fill="#b9ffd0" opacity="0.28" />
+  <!-- Rooftop Parapet Surface -->
+  <polygon points="360.6,153.0 376.2,158.5 364.4,167.5 348.8,162.0" fill="#26a641" stroke="#56ff74" stroke-width="0.8" />
+  <!-- Inset Roof Terrace / Crown -->
+  <polygon points="361.3,155.9 370.7,159.2 363.7,164.6 354.3,161.3" fill="#1a7e32" stroke="rgb(255,255,255)" stroke-width="0.5" opacity="0.9" />
+
+</g>
 <g >
   <!-- Right Shadow Wall -->
   <polygon points="299.5,249.0 311.1,240.0 311.1,222.0 299.5,231.0" fill="#173926" stroke="#388e5a" stroke-width="0.6" />
@@ -628,7 +653,7 @@
     <line x1="0" y1="0" x2="0" y2="-16" stroke="#56ff74" stroke-width="1.2" stroke-dasharray="2,2" />
     <circle cx="0" cy="0" r="3" fill="#ffffff" stroke="#39d353" stroke-width="1.2" />
     <rect x="-46" y="-32" width="92" height="18" rx="4" fill="#141c24" stroke="#56ff74" stroke-width="1" />
-    <text x="0" y="-20" fill="#7ee787" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="700" text-anchor="middle">Peak: 31 commits</text>
+    <text x="0" y="-20" fill="#7ee787" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="700" text-anchor="middle">Peak: 32 commits</text>
   </g>
 
   <!-- Bottom Proof-of-Work Footer & Intensity Legend -->
@@ -636,7 +661,7 @@
 
   <g transform="translate(20, 406)">
     <text x="0" y="0" fill="#8b949e" font-size="13" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">192 contributions</tspan> from 2026-08-23 to 2026-11-02
+      <tspan fill="#39d353" font-weight="700">207 contributions</tspan> from 2026-08-23 to 2026-11-03
     </text>
   </g>
 
