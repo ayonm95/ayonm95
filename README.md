@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/terminal.svg" alt="Ayon Moitra — Creative Backend & Web3 Cockpit" width="800" height="470"/>
+<img src="https://raw.githubusercontent.com/ayonm95/ayonm95/main/terminal.svg?v=2" alt="Ayon Moitra — Creative Backend & Web3 Cockpit" width="800" height="470"/>
 
 <br/>
 
