@@ -1130,6 +1130,11 @@
   <circle cx="654.5" cy="495.0" r="3.2" fill="#0284c7" opacity="0.6" />
   <circle cx="654.5" cy="495.0" r="1.5" fill="#38bdf8" opacity="0.9" filter="url(#edgeGlow)" />
 </g>
+<g>
+  <polygon points="613.6,504.2 652.6,515.1 625.4,533.8 586.4,522.9" fill="#0e161f" stroke="#2ea043" stroke-opacity="0.28" stroke-width="0.75" />
+  <polygon points="615.3,508.3 643.4,516.2 623.7,529.7 595.6,521.8" fill="#12261c" stroke="#1f4e34" stroke-width="0.6" />
+  <circle cx="619.5" cy="519.0" r="2.8" fill="#2ea043" opacity="0.8" />
+</g>
 
   <!-- Peak Tower Callout -->
 
@@ -1147,7 +1152,7 @@
 
   <g transform="translate(24, 626)">
     <text x="0" y="0" fill="#94a3b8" font-size="13" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">119 contributions</tspan> recorded from <tspan fill="#f8fafc">2026-09-08</tspan> to <tspan fill="#f8fafc">2026-11-13</tspan>
+      <tspan fill="#39d353" font-weight="700">119 contributions</tspan> recorded from <tspan fill="#f8fafc">2026-09-08</tspan> to <tspan fill="#f8fafc">2026-11-14</tspan>
     </text>
   </g>
 
