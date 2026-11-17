@@ -19,8 +19,8 @@
   - Multi-tier geological bedrock mesa/plateau with neon-edge contours.
   - Dynamic architectural skyscrapers with story heights, lighted window bays, mullions, and rooftop terraces.
   - Stepped contribution quartile color gradient and beacon spire callout for peak commit days.
-  - Automated daily GitHub Actions scheduler (`.github/workflows/profile-3d.yml`).
-  - Active timeframe window (`2026-09-08` to `2026-11-07`) recording 117 contributions.
+  - Automated daily GitHub Actions scheduler (`.github/workflows/profile-3d.yml`) running daily at EOD (18:29 UTC / 11:59 PM IST) + on push + manual dispatch.
+  - Active timeframe window (`2026-09-08` to `2026-11-17`) recording 119 contributions with 28 peak commits.
 - [x] **Profile Showcase & Featured Repositories**:
   - Integrated PharmaTree, Sonder, QuizGenius, Nightowler, Student ERP, and FitMe.
   - Added Nightowler macOS background clamshell guardian with custom SVG badge.
