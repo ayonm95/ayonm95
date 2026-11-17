@@ -15,12 +15,12 @@
   - Multi-tab project status cards: PharmaTree, Sonder Merkle GAAP, QuizGenius, FitMe.
   - Camo CDN cache-busting implementation.
 - [x] **Realistic 3D Architectural Micro-Cityscape & Landscape (`activity-skyline.svg`)**:
-  - Alpine faceted low-poly mountain horizon with moonlight gradients and snowcaps.
+  - Chromatic architectural skyscrapers categorized into multi-tier color spectrum: **Emerald** (1-3 commits), **Electric Cyan** (4-8 commits), **Ultraviolet / Neon Violet** (9-15 commits), and **Solar Gold** (16+ peak commits).
+  - Alpine faceted low-poly mountain horizon with moonlight gradients, celestial aurora curtains, and snowcaps.
   - Multi-tier geological bedrock mesa/plateau with neon-edge contours.
-  - Dynamic architectural skyscrapers with story heights, lighted window bays, mullions, and rooftop terraces.
-  - Stepped contribution quartile color gradient and beacon spire callout for peak commit days.
+  - Stepped chromatic contribution legend and beacon spire callout in solar gold for peak commit days.
   - Automated daily GitHub Actions scheduler (`.github/workflows/profile-3d.yml`) running daily at EOD (18:29 UTC / 11:59 PM IST) + on push + manual dispatch.
-  - Active timeframe window (`2026-09-08` to `2026-11-17`) recording 119 contributions with 28 peak commits.
+  - Active timeframe window (`2026-09-08` to `2026-11-17`) recording 120 contributions with 28 peak commits.
 - [x] **Profile Showcase & Featured Repositories**:
   - Integrated PharmaTree, Sonder, QuizGenius, Nightowler, Student ERP, and FitMe.
   - Added Nightowler macOS background clamshell guardian with custom SVG badge.

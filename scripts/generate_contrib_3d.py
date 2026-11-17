@@ -289,10 +289,10 @@ def generate_svg(cal):
         p_end = proj(num_weeks, d, 0)
         grid_lines.append(f'<line x1="{p_start[0]:.1f}" y1="{p_start[1]:.1f}" x2="{p_end[0]:.1f}" y2="{p_end[1]:.1f}" stroke="#233547" stroke-width="0.9" opacity="0.65" />')
 
-    # Grand Avenue Centerline (dashed neon-green lane marking)
+    # Grand Avenue Centerline (dashed luminous cyan lane marking)
     blvd_start = proj(0, 3.5, 0)
     blvd_end = proj(num_weeks, 3.5, 0)
-    grid_lines.append(f'<polyline points="{blvd_start[0]:.1f},{blvd_start[1]:.1f} {blvd_end[0]:.1f},{blvd_end[1]:.1f}" fill="none" stroke="#39d353" stroke-width="1.8" stroke-dasharray="5,6" opacity="0.55" />')
+    grid_lines.append(f'<polyline points="{blvd_start[0]:.1f},{blvd_start[1]:.1f} {blvd_end[0]:.1f},{blvd_end[1]:.1f}" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6,6" opacity="0.65" />')
 
     # ─────────────────────────────────────────────────────────────
     # 3. ARCHITECTURAL BUILDING SPECIFICATIONS
@@ -301,32 +301,40 @@ def generate_svg(cal):
         if count == 0:
             return {
                 'level': 0, 'h': 0, 'type': 'park',
-                'fill': '#0e161f', 'stroke': '#2ea043', 'stroke_opacity': '0.28',
+                'fill': '#0d1520', 'stroke': '#38bdf8', 'stroke_opacity': '0.25',
                 'glow': False, 'spire': False
             }
         elif count <= 3:
+            # Tier 1: Emerald & Jade Townhouses (1-3 commits)
             return {
-                'level': 1, 'h': 34, 'type': 'townhouse', 'stories': 3,
-                'top': '#24593c', 'front': '#18422a', 'right': '#123321',
-                'stroke': '#2ea043', 'glow': False, 'spire': False
+                'level': 1, 'h': 36, 'type': 'townhouse', 'stories': 3,
+                'top': '#059669', 'front': '#047857', 'right': '#065f46',
+                'stroke': '#34d399', 'glow': False, 'spire': False,
+                'win_fill': '#a7f3d0', 'glow_filter': 'url(#greenGlow)'
             }
         elif count <= 8:
+            # Tier 2: Electric Cyan & Azure Highrises (4-8 commits)
             return {
-                'level': 2, 'h': 72, 'type': 'commercial', 'stories': 6,
-                'top': '#1e7b44', 'front': '#145f34', 'right': '#0f4c29',
-                'stroke': '#3fb950', 'glow': False, 'spire': False
+                'level': 2, 'h': 76, 'type': 'commercial', 'stories': 6,
+                'top': '#0284c7', 'front': '#0369a1', 'right': '#075985',
+                'stroke': '#38bdf8', 'glow': True, 'spire': False,
+                'win_fill': '#bae6fd', 'glow_filter': 'url(#cyanGlow)'
             }
         elif count <= 15:
+            # Tier 3: Ultraviolet & Neon Purple Crystal Spires (9-15 commits)
             return {
-                'level': 3, 'h': 118, 'type': 'skyscraper', 'stories': 9,
-                'top': '#26a641', 'front': '#1a8234', 'right': '#136728',
-                'stroke': '#56ff74', 'glow': True, 'spire': False
+                'level': 3, 'h': 122, 'type': 'skyscraper', 'stories': 9,
+                'top': '#7c3aed', 'front': '#6d28d9', 'right': '#5b21b6',
+                'stroke': '#c084fc', 'glow': True, 'spire': False,
+                'win_fill': '#f3e8ff', 'glow_filter': 'url(#violetGlow)'
             }
         else:
+            # Tier 4: Solar Gold & Sunset Amber Mega-Towers (16+ commits)
             return {
-                'level': 4, 'h': 170, 'type': 'supertall', 'stories': 13,
-                'top': '#39d353', 'front': '#24a63f', 'right': '#1b8131',
-                'stroke': '#7ee787', 'glow': True, 'spire': True
+                'level': 4, 'h': 176, 'type': 'supertall', 'stories': 13,
+                'top': '#f59e0b', 'front': '#d97706', 'right': '#b45309',
+                'stroke': '#fde047', 'glow': True, 'spire': True,
+                'win_fill': '#fef9c3', 'glow_filter': 'url(#amberGlow)'
             }
 
     # Painter's Algorithm Depth Sorting
@@ -421,7 +429,8 @@ def generate_svg(cal):
                     for u in (0.16, 0.58):
                         x0 = p_d[0] + u * (p_c[0] - p_d[0])
                         x1 = p_d[0] + (u + bay_w) * (p_c[0] - p_d[0])
-                        windows.append(f'<polygon points="{x0:.1f},{y_top:.1f} {x1:.1f},{y_top:.1f} {x1:.1f},{y_bot:.1f} {x0:.1f},{y_bot:.1f}" fill="#b9ffd0" opacity="0.38" />')
+                        win_color = spec.get('win_fill', '#ffffff')
+                        windows.append(f'<polygon points="{x0:.1f},{y_top:.1f} {x1:.1f},{y_top:.1f} {x1:.1f},{y_bot:.1f} {x0:.1f},{y_bot:.1f}" fill="{win_color}" opacity="0.55" />')
 
             mullions = []
             if stories >= 4:
@@ -444,12 +453,13 @@ def generate_svg(cal):
   <!-- Architectural Spire Antenna & Beacon Light -->
   <line x1="{cx:.1f}" y1="{cy:.1f}" x2="{cx:.1f}" y2="{cy-24:.1f}" stroke="#ffffff" stroke-width="1.6" />
   <circle cx="{cx:.1f}" cy="{cy-24:.1f}" r="3.5" fill="#ffffff" filter="url(#beaconGlow)" />
-  <circle cx="{cx:.1f}" cy="{cy-24:.1f}" r="1.8" fill="#56ff74" />
+  <circle cx="{cx:.1f}" cy="{cy-24:.1f}" r="2.0" fill="#fde047" />
 '''
 
             floors_str = "\n  ".join(floor_bands)
             mullions_str = ("\n  " + "\n  ".join(mullions)) if mullions else ""
-            glow_attr = 'filter="url(#greenGlow)" ' if spec['glow'] else ''
+            glow_filter = spec.get('glow_filter', 'url(#greenGlow)')
+            glow_attr = f'filter="{glow_filter}" ' if spec['glow'] else ''
 
             building_str = f'''<g {glow_attr}>
   <!-- Right Shadow Facade -->
@@ -505,13 +515,13 @@ def generate_svg(cal):
         ph = peak_item['spec']['h']
         pt_x, pt_y = proj(pw + 0.5, pd + 0.5, h=ph + 22)
         peak_callout = f'''
-  <!-- Peak Skyscraper Callout -->
+  <!-- Peak Skyscraper Callout (Solar Gold Spectrum) -->
   <g transform="translate({pt_x:.1f}, {pt_y:.1f})">
-    <line x1="0" y1="0" x2="0" y2="-24" stroke="#56ff74" stroke-width="1.5" stroke-dasharray="3,3" />
-    <circle cx="0" cy="0" r="4" fill="#ffffff" stroke="#39d353" stroke-width="1.8" />
-    <rect x="-65" y="-48" width="130" height="24" rx="7" fill="#0d141c" stroke="#56ff74" stroke-width="1.3" filter="url(#edgeGlow)" />
-    <circle cx="-52" cy="-36" r="3.5" fill="#39d353" />
-    <text x="7" y="-32" fill="#7ee787" font-size="11" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',monospace" font-weight="700" text-anchor="middle">PEAK: {peak_item['count']} COMMITS</text>
+    <line x1="0" y1="0" x2="0" y2="-24" stroke="#fde047" stroke-width="1.6" stroke-dasharray="3,3" />
+    <circle cx="0" cy="0" r="4" fill="#ffffff" stroke="#f59e0b" stroke-width="1.8" />
+    <rect x="-65" y="-48" width="130" height="24" rx="7" fill="#130e06" stroke="#fbbf24" stroke-width="1.3" filter="url(#amberGlow)" />
+    <circle cx="-52" cy="-36" r="3.5" fill="#f59e0b" />
+    <text x="7" y="-32" fill="#fef08a" font-size="11" font-family="-apple-system,BlinkMacSystemFont,\'Segoe UI\',monospace" font-weight="700" text-anchor="middle">PEAK: {peak_item['count']} COMMITS</text>
   </g>'''
 
     visible_dates = [
@@ -535,12 +545,21 @@ def generate_svg(cal):
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {WIDTH} {HEIGHT}" width="100%" height="auto">
   <defs>
-    <!-- Background Canvas Twilight Gradient -->
+    <!-- Background Canvas Twilight Gradient with Cosmic Violet Horizon -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#070c14" />
-      <stop offset="35%" stop-color="#0a121e" />
-      <stop offset="70%" stop-color="#0d1828" />
-      <stop offset="100%" stop-color="#070b12" />
+      <stop offset="0%" stop-color="#060913" />
+      <stop offset="30%" stop-color="#0c1124" />
+      <stop offset="65%" stop-color="#141738" />
+      <stop offset="85%" stop-color="#0e1329" />
+      <stop offset="100%" stop-color="#070a14" />
+    </linearGradient>
+
+    <!-- Celestial Aurora Borealis Curtains -->
+    <linearGradient id="auroraGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.22" />
+      <stop offset="40%" stop-color="#818cf8" stop-opacity="0.30" />
+      <stop offset="75%" stop-color="#c084fc" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.10" />
     </linearGradient>
 
     <!-- Mountain Gradients -->
@@ -584,9 +603,21 @@ def generate_svg(cal):
       <stop offset="100%" stop-color="#7ee787" />
     </linearGradient>
 
-    <!-- Filters & Glows -->
-    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+    <!-- Multi-Chromatic Ambient & Neon Filters -->
+    <filter id="greenGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4.0" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="cyanGlow" x="-25%" y="-25%" width="150%" height="150%">
       <feGaussianBlur stdDeviation="4.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="violetGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="5.0" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="amberGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="5.5" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
     <filter id="edgeGlow" x="-20%" y="-20%" width="140%" height="140%">
@@ -594,7 +625,7 @@ def generate_svg(cal):
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
     <filter id="beaconGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feGaussianBlur stdDeviation="4.0" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
     <filter id="shadowBlurLarge" x="-20%" y="-20%" width="140%" height="140%">
@@ -604,6 +635,9 @@ def generate_svg(cal):
 
   <!-- Background Canvas -->
   <rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="14" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.2" />
+
+  <!-- Aurora Borealis Atmosphere -->
+  <path d="M 0,90 Q 240,40 490,95 T 980,60 L 980,180 Q 720,220 480,170 T 0,160 Z" fill="url(#auroraGrad1)" filter="url(#shadowBlurLarge)" opacity="0.8" />
 
   <!-- Stars in Upper Night Sky -->
   <g opacity="0.65">
@@ -702,18 +736,23 @@ def generate_svg(cal):
     </text>
   </g>
 
-  <!-- Stepped Architectural Legend -->
-  <g transform="translate({WIDTH-350}, {HEIGHT-24})">
-    <text x="-12" y="0" fill="#64748b" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" text-anchor="end">Less</text>
+  <!-- Stepped Chromatic Architectural Legend -->
+  <g transform="translate({WIDTH-360}, {HEIGHT-24})">
+    <text x="-10" y="0" fill="#64748b" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" text-anchor="end">Less</text>
     
-    <rect x="0" y="-10" width="14" height="14" rx="2" fill="#0e161f" stroke="#2ea043" stroke-opacity="0.3" stroke-width="0.8" />
-    <rect x="20" y="-10" width="14" height="14" rx="2" fill="#18422a" stroke="#2ea043" stroke-width="0.8" />
-    <rect x="40" y="-10" width="14" height="14" rx="2" fill="#145f34" stroke="#3fb950" stroke-width="0.8" />
-    <rect x="60" y="-10" width="14" height="14" rx="2" fill="#1a8234" stroke="#56ff74" stroke-width="0.8" />
-    <rect x="80" y="-10" width="14" height="14" rx="2" fill="#24a63f" stroke="#7ee787" stroke-width="0.8" />
+    <!-- Tier 0: Landscaped Park -->
+    <rect x="0" y="-10" width="14" height="14" rx="2" fill="#0d1520" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="0.8" />
+    <!-- Tier 1: Emerald Townhouses (1-3) -->
+    <rect x="18" y="-10" width="14" height="14" rx="2" fill="#059669" stroke="#34d399" stroke-width="0.8" />
+    <!-- Tier 2: Electric Cyan Highrises (4-8) -->
+    <rect x="36" y="-10" width="14" height="14" rx="2" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8" />
+    <!-- Tier 3: Ultraviolet Spires (9-15) -->
+    <rect x="54" y="-10" width="14" height="14" rx="2" fill="#7c3aed" stroke="#c084fc" stroke-width="0.8" />
+    <!-- Tier 4: Solar Gold Supertalls (16+) -->
+    <rect x="72" y="-10" width="14" height="14" rx="2" fill="#f59e0b" stroke="#fde047" stroke-width="0.8" />
     
-    <text x="104" y="0" fill="#64748b" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace">More</text>
-    <text x="155" y="0" fill="#94a3b8" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace">Park · Towers · Spire</text>
+    <text x="96" y="0" fill="#64748b" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace">More</text>
+    <text x="140" y="0" fill="#94a3b8" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace">Parks · Emerald · Cyan · Violet · Gold</text>
   </g>
 </svg>'''
 
