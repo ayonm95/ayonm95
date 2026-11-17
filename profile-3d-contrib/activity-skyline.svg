@@ -1162,19 +1162,19 @@
 </g>
 <g >
   <!-- Right Shadow Facade -->
-  <polygon points="769.4,435.0 794.4,417.8 794.4,383.8 769.4,401.0" fill="#123321" stroke="#2ea043" stroke-width="0.75" />
+  <polygon points="769.4,435.0 794.4,417.8 794.4,381.8 769.4,399.0" fill="#065f46" stroke="#34d399" stroke-width="0.75" />
   <!-- Front Sunlit Facade -->
-  <polygon points="733.3,424.8 769.4,435.0 769.4,401.0 733.3,390.8" fill="#18422a" stroke="#2ea043" stroke-width="0.75" />
+  <polygon points="733.3,424.8 769.4,435.0 769.4,399.0 733.3,388.8" fill="#047857" stroke="#34d399" stroke-width="0.75" />
   <!-- Facade Stories & Windows -->
-  <line x1="733.3" y1="413.5" x2="769.4" y2="423.6" stroke="#ffffff" stroke-opacity="0.22" stroke-width="0.7" />
-  <line x1="769.4" y1="423.6" x2="794.4" y2="406.5" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.6" />
-  <line x1="733.3" y1="402.2" x2="769.4" y2="412.3" stroke="#ffffff" stroke-opacity="0.22" stroke-width="0.7" />
-  <line x1="769.4" y1="412.3" x2="794.4" y2="395.1" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.6" />
+  <line x1="733.3" y1="412.8" x2="769.4" y2="423.0" stroke="#ffffff" stroke-opacity="0.22" stroke-width="0.7" />
+  <line x1="769.4" y1="423.0" x2="794.4" y2="405.8" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.6" />
+  <line x1="733.3" y1="400.8" x2="769.4" y2="411.0" stroke="#ffffff" stroke-opacity="0.22" stroke-width="0.7" />
+  <line x1="769.4" y1="411.0" x2="794.4" y2="393.8" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.6" />
 
   <!-- Rooftop Parapet Surface -->
-  <polygon points="758.2,373.7 794.4,383.8 769.4,401.0 733.3,390.8" fill="#24593c" stroke="#2ea043" stroke-width="1.0" />
+  <polygon points="758.2,371.7 794.4,381.8 769.4,399.0 733.3,388.8" fill="#059669" stroke="#34d399" stroke-width="1.0" />
   <!-- Inset Mechanical Penthouse / Sky Terrace -->
-  <polygon points="760.7,379.7 780.9,385.3 767.0,394.9 746.7,389.3" fill="#18422a" stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.6" opacity="0.95" />
+  <polygon points="760.7,377.7 780.9,383.3 767.0,392.9 746.7,387.3" fill="#047857" stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.6" opacity="0.95" />
 
 </g>
 <g>
