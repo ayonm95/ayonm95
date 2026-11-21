@@ -153,7 +153,7 @@
 
       <rect x="210" y="0" width="180" height="22" rx="11" fill="#0b1c14" stroke="#22c55e" stroke-width="1" />
       <circle cx="222" cy="11" r="3.5" fill="#4ade80" filter="url(#edgeGlow)" />
-      <text x="234" y="15" fill="#4ade80" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="700">122 CONTRIBUTIONS</text>
+      <text x="234" y="15" fill="#4ade80" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',monospace" font-weight="700">124 CONTRIBUTIONS</text>
     </g>
   </g>
 
@@ -164,7 +164,7 @@
   <g transform="translate(24, 68)">
     <rect x="0" y="0" width="135" height="34" rx="7" fill="#0b131f" stroke="#1e2d42" stroke-width="1" />
     <text x="12" y="15" fill="#64748b" font-size="9" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="700" letter-spacing="0.8">ACTIVE DAYS</text>
-    <text x="12" y="28" fill="#f8fafc" font-size="12" font-family="monospace" font-weight="700">18 Days <tspan fill="#39d353">(23%)</tspan></text>
+    <text x="12" y="28" fill="#f8fafc" font-size="12" font-family="monospace" font-weight="700">19 Days <tspan fill="#39d353">(25%)</tspan></text>
   </g>
 
   <g transform="translate(170, 68)">
@@ -1203,10 +1203,30 @@
   <circle cx="699.8" cy="465.3" r="3.2" fill="#0284c7" opacity="0.6" />
   <circle cx="699.8" cy="465.3" r="1.5" fill="#38bdf8" opacity="0.9" filter="url(#edgeGlow)" />
 </g>
+<g >
+  <!-- Right Shadow Facade -->
+  <polygon points="673.4,501.0 698.4,483.8 698.4,447.8 673.4,465.0" fill="#065f46" stroke="#34d399" stroke-width="0.75" />
+  <!-- Front Sunlit Facade -->
+  <polygon points="637.3,490.8 673.4,501.0 673.4,465.0 637.3,454.8" fill="#047857" stroke="#34d399" stroke-width="0.75" />
+  <!-- Facade Stories & Windows -->
+  <line x1="637.3" y1="478.8" x2="673.4" y2="489.0" stroke="#ffffff" stroke-opacity="0.22" stroke-width="0.7" />
+  <line x1="673.4" y1="489.0" x2="698.4" y2="471.8" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.6" />
+  <line x1="637.3" y1="466.8" x2="673.4" y2="477.0" stroke="#ffffff" stroke-opacity="0.22" stroke-width="0.7" />
+  <line x1="673.4" y1="477.0" x2="698.4" y2="459.8" stroke="#ffffff" stroke-opacity="0.12" stroke-width="0.6" />
+
+  <!-- Rooftop Parapet Surface -->
+  <polygon points="662.2,437.7 698.4,447.8 673.4,465.0 637.3,454.8" fill="#059669" stroke="#34d399" stroke-width="1.0" />
+  <!-- Inset Mechanical Penthouse / Sky Terrace -->
+  <polygon points="664.7,443.7 684.9,449.3 671.0,458.9 650.7,453.3" fill="#047857" stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.6" opacity="0.95" />
+
+</g>
 <g>
-  <polygon points="662.2,473.7 698.4,483.8 673.4,501.0 637.3,490.8" fill="#0d1520" stroke="#38bdf8" stroke-opacity="0.28" stroke-width="0.75" />
-  <polygon points="663.8,477.5 689.8,484.8 671.9,497.1 645.8,489.8" fill="#12261c" stroke="#1f4e34" stroke-width="0.6" />
-  <circle cx="667.8" cy="487.3" r="2.8" fill="#2ea043" opacity="0.8" />
+  <polygon points="630.2,495.7 666.4,505.8 641.4,523.0 605.3,512.8" fill="#0d1520" stroke="#38bdf8" stroke-opacity="0.28" stroke-width="0.75" />
+  <!-- Stone Terrace -->
+  <polygon points="631.8,499.5 657.8,506.8 639.9,519.1 613.8,511.8" fill="#0f1c24" stroke="#1f3b4c" stroke-width="0.6" />
+  <!-- Illuminated Pool -->
+  <circle cx="635.8" cy="509.3" r="3.2" fill="#0284c7" opacity="0.6" />
+  <circle cx="635.8" cy="509.3" r="1.5" fill="#38bdf8" opacity="0.9" filter="url(#edgeGlow)" />
 </g>
 
   <!-- Peak Tower Callout -->
@@ -1225,7 +1245,7 @@
 
   <g transform="translate(24, 626)">
     <text x="0" y="0" fill="#94a3b8" font-size="13" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">122 contributions</tspan> recorded from <tspan fill="#f8fafc">2026-09-08</tspan> to <tspan fill="#f8fafc">2026-11-20</tspan>
+      <tspan fill="#39d353" font-weight="700">124 contributions</tspan> recorded from <tspan fill="#f8fafc">2026-09-08</tspan> to <tspan fill="#f8fafc">2026-11-21</tspan>
     </text>
   </g>
 
