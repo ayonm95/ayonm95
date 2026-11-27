@@ -1260,6 +1260,14 @@
   <polygon points="700.2,447.9 724.1,454.6 707.3,465.8 683.4,459.1" fill="#12261c" stroke="#1f4e34" stroke-width="0.6" />
   <circle cx="703.8" cy="456.8" r="2.8" fill="#2ea043" opacity="0.8" />
 </g>
+<g>
+  <polygon points="668.9,464.4 702.0,473.7 678.6,489.3 645.5,480.0" fill="#0d1520" stroke="#38bdf8" stroke-opacity="0.28" stroke-width="0.75" />
+  <!-- Stone Terrace -->
+  <polygon points="670.2,467.9 694.1,474.6 677.3,485.8 653.4,479.1" fill="#0f1c24" stroke="#1f3b4c" stroke-width="0.6" />
+  <!-- Illuminated Pool -->
+  <circle cx="673.8" cy="476.8" r="3.2" fill="#0284c7" opacity="0.6" />
+  <circle cx="673.8" cy="476.8" r="1.5" fill="#38bdf8" opacity="0.9" filter="url(#edgeGlow)" />
+</g>
 
   <!-- Peak Tower Callout -->
 
@@ -1277,7 +1285,7 @@
 
   <g transform="translate(24, 626)">
     <text x="0" y="0" fill="#94a3b8" font-size="13" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-weight="500">
-      <tspan fill="#39d353" font-weight="700">124 contributions</tspan> recorded from <tspan fill="#f8fafc">2026-09-08</tspan> to <tspan fill="#f8fafc">2026-11-26</tspan>
+      <tspan fill="#39d353" font-weight="700">124 contributions</tspan> recorded from <tspan fill="#f8fafc">2026-09-08</tspan> to <tspan fill="#f8fafc">2026-11-27</tspan>
     </text>
   </g>
 
